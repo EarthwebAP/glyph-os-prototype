@@ -1,80 +1,547 @@
 ---
 version: "0.1.0"
-title: "Glyph Specification v0"
-description: "Initial specification for Glyph OS content-addressed storage system"
+title: "Glyph Specification v0 - Frozen"
+description: "Concrete specification for Glyph OS. Runtime, dynamics, and renderer rely on this schema."
+frozen_date: "2025-12-04"
 
-glyph:
-  description: "A glyph is a content-addressed data unit with metadata"
+# =============================================================================
+# GLYPH SCHEMA v0 - FROZEN
+# =============================================================================
 
-  structure:
+glyph_schema:
+  description: "Complete glyph structure with all required and optional fields"
+
+  fields:
     id:
       type: "string"
-      format: "sha256 hash (64 hex characters)"
-      description: "SHA256 hash of the content, used as unique identifier"
+      format: "glyph:<sha256_hex>"
+      description: "Content-addressed identifier with 'glyph:' prefix"
       required: true
-      generation: "Computed from content field using SHA256"
+      constraints:
+        - "Must start with 'glyph:'"
+        - "Followed by 64 hexadecimal characters (SHA256)"
+        - "Case-insensitive hex, but canonical form is lowercase"
+      example: "glyph:a19315151ebbf7a9b020b9dc6e52b511f168afe7cb11f53b7c2c101bf481fedd"
+      generation: "SHA256(canonical_json(form + identity.lineage[0]))"
 
-    content:
-      type: "string"
-      description: "The primary content of the glyph"
-      required: true
-
-    metadata:
+    form:
       type: "object"
-      description: "Optional metadata associated with the glyph"
+      description: "Geometric and topological structure of the glyph"
+      required: true
+
+      fields:
+        topology:
+          type: "list[string]"
+          description: "Ordered list of topological elements"
+          required: true
+          allowed_values: ["node", "edge", "loop", "mesh", "surface", "void"]
+          constraints:
+            - "Must contain at least one element"
+            - "Order matters for rendering"
+          example: ["node", "edge", "loop"]
+
+        parameters:
+          type: "map[string, number|string|list]"
+          description: "Rendering and geometry parameters"
+          required: true
+          constraints:
+            - "Keys must be valid identifiers (alphanumeric + underscore)"
+            - "Values can be numbers, strings, or lists of primitives"
+          example:
+            radius: 1.5
+            color: "#FF5733"
+            vertices: [0, 0, 1.0, 0, 0.5, 1.0]
+            material: "metallic"
+
+    state:
+      type: "object"
+      description: "Dynamic state managed by the dynamics engine"
+      required: true
+
+      fields:
+        energy:
+          type: "number"
+          description: "Current energy level of the glyph"
+          required: true
+          constraints:
+            - "Must be non-negative (≥ 0.0)"
+            - "No upper bound"
+            - "Decays over time according to dynamics rules"
+          default: 0.0
+          example: 5.5
+
+        activated:
+          type: "boolean"
+          description: "Whether glyph has crossed activation threshold"
+          required: true
+          default: false
+          example: true
+
+        last_updated:
+          type: "string"
+          format: "iso8601_timestamp"
+          description: "Last time state was modified"
+          required: true
+          constraints:
+            - "Must be valid ISO 8601 format"
+            - "UTC timezone required"
+            - "Microsecond precision optional"
+          example: "2025-12-04T17:30:45.123456Z"
+
+    identity:
+      type: "object"
+      description: "Lineage and provenance tracking"
+      required: true
+
+      fields:
+        lineage:
+          type: "list[string]"
+          description: "Ordered list of ancestor glyph IDs (Merkle chain)"
+          required: true
+          constraints:
+            - "First element is always the original/seed glyph ID"
+            - "Each subsequent element is a parent glyph ID"
+            - "IDs must be valid glyph: prefixed SHA256 hashes"
+            - "Minimum length: 1 (self-reference for new glyphs)"
+            - "Order is chronological (oldest to newest)"
+          example:
+            - "glyph:abc123..."
+            - "glyph:def456..."
+            - "glyph:current_id..."
+          merge_semantics: "Union of both parent lineages, deduplicated, chronologically sorted"
+
+    relations:
+      type: "object"
+      description: "Graph edges connecting glyphs"
       required: false
-      default: {}
+      default: {"edges": []}
 
-  content_addressing:
+      fields:
+        edges:
+          type: "list[object]"
+          description: "List of directed edges to other glyphs"
+          required: false
+          default: []
+
+          edge_schema:
+            from:
+              type: "string"
+              description: "Source glyph ID"
+              required: true
+
+            to:
+              type: "string"
+              description: "Target glyph ID"
+              required: true
+
+            type:
+              type: "string"
+              description: "Edge type/relation"
+              required: true
+              allowed_values: ["parent", "child", "sibling", "reference", "merge", "custom"]
+
+            weight:
+              type: "number"
+              description: "Edge strength/weight"
+              required: false
+              default: 1.0
+              constraints:
+                - "Must be non-negative"
+
+          example:
+            - from: "glyph:abc123..."
+              to: "glyph:def456..."
+              type: "merge"
+              weight: 0.8
+
+    dynamics:
+      type: "object"
+      description: "Rules governing glyph evolution"
+      required: false
+      default: {"rules": []}
+
+      fields:
+        rules:
+          type: "list[object]"
+          description: "Active dynamics rules for this glyph"
+          required: false
+          default: []
+
+          rule_schema:
+            id:
+              type: "string"
+              description: "Unique rule identifier"
+              required: true
+
+            type:
+              type: "string"
+              description: "Rule type"
+              required: true
+              allowed_values: ["activation", "decay", "merge", "split", "custom"]
+
+            params:
+              type: "map[string, any]"
+              description: "Rule-specific parameters"
+              required: false
+              default: {}
+
+          example:
+            - id: "decay_rule_1"
+              type: "decay"
+              params:
+                rate: 0.1
+                min_energy: 0.001
+
+    resonance:
+      type: "object"
+      description: "Audio/frequency characteristics"
+      required: false
+      default: null
+
+      fields:
+        tone:
+          type: "object"
+          description: "Primary tone characteristics"
+          required: false
+
+          fields:
+            freq:
+              type: "number"
+              description: "Frequency in Hz"
+              constraints:
+                - "Must be positive"
+                - "Typical range: 20 - 20000 Hz"
+              example: 440.0
+
+            amplitude:
+              type: "number"
+              description: "Amplitude (0.0 - 1.0)"
+              constraints:
+                - "Must be in range [0.0, 1.0]"
+              example: 0.5
+
+    context:
+      type: "object"
+      description: "Environmental and runtime context"
+      required: false
+      default: {"environment": {}}
+
+      fields:
+        environment:
+          type: "map[string, any]"
+          description: "Key-value pairs describing context"
+          required: false
+          default: {}
+          example:
+            simulation_id: "sim_001"
+            temperature: 300
+            pressure: 1.0
+
+    rendering:
+      type: "object"
+      description: "Renderer-specific parameters"
+      required: false
+      default: {"procedural_params": {}}
+
+      fields:
+        procedural_params:
+          type: "map[string, any]"
+          description: "Procedural generation parameters for renderer"
+          required: false
+          default: {}
+          example:
+            seed: 42
+            complexity: 3
+            style: "wireframe"
+
+    serialization:
+      type: "object"
+      description: "Serialization metadata"
+      required: true
+
+      fields:
+        format:
+          type: "string"
+          description: "Serialization format"
+          required: true
+          allowed_values: ["json"]
+          default: "json"
+          example: "json"
+
+# =============================================================================
+# MERGE SEMANTICS
+# =============================================================================
+
+merge_semantics:
+  description: "How two glyphs combine to form a new glyph"
+
+  id_generation:
     algorithm: "SHA256"
-    encoding: "UTF-8"
-    description: "ID is generated by computing SHA256 hash of content"
-    properties:
-      - "Deterministic: same content always produces same ID"
-      - "Immutable: changing content changes ID"
-      - "Collision-resistant: different content produces different IDs"
+    input: "Canonical JSON of merged glyph (excluding 'id' field)"
+    output: "glyph:<sha256_hex>"
 
-  persistence:
-    format: "JSON"
-    filename_pattern: "glyph_{id}.json"
-    directory: "persistence/"
-    structure: |
-      {
-        "id": "<sha256_hash>",
-        "content": "<content_string>",
-        "metadata": {
-          // optional key-value pairs
-        }
-      }
+  field_merge_rules:
+    form:
+      rule: "precedence"
+      description: "Higher energy parent's form takes precedence"
 
-cli_tools:
-  create_glyph:
-    command: "./runtime/cli/create_glyph.py"
-    usage: "create_glyph.py <content> [--metadata <json>]"
-    output: "Prints glyph ID (SHA256 hash) to stdout"
-    side_effects: "Creates persistence/glyph_{id}.json file"
+    state:
+      energy:
+        rule: "sum"
+        description: "E_merged = E_parent1 + E_parent2"
+      activated:
+        rule: "logical_or"
+        description: "activated = parent1.activated OR parent2.activated"
+      last_updated:
+        rule: "max"
+        description: "Most recent timestamp"
 
-  query_glyph:
-    command: "./runtime/cli/query_glyph.py"
-    usage: "query_glyph.py <id>"
-    output: "Prints glyph JSON to stdout"
-    exit_codes:
-      0: "Success - glyph found"
-      1: "Error - glyph not found"
+    identity:
+      lineage:
+        rule: "union_chronological"
+        description: "Union of both lineages, deduplicated, sorted chronologically"
+        example:
+          parent1: ["glyph:a", "glyph:b"]
+          parent2: ["glyph:a", "glyph:c"]
+          merged: ["glyph:a", "glyph:b", "glyph:c", "glyph:merged_id"]
 
-testing:
-  framework: "unittest"
-  test_file: "runtime/tests/test_create_query.py"
-  required_tests:
-    - "test_create_glyph: Verify glyph creation and SHA256 addressing"
-    - "test_query_glyph: Verify glyph retrieval by ID"
+    relations:
+      edges:
+        rule: "union_deduplicated"
+        description: "Union of all edges, deduplicated by (from, to, type)"
 
-  ci:
-    platform: "GitHub Actions"
-    workflow: ".github/workflows/test.yml"
-    triggers:
-      - "push to master/main"
-      - "pull requests"
+    dynamics:
+      rules:
+        rule: "union_by_id"
+        description: "Union of rules, deduplicated by rule.id"
 
-phase: "phase0-runtime-stub"
-status: "Initial prototype"
+    resonance:
+      tone:
+        rule: "weighted_average"
+        description: "Average weighted by parent energies"
+
+    context:
+      environment:
+        rule: "merge_maps"
+        description: "Merge maps, parent2 overwrites conflicts"
+
+    rendering:
+      procedural_params:
+        rule: "merge_maps"
+        description: "Merge maps, higher energy parent overwrites conflicts"
+
+# =============================================================================
+# PERSISTENCE
+# =============================================================================
+
+persistence:
+  format: "JSON"
+  encoding: "UTF-8"
+
+  directory_structure:
+    pattern: "<prefix1>/<prefix2>/glyph_<full_id>.json"
+    prefix1: "First 2 hex chars of SHA256"
+    prefix2: "Next 2 hex chars of SHA256"
+    example: "ab/cd/glyph_abcd1234...json"
+
+  atomic_writes:
+    enabled: true
+    method: "temp file + atomic rename"
+    description: "Prevents partial writes and corruption"
+
+  nvme_priority:
+    primary: "/mnt/persistence"
+    fallback: "./persistence"
+    override_env: "GLYPH_FORCE_NVME"
+
+# =============================================================================
+# KERNEL API OPERATIONS
+# =============================================================================
+
+kernel_api:
+  description: "Core operations supported by the glyph runtime"
+
+  operations:
+    create:
+      description: "Create a new glyph from form and initial state"
+      inputs: ["form", "state", "identity"]
+      outputs: ["glyph_id"]
+      side_effects: ["Persists glyph to storage"]
+
+    merge:
+      description: "Merge two glyphs according to merge semantics"
+      inputs: ["glyph_id_1", "glyph_id_2"]
+      outputs: ["merged_glyph_id"]
+      side_effects: ["Creates new glyph", "Updates lineage"]
+
+    query:
+      description: "Retrieve glyph by ID"
+      inputs: ["glyph_id"]
+      outputs: ["glyph_object"]
+      side_effects: []
+
+    version:
+      description: "Get glyph lineage/version history"
+      inputs: ["glyph_id"]
+      outputs: ["lineage_list"]
+      side_effects: []
+
+    rollback:
+      description: "Create new glyph from ancestor in lineage"
+      inputs: ["glyph_id", "ancestor_index"]
+      outputs: ["new_glyph_id"]
+      side_effects: ["Creates new glyph with rolled-back state"]
+
+# =============================================================================
+# BACKWARDS COMPATIBILITY
+# =============================================================================
+
+compatibility:
+  version_policy: "Semantic Versioning (semver)"
+
+  adding_fields:
+    rule: "Backwards compatible"
+    description: "New optional fields can be added in minor versions"
+    requirements:
+      - "New fields must be optional (have defaults)"
+      - "Old glyphs without new fields remain valid"
+      - "Parsers must ignore unknown fields"
+    example: "v0.1.0 → v0.2.0 can add optional 'physics' field"
+
+  changing_required_fields:
+    rule: "Breaking change - major version bump"
+    description: "Changing required fields requires v1.0.0 → v2.0.0"
+    examples:
+      - "Making optional field required"
+      - "Removing required field"
+      - "Changing field type"
+
+  deprecation_policy:
+    notice_period: "One major version"
+    description: "Deprecated fields marked in v1.x, removed in v2.0"
+
+  forward_compatibility:
+    unknown_fields: "Preserve and pass through"
+    description: "Parsers must preserve unknown fields during read-modify-write"
+
+  canonical_form:
+    description: "Glyphs have a canonical JSON representation for hashing"
+    rules:
+      - "Fields sorted alphabetically by key"
+      - "No whitespace outside strings"
+      - "Numbers in standard decimal form (no scientific notation for small numbers)"
+      - "UTF-8 encoding"
+      - "Unix line endings (LF)"
+
+# =============================================================================
+# VALIDATION SCHEMA
+# =============================================================================
+
+validation:
+  required_fields: ["id", "form", "state", "identity", "serialization"]
+  optional_fields: ["relations", "dynamics", "resonance", "context", "rendering"]
+
+  id_validation:
+    regex: "^glyph:[a-f0-9]{64}$"
+
+  timestamp_validation:
+    regex: "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,6})?Z$"
+
+  content_hash_verification:
+    enabled: true
+    description: "On load, verify that recomputed hash matches glyph.id"
+
+# =============================================================================
+# EXAMPLES
+# =============================================================================
+
+examples:
+  minimal_glyph:
+    id: "glyph:a19315151ebbf7a9b020b9dc6e52b511f168afe7cb11f53b7c2c101bf481fedd"
+    form:
+      topology: ["node"]
+      parameters:
+        radius: 1.0
+    state:
+      energy: 0.0
+      activated: false
+      last_updated: "2025-12-04T17:30:00Z"
+    identity:
+      lineage: ["glyph:a19315151ebbf7a9b020b9dc6e52b511f168afe7cb11f53b7c2c101bf481fedd"]
+    serialization:
+      format: "json"
+
+  full_featured_glyph:
+    id: "glyph:b29426262fccf8a0c030c0ed7f63d7229279bge8dc22g64c8d3d212cg592gfee"
+    form:
+      topology: ["node", "edge", "loop"]
+      parameters:
+        radius: 2.5
+        color: "#3498db"
+        vertices: [0.0, 0.0, 1.0, 1.0, 1.0, 0.0]
+        complexity: 3
+    state:
+      energy: 5.5
+      activated: true
+      last_updated: "2025-12-04T18:45:30.123456Z"
+    identity:
+      lineage:
+        - "glyph:abc123..."
+        - "glyph:def456..."
+        - "glyph:b29426..."
+    relations:
+      edges:
+        - from: "glyph:b29426..."
+          to: "glyph:xyz789..."
+          type: "reference"
+          weight: 0.75
+    dynamics:
+      rules:
+        - id: "decay_1"
+          type: "decay"
+          params:
+            rate: 0.1
+        - id: "activation_1"
+          type: "activation"
+          params:
+            threshold: 1.0
+    resonance:
+      tone:
+        freq: 440.0
+        amplitude: 0.5
+    context:
+      environment:
+        simulation_id: "sim_001"
+        generation: 42
+    rendering:
+      procedural_params:
+        seed: 12345
+        style: "wireframe"
+    serialization:
+      format: "json"
+
+# =============================================================================
+# IMPLEMENTATION NOTES
+# =============================================================================
+
+implementation:
+  reference_implementation: "glyph-os-prototype"
+  language: "Python 3.x"
+
+  dependencies:
+    required: ["hashlib", "json", "pathlib"]
+    optional: []
+
+  performance_targets:
+    create_latency: "< 10ms (local persistence)"
+    query_latency: "< 5ms (local persistence)"
+    merge_latency: "< 20ms"
+
+  testing:
+    framework: "unittest"
+    property_tests: "13 dynamics property tests"
+    persistence_tests: "2 create/query tests"
+    total_tests: 15
+
+phase: "v0-frozen"
+status: "Production-ready specification"
