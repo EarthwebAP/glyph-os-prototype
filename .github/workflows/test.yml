@@ -20,4 +20,4 @@ jobs:
 
     - name: Run unit tests
       run: |
-        python3 -m unittest tests.test_glyph_cli -v
+        python3 -m unittest runtime.tests.test_create_query -v

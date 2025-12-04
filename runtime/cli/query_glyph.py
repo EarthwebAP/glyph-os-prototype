@@ -27,7 +27,7 @@ def query_glyph(glyph_id):
         dict: The glyph data, or None if not found
     """
     persistence_dir = get_persistence_path()
-    file_path = persistence_dir / f"{glyph_id}.json"
+    file_path = persistence_dir / f"glyph_{glyph_id}.json"
 
     if not file_path.exists():
         return None

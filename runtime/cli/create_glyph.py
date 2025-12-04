@@ -56,7 +56,7 @@ def save_glyph(glyph_id, glyph_data):
     persistence_dir = get_persistence_path()
     persistence_dir.mkdir(parents=True, exist_ok=True)
 
-    file_path = persistence_dir / f"{glyph_id}.json"
+    file_path = persistence_dir / f"glyph_{glyph_id}.json"
 
     with open(file_path, 'w') as f:
         json.dump(glyph_data, f, indent=2)
@@ -86,12 +86,8 @@ def main():
     # Save glyph
     file_path = save_glyph(glyph_id, glyph_data)
 
-    # Output result
-    print(json.dumps({
-        "id": glyph_id,
-        "path": file_path,
-        "glyph": glyph_data
-    }, indent=2))
+    # Output glyph ID
+    print(glyph_id)
 
     return 0
 
