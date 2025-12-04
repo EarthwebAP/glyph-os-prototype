@@ -10,7 +10,18 @@ from pathlib import Path
 
 
 def get_persistence_path():
-    """Get the persistence directory path"""
+    """
+    Get the persistence directory path with priority:
+    1. /mnt/persistence (NVMe mount)
+    2. ./persistence (fallback)
+    """
+    import os
+    # Check for NVMe mount
+    nvme_path = Path("/mnt/persistence")
+    if nvme_path.exists() or os.environ.get("GLYPH_FORCE_NVME"):
+        return nvme_path
+
+    # Fallback to local persistence
     script_dir = Path(__file__).parent
     persistence_dir = script_dir / ".." / ".." / "persistence"
     return persistence_dir.resolve()
@@ -18,7 +29,7 @@ def get_persistence_path():
 
 def query_glyph(glyph_id):
     """
-    Query a glyph by ID from persistence directory
+    Query a glyph by ID from persistence directory using Merkle-style paths
 
     Args:
         glyph_id: The SHA256 hash ID of the glyph
@@ -27,7 +38,12 @@ def query_glyph(glyph_id):
         dict: The glyph data, or None if not found
     """
     persistence_dir = get_persistence_path()
-    file_path = persistence_dir / f"glyph_{glyph_id}.json"
+
+    # Merkle-style directory organization
+    prefix1 = glyph_id[:2]
+    prefix2 = glyph_id[2:4]
+
+    file_path = persistence_dir / prefix1 / prefix2 / f"glyph_{glyph_id}.json"
 
     if not file_path.exists():
         return None
