@@ -1,0 +1,92 @@
+{
+  "id": "glyph:a19315151ebbf7a9b020b9dc6e52b511f168afe7cb11f53b7c2c101bf481fedd",
+  "form": {
+    "topology": [
+      "node",
+      "edge",
+      "loop"
+    ],
+    "parameters": {
+      "radius": 2.5,
+      "color": "#3498db",
+      "vertices": [
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        1.0,
+        0.0
+      ],
+      "complexity": 3,
+      "stroke_width": 0.1,
+      "material": "metallic"
+    }
+  },
+  "state": {
+    "energy": 5.5,
+    "activated": true,
+    "last_updated": "2025-12-04T18:45:30.123456Z"
+  },
+  "identity": {
+    "lineage": [
+      "glyph:abc1234567890abcdef1234567890abcdef1234567890abcdef1234567890ab",
+      "glyph:def4567890abcdef1234567890abcdef1234567890abcdef1234567890abcd",
+      "glyph:a19315151ebbf7a9b020b9dc6e52b511f168afe7cb11f53b7c2c101bf481fedd"
+    ]
+  },
+  "relations": {
+    "edges": [
+      {
+        "from": "glyph:a19315151ebbf7a9b020b9dc6e52b511f168afe7cb11f53b7c2c101bf481fedd",
+        "to": "glyph:xyz7890abcdef1234567890abcdef1234567890abcdef1234567890abcdef12",
+        "type": "reference",
+        "weight": 0.75
+      }
+    ]
+  },
+  "dynamics": {
+    "rules": [
+      {
+        "id": "decay_1",
+        "type": "decay",
+        "params": {
+          "rate": 0.1,
+          "min_energy": 0.001
+        }
+      },
+      {
+        "id": "activation_1",
+        "type": "activation",
+        "params": {
+          "threshold": 1.0
+        }
+      }
+    ]
+  },
+  "resonance": {
+    "tone": {
+      "freq": 440.0,
+      "amplitude": 0.5
+    }
+  },
+  "context": {
+    "environment": {
+      "simulation_id": "sim_001",
+      "generation": 42,
+      "temperature": 300,
+      "pressure": 1.0
+    }
+  },
+  "rendering": {
+    "procedural_params": {
+      "seed": 12345,
+      "complexity": 3,
+      "style": "wireframe",
+      "glow": true,
+      "animation_speed": 1.0
+    }
+  },
+  "serialization": {
+    "format": "json"
+  }
+}

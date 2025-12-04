@@ -5,6 +5,31 @@ description: "Concrete specification for Glyph OS. Runtime, dynamics, and render
 frozen_date: "2025-12-04"
 
 # =============================================================================
+# CHANGELOG
+# =============================================================================
+
+changelog:
+  v0.1.0:
+    date: "2025-12-04"
+    status: "LOCKED"
+    changes:
+      - "Initial frozen specification"
+      - "Added complete field definitions with types, constraints, examples"
+      - "Defined merge semantics for all field types"
+      - "Specified lineage format (chronological Merkle chain)"
+      - "Added time/energy fields for dynamics engine"
+      - "Documented backwards compatibility policy (semver)"
+      - "Added validation schemas and regex patterns"
+      - "Defined kernel API operations (create, merge, query, version, rollback)"
+      - "Specified canonical form rules for content addressing"
+      - "Included minimal and full-featured example glyphs"
+    breaking_changes: []
+    deprecations: []
+    notes:
+      - "This is the foundation spec - runtime, dynamics, and renderer depend on it"
+      - "Tagged as spec-v0-locked"
+
+# =============================================================================
 # GLYPH SCHEMA v0 - FROZEN
 # =============================================================================
 
