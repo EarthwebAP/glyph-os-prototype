@@ -1,0 +1,33 @@
+{
+  "primitive": "merge",
+  "iterations": 50000,
+  "results": [
+    {
+      "implementation": "python",
+      "iterations": 50000,
+      "latency_us": {
+        "min": 4.045999958179891,
+        "max": 95.37200094200671,
+        "median": 4.2389947338961065,
+        "mean": 4.608962934435112,
+        "p95": 4.528003046289086,
+        "p99": 17.14799873298034
+      },
+      "throughput": {
+        "ops_per_sec": 206487
+      },
+      "total_time_ms": 242.1457409946015
+    },
+    {
+      "implementation": "cpp_standalone",
+      "latency_us": {
+        "mean": 0.566502
+      },
+      "throughput": {
+        "ops_per_sec": 1765217
+      },
+      "speedup_vs_python": 8.135828177897189,
+      "note": "From merge_ref_results.json"
+    }
+  ]
+}
