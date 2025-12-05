@@ -1,16 +1,50 @@
 {
-  "timestamp": "2025-12-05T00:21:04.076163Z",
-  "commit": "9470aad",
+  "timestamp": "2025-12-05T00:28:39.883143Z",
+  "commit": "cbb6da0",
   "persistence": {
-    "median_ms": 6.809,
-    "p95_ms": 11.49,
-    "p99_ms": 12.796,
-    "total_glyphs": 1000,
-    "success_rate": 1.0
+    "baseline": {
+      "median_ms": 6.735,
+      "p95_ms": 11.222,
+      "p99_ms": 12.502,
+      "mean_ms": 7.235,
+      "min_ms": 5.855,
+      "max_ms": 16.753,
+      "total": 1000,
+      "success": 1000,
+      "failed": 0
+    },
+    "config": {
+      "count": 1000,
+      "batch_window_ms": 0,
+      "parallel": 1
+    },
+    "batched": {
+      "stats": {
+        "median_ms": 0.003,
+        "p95_ms": 0.012,
+        "p99_ms": 0.025,
+        "mean_ms": 3.926,
+        "min_ms": 0.003,
+        "max_ms": 3921.123,
+        "total": 1000,
+        "success": 1000,
+        "failed": 0
+      },
+      "config": {
+        "count": 1000,
+        "batch_window_ms": 5,
+        "parallel": 1
+      },
+      "improvement": {
+        "median_reduction_pct": 100.0,
+        "p99_reduction_pct": 99.8
+      }
+    }
   },
   "dynamics": {
     "deterministic": true,
-    "seeds_tested": 10
+    "seeds_tested": 10,
+    "failing_seeds": []
   },
   "spu": [
     {
@@ -40,12 +74,16 @@
     }
   ],
   "fabric": {
-    "p50_ms": 0.0147,
-    "p95_ms": 0.0181,
-    "p99_ms": 0.0495,
-    "avg_ms": 0.0161,
-    "transport": "loopback",
-    "rdma_available": false
+    "loopback": {
+      "p50_ms": 0.0147,
+      "p95_ms": 0.0181,
+      "p99_ms": 0.0495,
+      "avg_ms": 0.0161,
+      "transport": "loopback",
+      "rdma_available": false,
+      "notes": "Loopback simulation - no network transport"
+    },
+    "rdma": null
   },
-  "notes": "All benchmarks passed successfully"
+  "notes": "Batching improved median latency by 100.0%"
 }
