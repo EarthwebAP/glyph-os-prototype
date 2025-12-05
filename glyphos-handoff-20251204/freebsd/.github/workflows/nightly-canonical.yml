@@ -1,0 +1,293 @@
+name: Nightly Canonical Build
+
+on:
+  schedule:
+    - cron: '0 2 * * *'  # 2 AM UTC daily
+  workflow_dispatch:  # Manual trigger for testing
+
+env:
+  TZ: UTC
+  LANG: C
+  LC_ALL: C
+  SOURCE_DATE_EPOCH: 1701820800
+  GDF_SEED: 0
+
+jobs:
+  canonical-build:
+    name: Canonical Deterministic Build
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Full history for git metadata
+
+      - name: Cache APT packages
+        uses: actions/cache@v3
+        with:
+          path: /var/cache/apt/archives
+          key: apt-${{ runner.os }}-${{ hashFiles('.github/workflows/*.yml') }}
+          restore-keys: |
+            apt-${{ runner.os }}-
+
+      - name: Install build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            gcc \
+            clang \
+            llvm \
+            build-essential \
+            jq \
+            openssl \
+            gnupg
+
+      - name: Verify toolchain lockfile
+        working-directory: freebsd
+        run: |
+          if [ ! -f ci/toolchain.lock ]; then
+            echo "::error::ci/toolchain.lock not found"
+            exit 1
+          fi
+          echo "::group::Toolchain lockfile"
+          cat ci/toolchain.lock
+          echo "::endgroup::"
+
+      - name: Verify reproducible environment
+        working-directory: freebsd
+        run: |
+          echo "::group::Environment variables"
+          echo "TZ=$TZ"
+          echo "LANG=$LANG"
+          echo "LC_ALL=$LC_ALL"
+          echo "SOURCE_DATE_EPOCH=$SOURCE_DATE_EPOCH"
+          echo "GDF_SEED=$GDF_SEED"
+          echo "::endgroup::"
+
+          # Verify all required variables are set
+          if [ "$TZ" != "UTC" ] || [ "$LANG" != "C" ] || [ -z "$SOURCE_DATE_EPOCH" ]; then
+            echo "::error::Reproducibility environment variables not properly set"
+            exit 1
+          fi
+
+      - name: Canonical build (Run 1)
+        working-directory: freebsd
+        run: |
+          echo "::group::Build 1"
+          mkdir -p bin logs
+
+          # Clean build
+          make clean || true
+
+          # Build with unified pipeline
+          sh scripts/unified_pipeline.sh --ci | tee logs/canonical_build1.log
+
+          # Generate checksums
+          sha256sum bin/substrate_core bin/glyph_interp | tee canonical_checksums_build1.sha256
+
+          echo "::endgroup::"
+
+      - name: Canonical build (Run 2)
+        working-directory: freebsd
+        run: |
+          echo "::group::Build 2"
+
+          # Clean again
+          make clean || true
+
+          # Sleep to catch timestamp issues
+          sleep 5
+
+          # Build again with identical environment
+          sh scripts/unified_pipeline.sh --ci | tee logs/canonical_build2.log
+
+          # Generate checksums
+          sha256sum bin/substrate_core bin/glyph_interp | tee canonical_checksums_build2.sha256
+
+          echo "::endgroup::"
+
+      - name: Compare builds (Determinism check)
+        working-directory: freebsd
+        run: |
+          echo "::group::Determinism verification"
+
+          # Compare checksums
+          if diff canonical_checksums_build1.sha256 canonical_checksums_build2.sha256; then
+            echo "::notice::✓ DETERMINISM VERIFIED: Builds are identical"
+            DETERMINISTIC=1
+          else
+            echo "::error::✗ DETERMINISM FAILED: Builds differ"
+            echo "Build 1 checksums:"
+            cat canonical_checksums_build1.sha256
+            echo ""
+            echo "Build 2 checksums:"
+            cat canonical_checksums_build2.sha256
+            DETERMINISTIC=0
+          fi
+
+          # Write determinism log
+          mkdir -p logs
+          cat > logs/determinism.log << EOF
+GlyphOS Nightly Canonical Build - Determinism Report
+Date: $(date -u +%Y-%m-%dT%H:%M:%SZ)
+Workflow: nightly-canonical.yml
+Run: ${{ github.run_number }}
+Commit: ${{ github.sha }}
+
+Build 1 Checksums:
+$(cat canonical_checksums_build1.sha256)
+
+Build 2 Checksums:
+$(cat canonical_checksums_build2.sha256)
+
+Result: $([ $DETERMINISTIC -eq 1 ] && echo "IDENTICAL ✓" || echo "DIFFERENT ✗")
+
+Environment:
+  TZ=$TZ
+  LANG=$LANG
+  LC_ALL=$LC_ALL
+  SOURCE_DATE_EPOCH=$SOURCE_DATE_EPOCH
+  GDF_SEED=$GDF_SEED
+
+Toolchain:
+$(cat ci/toolchain.lock | head -20)
+EOF
+
+          cat logs/determinism.log
+
+          # Exit with error if non-deterministic
+          if [ $DETERMINISTIC -eq 0 ]; then
+            exit 1
+          fi
+
+          echo "::endgroup::"
+
+      - name: Generate canonical manifest
+        if: success()
+        working-directory: freebsd
+        run: |
+          echo "::group::Canonical manifest"
+
+          # Run manifest generation script
+          sh ci/generate_release_manifest.sh > release_manifest_canonical.json
+
+          cat release_manifest_canonical.json | jq '.'
+
+          echo "::endgroup::"
+
+      - name: Compare with previous canonical build
+        if: github.event_name == 'schedule'
+        working-directory: freebsd
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          echo "::group::Parity check with previous build"
+
+          # Find previous successful run
+          PREV_RUN=$(gh run list \
+            --workflow=nightly-canonical.yml \
+            --status=success \
+            --limit=2 \
+            --json databaseId \
+            --jq '.[1].databaseId' 2>/dev/null || echo "")
+
+          if [ -z "$PREV_RUN" ]; then
+            echo "::notice::First canonical build - no previous build to compare"
+          else
+            echo "Comparing with previous run: $PREV_RUN"
+
+            # Download previous canonical build artifact
+            gh run download "$PREV_RUN" --name "canonical-build-artifacts" --dir previous/ 2>/dev/null || {
+              echo "::warning::Could not download previous build artifacts"
+              exit 0
+            }
+
+            # Compare checksums
+            if [ -f previous/canonical_checksums.sha256 ]; then
+              if diff canonical_checksums_build1.sha256 previous/canonical_checksums.sha256; then
+                echo "::notice::✓ PARITY VERIFIED: Current build matches previous canonical build"
+              else
+                echo "::error::✗ PARITY FAILED: Current build differs from previous canonical build"
+                echo "Current:"
+                cat canonical_checksums_build1.sha256
+                echo "Previous:"
+                cat previous/canonical_checksums.sha256
+
+                # This is a critical failure
+                exit 1
+              fi
+            fi
+          fi
+
+          echo "::endgroup::"
+
+      - name: Upload canonical artifacts
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: canonical-build-artifacts
+          path: |
+            freebsd/bin/substrate_core
+            freebsd/bin/glyph_interp
+            freebsd/canonical_checksums_build1.sha256
+            freebsd/canonical_checksums_build2.sha256
+            freebsd/logs/determinism.log
+            freebsd/logs/canonical_build1.log
+            freebsd/logs/canonical_build2.log
+            freebsd/release_manifest_canonical.json
+          retention-days: 90
+
+      - name: Create GitHub Release (on success)
+        if: success() && github.event_name == 'schedule'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        working-directory: freebsd
+        run: |
+          # Create nightly release tag
+          TAG_NAME="nightly-$(date -u +%Y%m%d)"
+
+          # Check if tag already exists
+          if gh release view "$TAG_NAME" >/dev/null 2>&1; then
+            echo "::notice::Release $TAG_NAME already exists, skipping"
+            exit 0
+          fi
+
+          # Create release
+          gh release create "$TAG_NAME" \
+            --title "Nightly Canonical Build - $(date -u +%Y-%m-%d)" \
+            --notes "Automated nightly canonical build
+
+**Determinism**: ✓ Verified
+**Commit**: ${{ github.sha }}
+**Workflow Run**: ${{ github.run_number }}
+
+This is an automated nightly build for determinism verification.
+
+**Checksums**:
+\`\`\`
+$(cat canonical_checksums_build1.sha256)
+\`\`\`
+
+**Verification**:
+\`\`\`bash
+sha256sum -c <(echo '$(cat canonical_checksums_build1.sha256)')
+\`\`\`
+" \
+            bin/substrate_core \
+            bin/glyph_interp \
+            canonical_checksums_build1.sha256 \
+            release_manifest_canonical.json \
+            --prerelease
+
+  notify:
+    name: Notify on Failure
+    runs-on: ubuntu-latest
+    needs: canonical-build
+    if: failure()
+    steps:
+      - name: Report failure
+        run: |
+          echo "::error::Nightly canonical build failed - determinism may be broken!"
+          echo "Check workflow logs at: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
