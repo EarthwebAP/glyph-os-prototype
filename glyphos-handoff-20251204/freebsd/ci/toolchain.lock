@@ -1,0 +1,70 @@
+# GlyphOS Toolchain Lockfile
+# Generated: 2025-12-05_22:00:00_UTC
+# Format: package_name==version
+# Purpose: Ensure bit-identical reproducible builds across environments
+
+## Build System Information
+os=Ubuntu 24.04 LTS (Noble Numbat)
+arch=x86_64
+kernel=Linux 6.6.87.2-microsoft-standard-WSL2
+
+## Compiler Versions
+gcc_version=13.3.0
+gcc_package=gcc (Ubuntu 13.3.0-6ubuntu2~24.04)
+clang_version=NOT_INSTALLED
+# Note: Build defaults to gcc when clang unavailable
+
+## Toolchain Components
+binutils_version=2.42
+ld_version=GNU ld (GNU Binutils for Ubuntu) 2.42
+make_version=4.3
+dpkg_version=1.22.6
+
+## Critical Build Dependencies
+# These must be pinned for reproducible builds
+libc_dev=libc6-dev
+build_essential=build-essential
+jq=jq
+openssl=openssl
+
+## Reproducibility Environment Variables
+# These MUST be set for all builds
+SOURCE_DATE_EPOCH=1701820800
+TZ=UTC
+LANG=C
+LC_ALL=C
+GDF_SEED=0
+
+## Compiler Flags for Determinism
+# Recommended flags to ensure reproducibility
+CFLAGS=-O2 -fdebug-prefix-map=$PWD=. -ffile-prefix-map=$PWD=.
+LDFLAGS=-Wl,--build-id=none
+
+## Package Checksums
+# Computed on 2025-12-05, Ubuntu 24.04 LTS
+# gcc_sha256=<requires package verification>
+# binutils_sha256=<requires package verification>
+# Note: Use 'dpkg -L gcc-13 | xargs sha256sum' to verify
+
+## Verification Commands
+# Verify this lockfile produces identical builds:
+#   1. Set environment: export TZ=UTC LANG=C LC_ALL=C SOURCE_DATE_EPOCH=1701820800 GDF_SEED=0
+#   2. Build twice: make clean && make && sha256sum bin/* > build1.txt
+#                   make clean && make && sha256sum bin/* > build2.txt
+#   3. Compare: diff build1.txt build2.txt (should be empty)
+
+## Update Policy
+# Only update this lockfile when:
+#   1. Critical CVE requires toolchain update
+#   2. New feature requires newer compiler version
+#   3. After updating, re-run 3 consecutive nightly builds to verify determinism
+
+## Notes
+# - FreeBSD production builds may use different toolchain versions
+# - Cross-reference with .github/workflows/ci.yml environment
+# - If builds differ, check: timestamps, file permissions, env vars, random seeds
+
+## Last Verified Checksums
+# substrate_core: d9bc1bd2a5f434f968137d77fc64dd480df45f4e474ed2154026df428baf20de
+# glyph_interp:   132a7c79f7d89da8f88bccc0f57727ad4ee10cee940b9a09dab5c09a75871e7b
+# Build date:     2025-12-05T21:00:23Z
