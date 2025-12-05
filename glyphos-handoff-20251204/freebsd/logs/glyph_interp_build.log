@@ -1,0 +1,16 @@
+src/glyph_interpreter.c: In function 'glyph_activate':
+src/glyph_interpreter.c:512:61: warning: '%s' directive output may be truncated writing up to 4607 bytes into a region of size 112 [-Wformat-truncation=]
+  512 |         snprintf(op_desc, sizeof(op_desc), "unknown_command(%s)", cmd->command);
+      |                                                             ^~
+In file included from /usr/include/stdio.h:980,
+                 from src/glyph_interpreter.c:13:
+In function 'snprintf',
+    inlined from 'execute_activation_command' at src/glyph_interpreter.c:512:9,
+    inlined from 'glyph_activate' at src/glyph_interpreter.c:554:13:
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:54:10: note: '__builtin___snprintf_chk' output between 18 and 4625 bytes into a destination of size 128
+   54 |   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   55 |                                    __glibc_objsize (__s), __fmt,
+      |                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   56 |                                    __va_arg_pack ());
+      |                                    ~~~~~~~~~~~~~~~~~
