@@ -1,0 +1,9 @@
+{
+  "p50_ms": 0.0147,
+  "p95_ms": 0.0181,
+  "p99_ms": 0.0495,
+  "avg_ms": 0.0161,
+  "transport": "loopback",
+  "rdma_available": false,
+  "notes": "Loopback simulation - no network transport"
+}
