@@ -1,0 +1,19 @@
+=== GlyphOS Standalone Fuzzer ===
+Corpus: ci/fuzz_corpus
+Runs:   10000
+
+Loaded 11 corpus files
+Runs: 1000, Valid: 979, Crashes: 0
+Runs: 2000, Valid: 1949, Crashes: 0
+Runs: 3000, Valid: 2923, Crashes: 0
+Runs: 4000, Valid: 3894, Crashes: 0
+Runs: 5000, Valid: 4864, Crashes: 0
+Runs: 6000, Valid: 5836, Crashes: 0
+Runs: 7000, Valid: 6811, Crashes: 0
+Runs: 8000, Valid: 7780, Crashes: 0
+Runs: 9000, Valid: 8752, Crashes: 0
+
+=== Fuzzing Complete ===
+Total runs:    10000
+Valid parses:  9725
+Crashes:       0
