@@ -1,0 +1,20 @@
+# GlyphOS Glyph Definition Format (GDF) v2.0
+# Multi-Parent Decay Simulation Glyph
+
+glyph_id: 006
+chronocode: 20250101_170000
+parent_glyphs: 001, 003, 004
+resonance_freq: 330.0
+field_magnitude: 0.7
+coherence: 75
+contributor_inheritance: genesis
+material_spec: substrate_dynamic
+frequency_signature: harmonic_0.75x
+activation_simulation: resonate(1.5) | entangle(001) | entangle(003) | amplify(0.9) | phase_shift(15) | decay(0.85) | stabilize()
+entanglement_coeff: 2.2
+phase_offset: 135.0
+quantum_state: 4
+metadata: decay_simulation
+dependencies: 001, 003, 004
+outputs: field_state, resonance, phase, decay_rate
+constraints: requires_all_parents_active

@@ -1,0 +1,127 @@
+groups:
+  - name: glyphos_critical
+    interval: 30s
+    rules:
+      - alert: GlyphOSServiceDown
+        expr: up{job=~"glyphos-.*"} == 0
+        for: 1m
+        labels:
+          severity: critical
+          component: "{{ $labels.job }}"
+        annotations:
+          summary: "GlyphOS service {{ $labels.job }} is down"
+          description: "{{ $labels.job }} has been down for more than 1 minute"
+          runbook_url: "https://github.com/EarthwebAP/glyph-os-prototype/blob/main/docs/runbooks/service-down.md"
+
+      - alert: HighActivationFailureRate
+        expr: rate(glyphos_glyph_activation_failures_total[5m]) > 0.1
+        for: 2m
+        labels:
+          severity: critical
+          component: glyph_interpreter
+        annotations:
+          summary: "High glyph activation failure rate"
+          description: "Activation failure rate is {{ $value | humanize }} per second (threshold: 0.1/s)"
+          runbook_url: "https://github.com/EarthwebAP/glyph-os-prototype/blob/main/docs/runbooks/activation-failures.md"
+
+      - alert: SubstrateChecksumFailures
+        expr: rate(glyphos_substrate_checksum_failures_total[5m]) > 0
+        for: 1m
+        labels:
+          severity: critical
+          component: substrate_core
+        annotations:
+          summary: "Substrate checksum failures detected"
+          description: "Data integrity violations detected at {{ $value | humanize }}/sec"
+          runbook_url: "https://github.com/EarthwebAP/glyph-os-prototype/blob/main/docs/runbooks/checksum-failures.md"
+
+      - alert: SubstrateParityFailures
+        expr: rate(glyphos_substrate_parity_failures_total[5m]) > 0
+        for: 1m
+        labels:
+          severity: critical
+          component: substrate_core
+        annotations:
+          summary: "Substrate parity failures detected"
+          description: "Parity check failures at {{ $value | humanize }}/sec - possible memory corruption"
+          runbook_url: "https://github.com/EarthwebAP/glyph-os-prototype/blob/main/docs/runbooks/parity-failures.md"
+
+  - name: glyphos_warning
+    interval: 1m
+    rules:
+      - alert: HighActivationLatency
+        expr: histogram_quantile(0.95, rate(glyphos_glyph_activation_duration_seconds_bucket[5m])) > 1.0
+        for: 5m
+        labels:
+          severity: warning
+          component: glyph_interpreter
+        annotations:
+          summary: "High glyph activation latency"
+          description: "P95 activation latency is {{ $value | humanizeDuration }} (threshold: 1s)"
+          runbook_url: "https://github.com/EarthwebAP/glyph-os-prototype/blob/main/docs/runbooks/high-latency.md"
+
+      - alert: HighSubstrateUpdateLatency
+        expr: histogram_quantile(0.95, rate(glyphos_substrate_update_duration_seconds_bucket[5m])) > 0.5
+        for: 5m
+        labels:
+          severity: warning
+          component: substrate_core
+        annotations:
+          summary: "High substrate update latency"
+          description: "P95 update latency is {{ $value | humanizeDuration }} (threshold: 500ms)"
+          runbook_url: "https://github.com/EarthwebAP/glyph-os-prototype/blob/main/docs/runbooks/high-latency.md"
+
+      - alert: HighGDFParseErrors
+        expr: rate(glyphos_gdf_parse_errors_total[10m]) > 0.01
+        for: 5m
+        labels:
+          severity: warning
+          component: glyph_interpreter
+        annotations:
+          summary: "Elevated GDF parse error rate"
+          description: "GDF parse errors at {{ $value | humanize }}/sec for field {{ $labels.field }}"
+          runbook_url: "https://github.com/EarthwebAP/glyph-os-prototype/blob/main/docs/runbooks/parse-errors.md"
+
+      - alert: FieldMagnitudeNearLimit
+        expr: glyphos_substrate_avg_magnitude > 900
+        for: 10m
+        labels:
+          severity: warning
+          component: substrate_core
+        annotations:
+          summary: "Field magnitude approaching limit"
+          description: "Average field magnitude is {{ $value }} (limit: 1000)"
+          runbook_url: "https://github.com/EarthwebAP/glyph-os-prototype/blob/main/docs/runbooks/field-limits.md"
+
+      - alert: LowCoherence
+        expr: glyphos_substrate_avg_coherence < 100
+        for: 10m
+        labels:
+          severity: warning
+          component: substrate_core
+        annotations:
+          summary: "Field coherence below threshold"
+          description: "Average coherence is {{ $value }} (threshold: 100)"
+          runbook_url: "https://github.com/EarthwebAP/glyph-os-prototype/blob/main/docs/runbooks/low-coherence.md"
+
+  - name: glyphos_info
+    interval: 5m
+    rules:
+      - alert: VaultGlyphCountChanged
+        expr: abs(delta(glyphos_vault_glyphs_total[5m])) > 0
+        labels:
+          severity: info
+          component: glyph_interpreter
+        annotations:
+          summary: "Vault glyph count changed"
+          description: "Vault now contains {{ $value }} glyphs"
+
+      - alert: HighCellWriteRate
+        expr: rate(glyphos_substrate_cells_written_total[5m]) > 1000
+        for: 10m
+        labels:
+          severity: info
+          component: substrate_core
+        annotations:
+          summary: "High cell write rate"
+          description: "Writing {{ $value | humanize }} cells/sec - normal for heavy activation load"

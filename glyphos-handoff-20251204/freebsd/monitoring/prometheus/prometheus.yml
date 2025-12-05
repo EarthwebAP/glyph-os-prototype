@@ -1,0 +1,65 @@
+# GlyphOS Prometheus Configuration
+
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+  external_labels:
+    cluster: 'glyphos-prod'
+    environment: 'production'
+
+# Alert manager configuration
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets:
+            - 'localhost:9093'
+
+# Load alert rules
+rule_files:
+  - 'alerts.yml'
+
+# Scrape configurations
+scrape_configs:
+  # Substrate core metrics
+  - job_name: 'glyphos-substrate'
+    static_configs:
+      - targets: ['localhost:9102']
+        labels:
+          component: 'substrate_core'
+          tier: 'backend'
+    scrape_interval: 10s
+    scrape_timeout: 5s
+    metrics_path: '/metrics'
+
+  # Glyph interpreter metrics
+  - job_name: 'glyphos-interpreter'
+    static_configs:
+      - targets: ['localhost:9103']
+        labels:
+          component: 'glyph_interpreter'
+          tier: 'application'
+    scrape_interval: 10s
+    scrape_timeout: 5s
+    metrics_path: '/metrics'
+
+  # Combined exporter (if using aggregator)
+  - job_name: 'glyphos-exporter'
+    static_configs:
+      - targets: ['localhost:9101']
+        labels:
+          component: 'glyphd_exporter'
+          tier: 'monitoring'
+    scrape_interval: 15s
+
+  # Node exporter for system metrics
+  - job_name: 'node'
+    static_configs:
+      - targets: ['localhost:9100']
+        labels:
+          component: 'node_exporter'
+          tier: 'infrastructure'
+
+  # Prometheus self-monitoring
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']

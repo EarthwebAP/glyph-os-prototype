@@ -1,0 +1,14 @@
+# Root Glyph - Base of the inheritance chain
+
+glyph_id: 000
+chronocode: 20250101_000000
+resonance_freq: 440.0
+field_magnitude: 1.0
+coherence: 100
+material_spec: fundamental_field
+frequency_signature: base_harmonic
+activation: stabilize()
+entanglement_coeff: 1.0
+phase_offset: 0.0
+quantum_state: 0
+metadata: Root glyph - foundation of all derived glyphs

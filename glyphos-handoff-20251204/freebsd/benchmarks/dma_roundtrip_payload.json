@@ -1,0 +1,29 @@
+{
+  "proof_version": "1.0",
+  "proof_type": "benchmark",
+  "timestamp": "2025-12-05T15:00:00Z",
+  "public_key_id": "test_key_001",
+  "payload": {
+    "test_name": "dma_roundtrip",
+    "component": "substrate_core",
+    "test_description": "DMA round-trip latency measurement",
+    "platform": "FreeBSD 13.2",
+    "compiler": "clang 14.0.0",
+    "build_flags": "-O2 -Wall -Wextra",
+    "environment": {
+      "TZ": "UTC",
+      "LANG": "C",
+      "SOURCE_DATE_EPOCH": "1701820800",
+      "GDF_SEED": "0"
+    },
+    "results": {
+      "iterations": 10000,
+      "mean_latency_ns": 245,
+      "min_latency_ns": 180,
+      "max_latency_ns": 420,
+      "stddev_ns": 35,
+      "throughput_ops_per_sec": 4081632
+    },
+    "checksum": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

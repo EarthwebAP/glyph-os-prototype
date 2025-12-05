@@ -1,0 +1,20 @@
+# GlyphOS Glyph Definition Format (GDF) v2.0
+# Full Feature Demonstration Glyph
+
+glyph_id: 008
+chronocode: 20250101_190000
+parent_glyphs: 001, 003, 005, 006, 007
+resonance_freq: 2200.0
+field_magnitude: 2.0
+coherence: 72
+contributor_inheritance: genesis
+material_spec: substrate_advanced_composite
+frequency_signature: harmonic_5x
+activation_simulation: resonate(3.0) | entangle(001) | amplify(1.8) | phase_shift(30) | entangle(003) | phase_shift(60) | entangle(005) | amplify(2.2) | phase_shift(90) | entangle(006) | decay(0.92) | phase_shift(-30) | entangle(007) | phase_shift(120) | amplify(2.5) | stabilize()
+entanglement_coeff: 4.0
+phase_offset: 315.0
+quantum_state: 6
+metadata: full_feature_demonstration
+dependencies: 001, 003, 005, 006, 007
+outputs: field_state, resonance, multi_phase, penta_entanglement, decay_rate, max_amplification
+constraints: requires_all_parents_active

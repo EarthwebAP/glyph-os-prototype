@@ -1,0 +1,160 @@
+{
+  "dashboard": {
+    "title": "GlyphOS Production Overview",
+    "tags": ["glyphos", "production"],
+    "timezone": "browser",
+    "schemaVersion": 16,
+    "version": 1,
+    "refresh": "10s",
+    "panels": [
+      {
+        "id": 1,
+        "title": "Service Status",
+        "type": "stat",
+        "targets": [
+          {
+            "expr": "up{job=\"glyphos-substrate\"}",
+            "legendFormat": "Substrate Core"
+          },
+          {
+            "expr": "up{job=\"glyphos-interpreter\"}",
+            "legendFormat": "Glyph Interpreter"
+          }
+        ],
+        "gridPos": {"h": 4, "w": 12, "x": 0, "y": 0},
+        "fieldConfig": {
+          "defaults": {
+            "thresholds": {
+              "steps": [
+                {"value": 0, "color": "red"},
+                {"value": 1, "color": "green"}
+              ]
+            }
+          }
+        }
+      },
+      {
+        "id": 2,
+        "title": "Total Glyph Activations",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "rate(glyphos_glyph_activations_total[5m])",
+            "legendFormat": "{{glyph_id}}"
+          }
+        ],
+        "gridPos": {"h": 8, "w": 12, "x": 12, "y": 0}
+      },
+      {
+        "id": 3,
+        "title": "Substrate Cell Operations",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "rate(glyphos_substrate_cells_written_total[5m])",
+            "legendFormat": "Writes/sec"
+          },
+          {
+            "expr": "rate(glyphos_substrate_cells_read_total[5m])",
+            "legendFormat": "Reads/sec"
+          }
+        ],
+        "gridPos": {"h": 8, "w": 12, "x": 0, "y": 4}
+      },
+      {
+        "id": 4,
+        "title": "Activation Latency (p95)",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "histogram_quantile(0.95, rate(glyphos_glyph_activation_duration_seconds_bucket[5m]))",
+            "legendFormat": "p95 latency"
+          }
+        ],
+        "gridPos": {"h": 8, "w": 12, "x": 12, "y": 8}
+      },
+      {
+        "id": 5,
+        "title": "Error Rates",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "rate(glyphos_glyph_activation_failures_total[5m])",
+            "legendFormat": "{{reason}}"
+          },
+          {
+            "expr": "rate(glyphos_substrate_checksum_failures_total[5m])",
+            "legendFormat": "Checksum failures"
+          }
+        ],
+        "gridPos": {"h": 8, "w": 12, "x": 0, "y": 12},
+        "alert": {
+          "conditions": [
+            {
+              "evaluator": {"params": [0.1], "type": "gt"},
+              "query": {"params": ["A", "5m", "now"]},
+              "reducer": {"params": [], "type": "avg"},
+              "type": "query"
+            }
+          ],
+          "executionErrorState": "alerting",
+          "frequency": "60s",
+          "handler": 1,
+          "name": "High Error Rate",
+          "noDataState": "no_data",
+          "notifications": []
+        }
+      },
+      {
+        "id": 6,
+        "title": "Average Field Magnitude",
+        "type": "gauge",
+        "targets": [
+          {
+            "expr": "glyphos_substrate_avg_magnitude",
+            "legendFormat": "Field Magnitude"
+          }
+        ],
+        "gridPos": {"h": 8, "w": 6, "x": 12, "y": 16},
+        "fieldConfig": {
+          "defaults": {
+            "min": 0,
+            "max": 1000,
+            "thresholds": {
+              "steps": [
+                {"value": 0, "color": "green"},
+                {"value": 800, "color": "yellow"},
+                {"value": 950, "color": "red"}
+              ]
+            }
+          }
+        }
+      },
+      {
+        "id": 7,
+        "title": "Average Coherence",
+        "type": "gauge",
+        "targets": [
+          {
+            "expr": "glyphos_substrate_avg_coherence",
+            "legendFormat": "Coherence"
+          }
+        ],
+        "gridPos": {"h": 8, "w": 6, "x": 18, "y": 16},
+        "fieldConfig": {
+          "defaults": {
+            "min": 0,
+            "max": 1000,
+            "thresholds": {
+              "steps": [
+                {"value": 0, "color": "red"},
+                {"value": 100, "color": "yellow"},
+                {"value": 500, "color": "green"}
+              ]
+            }
+          }
+        }
+      }
+    ]
+  }
+}
