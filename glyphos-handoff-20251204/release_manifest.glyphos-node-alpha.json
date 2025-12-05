@@ -1,0 +1,126 @@
+{
+  "release": {
+    "name": "glyphos-node-alpha",
+    "version": "0.1.0",
+    "date": "2025-12-04",
+    "commit": "4ab82a6",
+    "stage": "hardware-offload-prototype"
+  },
+  "components": {
+    "fpga": {
+      "status": "simulated",
+      "description": "HLS merge accelerator for Xilinx Alveo U50/U280",
+      "files": [
+        "fpga/hls/merge_accel_hls.cpp",
+        "fpga/docs/dma_contract.json",
+        "fpga/sim/test_vectors/merge_inputs.json"
+      ],
+      "synthesis_target": "Xilinx Alveo U50/U280",
+      "clock_mhz": 200,
+      "projected_throughput": "3.2M ops/sec (16 lanes)"
+    },
+    "runtime": {
+      "status": "ready",
+      "description": "Rust-based node runtime (glyphd + glyph-spu)",
+      "files": [
+        "runtime/rust/glyphd/Cargo.toml",
+        "runtime/rust/glyphd/src/main.rs",
+        "runtime/rust/glyph-spu/Cargo.toml",
+        "runtime/rust/glyph-spu/src/main.rs"
+      ],
+      "build_command": "cargo build --release",
+      "dependencies": ["Rust 1.72+", "tokio", "axum", "serde"]
+    },
+    "freebsd": {
+      "status": "staged",
+      "description": "FreeBSD overlay and ISO build scripts",
+      "files": [
+        "freebsd/overlay/usr/local/etc/rc.d/glyphd",
+        "freebsd/overlay/usr/local/etc/rc.d/glyph_spu",
+        "freebsd/build_iso.sh"
+      ],
+      "target_iso": "glyphos-freebsd-0.1.0.iso",
+      "freebsd_version": "14.0+"
+    },
+    "ci": {
+      "status": "ready",
+      "description": "Parity check and performance baseline",
+      "files": [
+        "ci/check_parity.py",
+        "ci/perf_baseline.json",
+        ".github/workflows/perf.yml"
+      ],
+      "parity_check": "software vs HLS simulation",
+      "performance_gate": "20% SPU, 50% persistence"
+    },
+    "documentation": {
+      "status": "complete",
+      "files": [
+        "docs/spu_offload_api.md",
+        "docs/persistence_api.md"
+      ]
+    }
+  },
+  "artifacts": [
+    {
+      "path": "fpga/hls/merge_accel_hls.cpp",
+      "type": "source",
+      "description": "HLS merge accelerator implementation",
+      "size_bytes": 7834
+    },
+    {
+      "path": "fpga/docs/dma_contract.json",
+      "type": "specification",
+      "description": "DMA interface contract and verification protocol",
+      "size_bytes": 5621
+    },
+    {
+      "path": "fpga/sim/test_vectors/merge_inputs.json",
+      "type": "test_data",
+      "description": "Test vectors for HLS simulation",
+      "size_bytes": 3204
+    },
+    {
+      "path": "runtime/rust/glyphd/src/main.rs",
+      "type": "source",
+      "description": "glyphd node daemon",
+      "size_bytes": 2891
+    },
+    {
+      "path": "runtime/rust/glyph-spu/src/main.rs",
+      "type": "source",
+      "description": "glyph-spu offload service",
+      "size_bytes": 2564
+    }
+  ],
+  "verification": {
+    "parity_check": {
+      "description": "HLS simulation results must match software reference",
+      "command": "python3 ci/check_parity.py",
+      "expected_output": "PARITY OK"
+    },
+    "performance_baseline": {
+      "spu_merge_avg_latency_us": 5.33,
+      "spu_merge_ops_per_sec": 187652,
+      "persistence_p99_ms": 12.5
+    },
+    "build_verification": {
+      "rust_build": "cd runtime/rust && cargo build --release",
+      "freebsd_iso": "cd freebsd && ./build_iso.sh",
+      "hls_synthesis": "vivado_hls -f run_hls.tcl"
+    }
+  },
+  "next_steps": [
+    "1. FPGA HLS synthesis on Vivado HLS 2023.2",
+    "2. DMA contract validation with test vectors",
+    "3. Node runtime integration testing",
+    "4. FreeBSD ISO boot in QEMU",
+    "5. Parity verification (HLS vs software)",
+    "6. Tag: fpga-merge-proto-v1"
+  ],
+  "references": {
+    "software_benchmarks": "../benchmarks/results_summary.json",
+    "previous_release": "software-stage-complete",
+    "repository": "https://github.com/EarthwebAP/glyph-os-prototype"
+  }
+}

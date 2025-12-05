@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  glyphd:
+    build:
+      context: .
+      dockerfile: glyphd/Dockerfile
+    container_name: glyphd
+    ports:
+      - "8080:8080"
+    environment:
+      - RUST_LOG=info
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    networks:
+      - glyph-network
+
+  glyph-spu:
+    build:
+      context: .
+      dockerfile: glyph-spu/Dockerfile
+    container_name: glyph-spu
+    ports:
+      - "8081:8081"
+    environment:
+      - RUST_LOG=info
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8081/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    networks:
+      - glyph-network
+
+networks:
+  glyph-network:
+    driver: bridge

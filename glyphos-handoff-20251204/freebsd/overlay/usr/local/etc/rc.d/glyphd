@@ -1,0 +1,56 @@
+#!/bin/sh
+#
+# PROVIDE: glyphd
+# REQUIRE: NETWORKING
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable glyphd:
+# glyphd_enable="YES"
+
+. /etc/rc.subr
+
+name="glyphd"
+rcvar=glyphd_enable
+
+load_rc_config $name
+
+: ${glyphd_enable:="NO"}
+: ${glyphd_user:="glyphd"}
+: ${glyphd_group:="glyphd"}
+: ${glyphd_log:="/var/log/glyphd.log"}
+: ${glyphd_pidfile:="/var/run/glyphd.pid"}
+
+command="/usr/local/bin/glyphd"
+pidfile="${glyphd_pidfile}"
+
+start_cmd="${name}_start"
+stop_cmd="${name}_stop"
+status_cmd="${name}_status"
+
+glyphd_start()
+{
+    echo "Starting ${name}."
+    /usr/sbin/daemon -p ${pidfile} -u ${glyphd_user} ${command} >> ${glyphd_log} 2>&1
+}
+
+glyphd_stop()
+{
+    if [ -f ${pidfile} ]; then
+        echo "Stopping ${name}."
+        kill `cat ${pidfile}`
+        rm -f ${pidfile}
+    else
+        echo "${name} not running."
+    fi
+}
+
+glyphd_status()
+{
+    if [ -f ${pidfile} ]; then
+        echo "${name} is running as pid `cat ${pidfile}`."
+    else
+        echo "${name} is not running."
+    fi
+}
+
+run_rc_command "$1"

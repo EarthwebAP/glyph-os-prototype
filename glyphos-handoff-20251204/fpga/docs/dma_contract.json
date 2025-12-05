@@ -1,0 +1,203 @@
+{
+  "version": "1.0",
+  "description": "DMA contract for SPU merge accelerator host-FPGA interface",
+  "target_device": "Xilinx Alveo U50/U280",
+  "pcie_interface": "Gen3 x16",
+  "control_interface": {
+    "type": "AXI4-Lite",
+    "base_address": "0x00000000",
+    "address_space": "4KB",
+    "registers": [
+      {
+        "offset": "0x00",
+        "name": "CTRL",
+        "access": "R/W",
+        "width": 32,
+        "bits": [
+          {"bit": 0, "name": "AP_START", "description": "Start processing (write 1)"},
+          {"bit": 1, "name": "AP_DONE", "description": "Processing complete (read-only)"},
+          {"bit": 2, "name": "AP_IDLE", "description": "Accelerator idle (read-only)"},
+          {"bit": 3, "name": "AP_READY", "description": "Ready for new task (read-only)"},
+          {"bit": 4, "name": "AUTO_RESTART", "description": "Auto-restart on completion"},
+          {"bit": 8, "name": "IRQ_ENABLE", "description": "Enable completion interrupt"},
+          {"bit": 9, "name": "IRQ_PENDING", "description": "Interrupt pending (read-only)"}
+        ]
+      },
+      {
+        "offset": "0x04",
+        "name": "STATUS",
+        "access": "R",
+        "width": 32,
+        "description": "Status register (lane active bitmask, FIFO levels)"
+      },
+      {
+        "offset": "0x08",
+        "name": "INPUT_ADDR_LO",
+        "access": "R/W",
+        "width": 32,
+        "description": "Input DMA address (low 32 bits)"
+      },
+      {
+        "offset": "0x0C",
+        "name": "INPUT_ADDR_HI",
+        "access": "R/W",
+        "width": 32,
+        "description": "Input DMA address (high 32 bits)"
+      },
+      {
+        "offset": "0x10",
+        "name": "OUTPUT_ADDR_LO",
+        "access": "R/W",
+        "width": 32,
+        "description": "Output DMA address (low 32 bits)"
+      },
+      {
+        "offset": "0x14",
+        "name": "OUTPUT_ADDR_HI",
+        "access": "R/W",
+        "width": 32,
+        "description": "Output DMA address (high 32 bits)"
+      },
+      {
+        "offset": "0x18",
+        "name": "COUNT",
+        "access": "R/W",
+        "width": 32,
+        "description": "Number of glyph pairs to process"
+      },
+      {
+        "offset": "0x1C",
+        "name": "BATCH_SIZE",
+        "access": "R/W",
+        "width": 32,
+        "description": "DMA batch size (default: 1024)"
+      },
+      {
+        "offset": "0x20",
+        "name": "PERF_CYCLES",
+        "access": "R",
+        "width": 64,
+        "description": "Total cycles elapsed (performance counter)"
+      },
+      {
+        "offset": "0x28",
+        "name": "PERF_MERGES",
+        "access": "R",
+        "width": 32,
+        "description": "Total merges completed (performance counter)"
+      },
+      {
+        "offset": "0x2C",
+        "name": "ERROR_FLAGS",
+        "access": "R/W1C",
+        "width": 32,
+        "description": "Error flags (write 1 to clear)"
+      }
+    ]
+  },
+  "data_interface": {
+    "type": "AXI4-Stream",
+    "data_width": 512,
+    "input_descriptor": {
+      "type": "glyph_pair",
+      "size_bytes": 680,
+      "alignment": 64,
+      "fields": [
+        {"offset": 0, "name": "glyph1_id", "type": "uint8[64]", "description": "First glyph ID"},
+        {"offset": 64, "name": "glyph1_content", "type": "uint8[256]", "description": "First glyph content"},
+        {"offset": 320, "name": "glyph1_content_len", "type": "uint16", "description": "Content length"},
+        {"offset": 322, "name": "padding1", "type": "uint16", "description": "Alignment padding"},
+        {"offset": 324, "name": "glyph1_energy", "type": "float32", "description": "Energy (Q16.16 on device)"},
+        {"offset": 328, "name": "glyph1_activation_count", "type": "uint32"},
+        {"offset": 332, "name": "glyph1_last_update_time", "type": "uint64"},
+        {"offset": 340, "name": "glyph2_id", "type": "uint8[64]"},
+        {"offset": 404, "name": "glyph2_content", "type": "uint8[256]"},
+        {"offset": 660, "name": "glyph2_content_len", "type": "uint16"},
+        {"offset": 662, "name": "padding2", "type": "uint16"},
+        {"offset": 664, "name": "glyph2_energy", "type": "float32"},
+        {"offset": 668, "name": "glyph2_activation_count", "type": "uint32"},
+        {"offset": 672, "name": "glyph2_last_update_time", "type": "uint64"}
+      ]
+    },
+    "output_descriptor": {
+      "type": "merge_result",
+      "size_bytes": 468,
+      "alignment": 512,
+      "fields": [
+        {"offset": 0, "name": "merged_id", "type": "uint8[64]"},
+        {"offset": 64, "name": "merged_content", "type": "uint8[256]"},
+        {"offset": 320, "name": "merged_content_len", "type": "uint16"},
+        {"offset": 322, "name": "padding", "type": "uint16"},
+        {"offset": 324, "name": "merged_energy", "type": "float32"},
+        {"offset": 328, "name": "activation_count", "type": "uint32"},
+        {"offset": 332, "name": "last_update_time", "type": "uint64"},
+        {"offset": 340, "name": "parent1_id", "type": "uint8[64]"},
+        {"offset": 404, "name": "parent2_id", "type": "uint8[64]"}
+      ]
+    }
+  },
+  "dma_flow": {
+    "steps": [
+      "1. Host allocates pinned memory for input/output buffers",
+      "2. Host writes glyph pairs to input buffer",
+      "3. Host writes INPUT_ADDR_LO/HI with buffer physical address",
+      "4. Host writes OUTPUT_ADDR_LO/HI with output buffer address",
+      "5. Host writes COUNT with number of pairs",
+      "6. Host writes AP_START=1 to CTRL register",
+      "7. FPGA DMA engine fetches input descriptors",
+      "8. FPGA processes merges through accelerator pipeline",
+      "9. FPGA DMA engine writes results to output buffer",
+      "10. FPGA sets AP_DONE=1 in CTRL register",
+      "11. Host polls CTRL or waits for interrupt (if IRQ_ENABLE=1)",
+      "12. Host reads results from output buffer"
+    ]
+  },
+  "performance": {
+    "single_lane": {
+      "latency_cycles": 71,
+      "latency_ns": 355,
+      "throughput_ops_per_sec": 200000,
+      "clock_mhz": 200
+    },
+    "16_lanes": {
+      "latency_cycles": 71,
+      "latency_ns": 355,
+      "throughput_ops_per_sec": 3200000,
+      "clock_mhz": 200
+    },
+    "dma_overhead": {
+      "batch_1024": {
+        "input_transfer_us": 32,
+        "processing_us": 364,
+        "output_transfer_us": 43,
+        "total_us": 439,
+        "effective_throughput": 2330000
+      }
+    }
+  },
+  "error_handling": {
+    "timeout": {
+      "description": "If AP_DONE not set within timeout, check ERROR_FLAGS",
+      "timeout_ms": 1000
+    },
+    "error_codes": {
+      "0x01": "DMA read error",
+      "0x02": "DMA write error",
+      "0x04": "Invalid descriptor",
+      "0x08": "FIFO overflow",
+      "0x10": "Processing timeout"
+    }
+  },
+  "verification_protocol": {
+    "description": "Cryptographic proof that FPGA merge matches software reference",
+    "steps": [
+      "1. Host sends test vector (known glyphs) to FPGA",
+      "2. FPGA processes and returns merged result",
+      "3. Host compares result against software reference merge",
+      "4. Host signs verification with private key if match",
+      "5. Verification proof stored in dma_contract_signed.json"
+    ],
+    "test_vector_source": "fpga/sim/test_vectors/merge_inputs.json",
+    "reference_output": "benchmarks/merge_ref_results.json"
+  }
+}

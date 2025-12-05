@@ -1,0 +1,161 @@
+{
+  "description": "Test vectors for HLS merge accelerator simulation",
+  "version": "1.0",
+  "test_cases": [
+    {
+      "name": "basic_merge_higher_energy_wins",
+      "glyph1": {
+        "id": "id1_0000000000000000000000000000000000000000000000000000000000",
+        "content": "content1",
+        "content_len": 8,
+        "energy": 2.0,
+        "activation_count": 0,
+        "last_update_time": 0
+      },
+      "glyph2": {
+        "id": "id2_0000000000000000000000000000000000000000000000000000000000",
+        "content": "content2",
+        "content_len": 8,
+        "energy": 3.0,
+        "activation_count": 0,
+        "last_update_time": 0
+      },
+      "expected_result": {
+        "content": "content2 + content1",
+        "content_len": 19,
+        "energy": 5.0,
+        "activation_count": 0,
+        "last_update_time": 0,
+        "parent1_id": "id2_0000000000000000000000000000000000000000000000000000000000",
+        "parent2_id": "id1_0000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    {
+      "name": "energy_conservation",
+      "glyph1": {
+        "id": "test_a",
+        "content": "alpha",
+        "content_len": 5,
+        "energy": 2.5,
+        "activation_count": 5,
+        "last_update_time": 100
+      },
+      "glyph2": {
+        "id": "test_b",
+        "content": "beta",
+        "content_len": 4,
+        "energy": 3.5,
+        "activation_count": 3,
+        "last_update_time": 200
+      },
+      "expected_result": {
+        "content": "beta + alpha",
+        "content_len": 12,
+        "energy": 6.0,
+        "activation_count": 5,
+        "last_update_time": 200
+      }
+    },
+    {
+      "name": "equal_energy_first_wins",
+      "glyph1": {
+        "id": "equal1",
+        "content": "first",
+        "content_len": 5,
+        "energy": 4.0,
+        "activation_count": 10,
+        "last_update_time": 300
+      },
+      "glyph2": {
+        "id": "equal2",
+        "content": "second",
+        "content_len": 6,
+        "energy": 4.0,
+        "activation_count": 8,
+        "last_update_time": 400
+      },
+      "expected_result": {
+        "content": "first + second",
+        "content_len": 14,
+        "energy": 8.0,
+        "activation_count": 10,
+        "last_update_time": 400
+      }
+    },
+    {
+      "name": "max_content_length",
+      "glyph1": {
+        "id": "max1",
+        "content": "A very long content string that will test the maximum content length handling in the hardware accelerator implementation to ensure proper truncation",
+        "content_len": 146,
+        "energy": 7.0,
+        "activation_count": 0,
+        "last_update_time": 0
+      },
+      "glyph2": {
+        "id": "max2",
+        "content": "Another long string to push the limits",
+        "content_len": 38,
+        "energy": 5.0,
+        "activation_count": 0,
+        "last_update_time": 0
+      },
+      "expected_result": {
+        "content": "A very long content string that will test the maximum content length handling in the hardware accelerator implementation to ensure proper truncation + Another long string to push the limits",
+        "content_len": 187,
+        "energy": 12.0,
+        "activation_count": 0,
+        "last_update_time": 0
+      }
+    },
+    {
+      "name": "metadata_max_operations",
+      "glyph1": {
+        "id": "meta1",
+        "content": "test",
+        "content_len": 4,
+        "energy": 1.0,
+        "activation_count": 100,
+        "last_update_time": 5000
+      },
+      "glyph2": {
+        "id": "meta2",
+        "content": "data",
+        "content_len": 4,
+        "energy": 9.0,
+        "activation_count": 50,
+        "last_update_time": 10000
+      },
+      "expected_result": {
+        "content": "data + test",
+        "content_len": 11,
+        "energy": 10.0,
+        "activation_count": 100,
+        "last_update_time": 10000
+      }
+    }
+  ],
+  "reference_results": {
+    "source": "benchmarks/merge_ref_results.json",
+    "python_baseline": {
+      "avg_latency_us": 5.33,
+      "ops_per_sec": 187652
+    },
+    "cpp_reference": {
+      "avg_latency_us": 0.566,
+      "ops_per_sec": 1765217
+    },
+    "fpga_target": {
+      "latency_cycles": 71,
+      "latency_ns": 355,
+      "ops_per_sec_single_lane": 200000,
+      "ops_per_sec_16_lanes": 3200000
+    }
+  },
+  "simulation_parameters": {
+    "clock_period_ns": 5.0,
+    "clock_freq_mhz": 200,
+    "total_test_cases": 5,
+    "expected_total_cycles": 355
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "version": "1.0",
+  "timestamp": "2025-12-04T22:30:00Z",
+  "commit": "7bd1185",
+  "spu": {
+    "merge": {
+      "avg_latency_us": 5.33,
+      "ops_per_sec": 187652,
+      "note": "Python baseline from bench_spu.py"
+    }
+  },
+  "persistence": {
+    "median_ms": 6.735,
+    "p95_ms": 11.222,
+    "p99_ms": 12.502,
+    "note": "Baseline synchronous writes"
+  },
+  "thresholds": {
+    "spu_latency_increase_pct": 20.0,
+    "spu_throughput_decrease_pct": 20.0,
+    "persistence_p99_increase_pct": 50.0
+  },
+  "notes": "Baseline established 2025-12-04. SPU merge and persistence benchmarks."
+}

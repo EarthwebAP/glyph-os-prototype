@@ -1,0 +1,108 @@
+name: Performance Regression Tests
+
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+    branches: [master, main]
+
+jobs:
+  performance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          # No external dependencies required for performance tests
+
+      - name: Run SPU microbenchmarks
+        run: |
+          echo "Running SPU merge benchmark (10K iterations for CI speed)..."
+          python3 benchmarks/bench_spu.py --iterations 10000 --output benchmarks/spu_results_ci.json
+
+      - name: Run persistence benchmark (small)
+        run: |
+          echo "Running persistence baseline (100 glyphs for CI speed)..."
+          python3 benchmarks/persistence_bench.py \
+            --count 100 \
+            --batch-window-ms 0 \
+            --out benchmarks/persistence_ci.json
+
+      - name: Check performance regression
+        run: |
+          echo "Checking for performance regressions..."
+          python3 ci/check_perf.py \
+            --baseline ci/perf_baseline.json \
+            --current benchmarks/spu_results_ci.json \
+            --current-persistence benchmarks/persistence_ci.json
+
+      - name: Check HLS parity
+        run: |
+          echo "Checking HLS simulation parity against software reference..."
+          python3 ci/check_parity.py \
+            --hw-sim benchmarks/merge_hw_sim.json \
+            --reference benchmarks/merge_ref_results.json \
+            --output ci/parity_report.json
+
+      - name: Upload benchmark results
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: benchmark-results
+          path: |
+            benchmarks/spu_results_ci.json
+            benchmarks/persistence_ci.json
+            ci/parity_report.json
+
+      - name: Comment PR with results
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const fs = require('fs');
+            const spu = JSON.parse(fs.readFileSync('benchmarks/spu_results_ci.json', 'utf8'));
+            const persistence = JSON.parse(fs.readFileSync('benchmarks/persistence_ci.json', 'utf8'));
+
+            let parityStatus = '✅ Not run';
+            try {
+              const parity = JSON.parse(fs.readFileSync('ci/parity_report.json', 'utf8'));
+              parityStatus = parity.status === 'PARITY OK' ? '✅ PARITY OK' : '❌ PARITY FAIL';
+            } catch (e) {
+              parityStatus = '⚠️ Report not found';
+            }
+
+            const comment = `## Performance Test Results
+
+            ### SPU Merge Primitive
+            - Average latency: ${spu[0].avg_latency_us.toFixed(2)} µs
+            - Throughput: ${spu[0].ops_per_sec.toLocaleString()} ops/sec
+            - Status: ✅ Within acceptable range
+
+            ### Persistence
+            - P50: ${persistence.stats.median_ms.toFixed(2)} ms
+            - P95: ${persistence.stats.p95_ms.toFixed(2)} ms
+            - P99: ${persistence.stats.p99_ms.toFixed(2)} ms
+            - Status: ✅ Within acceptable range
+
+            ### HLS Parity Check
+            - Status: ${parityStatus}
+
+            ---
+            *Automated performance regression check*`;
+
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment
+            });
