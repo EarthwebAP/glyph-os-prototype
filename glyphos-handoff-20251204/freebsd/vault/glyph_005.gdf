@@ -1,0 +1,20 @@
+# GlyphOS Glyph Definition Format (GDF) v2.0
+# Complex Entanglement Glyph
+
+glyph_id: 005
+chronocode: 20250101_160000
+parent_glyphs: 002, 003
+resonance_freq: 1760.0
+field_magnitude: 1.6
+coherence: 82
+contributor_inheritance: genesis
+material_spec: substrate_composite
+frequency_signature: harmonic_4x
+activation_simulation: resonate(2.2) | entangle(002) | entangle(003) | phase_shift(45) | amplify(1.7) | stabilize()
+entanglement_coeff: 2.5
+phase_offset: 120.0
+quantum_state: 3
+metadata: complex_entanglement
+dependencies: 002, 003
+outputs: field_state, resonance, phase, dual_entanglement
+constraints: requires_both_parents_active

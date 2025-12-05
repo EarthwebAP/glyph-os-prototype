@@ -1,0 +1,181 @@
+═══════════════════════════════════════════════════════════════════════════════
+  GLYPHOS PHASES 1-4: INTEGRATION QUICK REFERENCE
+═══════════════════════════════════════════════════════════════════════════════
+
+COMPILATION COMMANDS
+────────────────────────────────────────────────────────────────────────────────
+Phase 1 (Pipeline):
+  chmod +x scripts/unified_pipeline.sh
+  ./scripts/unified_pipeline.sh --clean
+
+Phase 2 (CSE Core):
+  cc -o bin/cse_core src/cse_core.c
+  bin/cse_core --test
+
+Phase 3 (Substrate Core):
+  cc -o bin/substrate_core src/substrate_core.c -lm
+  bin/substrate_core --test
+
+Phase 4 (Glyph Interpreter):
+  cc -o bin/glyph_interp src/glyph_interpreter.c -lm
+  bin/glyph_interp --test
+
+═══════════════════════════════════════════════════════════════════════════════
+CSE CORE OPCODES (17 TOTAL)
+────────────────────────────────────────────────────────────────────────────────
+OP_NOP              No operation
+OP_LOAD             Load value onto stack
+OP_STORE            Store value to variable
+OP_ADD              Add two values
+OP_SUB              Subtract
+OP_MUL              Multiply
+OP_DIV              Divide
+OP_RESONATE         Apply resonance operation
+OP_ENTANGLE         Entangle two symbolic values
+OP_INHERIT          Inherit from parent glyph
+OP_ACTIVATE         Activate glyph
+OP_SUBSTRATE_READ   Read from substrate layer
+OP_SUBSTRATE_WRITE  Write to substrate layer
+OP_JUMP             Conditional jump
+OP_CALL             Call subroutine
+OP_RETURN           Return from subroutine
+OP_HALT             Halt execution
+
+═══════════════════════════════════════════════════════════════════════════════
+SYMBOLIC VALUE TYPES
+────────────────────────────────────────────────────────────────────────────────
+SYM_NULL            Null value
+SYM_INT             Integer (int64_t)
+SYM_FLOAT           Floating point (double)
+SYM_STRING          String (char*)
+SYM_SYMBOL          Symbol reference
+SYM_FIELD_STATE     Field state (magnitude, phase, coherence)
+SYM_RESONANCE       Resonance value
+SYM_CHRONOCODE      Temporal marker
+SYM_GLYPH_REF       Glyph reference (uint64_t)
+
+═══════════════════════════════════════════════════════════════════════════════
+SUBSTRATE CORE API
+────────────────────────────────────────────────────────────────────────────────
+int substrate_init(void)
+  Initialize substrate to default state
+  Returns: 0 on success, -1 on error
+
+int substrate_read_cell(uint32_t cell_idx, double *magnitude, double *phase, double *coherence)
+  Read field state from substrate cell
+  cell_idx: 0-4095
+  Returns: 0 on success, -1 on error
+
+int substrate_write_cell(uint32_t cell_idx, double magnitude, double phase, double coherence)
+  Write field state to substrate cell
+  Applies parity checks and normalization
+  Returns: 0 on success, -1 on error
+
+int substrate_sync(void)
+  Synchronize substrate state (parity check)
+  Returns: 0 on success, -1 on error
+
+void substrate_tick(void)
+  Advance substrate time by one tick
+  Applies decay to all cells
+
+int substrate_apply_force(uint32_t cell_idx, double force_x, double force_y, double force_z)
+  Apply force vector to substrate cell (ferrofluid dynamics)
+  Returns: 0 on success, -1 on error
+
+int substrate_propagate_wave(uint32_t origin_cell, double wave_amplitude, double wave_frequency)
+  Propagate wave through substrate
+  Returns: 0 on success, -1 on error
+
+int substrate_quantum_store(uint32_t cell_idx, QuantumState *state)
+  Store quantum superposition state
+  Returns: 0 on success, -1 on error
+
+int substrate_quantum_retrieve(uint32_t cell_idx, QuantumState *state)
+  Retrieve quantum superposition state
+  Returns: 0 on success, -1 on error
+
+═══════════════════════════════════════════════════════════════════════════════
+GLYPH INTERPRETER COMMANDS
+────────────────────────────────────────────────────────────────────────────────
+bin/glyph_interp --test
+  Run comprehensive test suite (10 tests)
+
+bin/glyph_interp --load <file.gdf>
+  Load single GDF file
+
+bin/glyph_interp --vault <dir>
+  Load all GDF files from directory
+
+bin/glyph_interp --activate <id>
+  Activate specific glyph by ID
+
+bin/glyph_interp --list
+  List all loaded glyphs
+
+bin/glyph_interp --verbose
+  Enable verbose output
+
+bin/glyph_interp --no-trace
+  Disable execution tracing
+
+═══════════════════════════════════════════════════════════════════════════════
+ACTIVATION SIMULATION OPERATORS
+────────────────────────────────────────────────────────────────────────────────
+resonate(factor)          Multiply field magnitude
+entangle(target)          Synchronize with another glyph
+amplify(factor)           Increase magnitude
+phase_shift(degrees)      Adjust phase
+stabilize()               Increase coherence
+decay(factor)             Reduce field strength
+
+Example:
+  activation_simulation: resonate(2.0) | entangle(000) | amplify(1.5)
+
+═══════════════════════════════════════════════════════════════════════════════
+GDF 18-FIELD SCHEMA
+────────────────────────────────────────────────────────────────────────────────
+glyph_id                  Unique identifier
+chronocode                Timestamp (YYYYmmdd_HHMMSS)
+parent_glyphs             Comma-separated parent IDs
+resonance_freq            Resonance frequency (Hz)
+field_magnitude           Field strength (0-1000)
+coherence                 Quantum coherence (0-100)
+contributor_inheritance   Contributor ID
+material_spec             Material specification
+frequency_signature       Frequency pattern
+activation_simulation     Pipe-separated command sequence
+entanglement_coeff        Entanglement coefficient
+phase_offset              Phase offset (degrees)
+quantum_state             Quantum state ID
+metadata                  Additional metadata
+dependencies              Comma-separated dependencies
+outputs                   Comma-separated outputs
+constraints               Constraint specification
+
+═══════════════════════════════════════════════════════════════════════════════
+PARITY CHECKS
+────────────────────────────────────────────────────────────────────────────────
+Phase Wrapping:           0.0 to 2π radians
+Coherence Bounds:         0.0 to 1000.0
+Magnitude Normalization:  0.0 to 1000.0
+Decay Rate:               0.0 to 1.0
+
+═══════════════════════════════════════════════════════════════════════════════
+EXPECTED TEST RESULTS
+────────────────────────────────────────────────────────────────────────────────
+Unified Pipeline:         6/6 modules built, 6/6 tests passed
+CSE Core:                 2/2 tests passed
+Substrate Core:           6/6 tests passed
+Glyph Interpreter:        9/10 tests passed (90%)
+
+═══════════════════════════════════════════════════════════════════════════════
+FILE SIZES
+────────────────────────────────────────────────────────────────────────────────
+unified_pipeline.sh       370 lines
+cse_core.c                478 lines
+substrate_core.c          995 lines
+glyph_interpreter.c       973 lines
+TOTAL:                    2,816 lines of production code
+
+═══════════════════════════════════════════════════════════════════════════════

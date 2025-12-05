@@ -1,22 +1,55 @@
 # FreeBSD Glyph OS Build
 
-This directory contains the FreeBSD overlay and build scripts for creating a bootable Glyph OS ISO image.
+This directory contains the FreeBSD overlay and build scripts for creating a production-ready bootable GlyphOS ISO image.
+
+## 🚀 Quick Start
+
+```bash
+# Build production ISO
+sudo ./build_iso.sh
+
+# Test in QEMU
+qemu-system-x86_64 -cdrom glyphos-freebsd-0.1.0.iso -m 2G \
+  -net nic -net user,hostfwd=tcp::8080-:8080,hostfwd=tcp::8081-:8081
+```
+
+**For complete documentation, see:**
+- **[PRODUCTION_ISO.md](PRODUCTION_ISO.md)** - Complete guide to production features
+- **[QUICKREF.md](QUICKREF.md)** - Quick reference card for operators
+- **README.md** (this file) - Build system and rc.d script documentation
+
+## Production Features (v1.0.0)
+
+The build system creates a **production-ready** bootable FreeBSD ISO with:
+
+✅ **Package Management** - pkg bootstrap, FreeBSD official repos, pre-installed packages
+✅ **Network Configuration** - DHCP/static IP support, hardened SSH, DNS configuration
+✅ **Security Hardening** - pf firewall (default-deny), sysctl hardening, auditd, securelevel
+✅ **Monitoring** - node_exporter, custom glyphd_exporter, Prometheus-ready
+✅ **Persistence Layer** - ZFS/UFS support, snapshots, atomic operations
+✅ **Update Mechanism** - glyphos-update script, freebsd-update, pkg integration
+
+See [PRODUCTION_ISO.md](PRODUCTION_ISO.md) for detailed documentation of all production features.
 
 ## Directory Structure
 
 ```
 freebsd/
-├── build_iso.sh                         # Main ISO build script
+├── build_iso.sh                         # Production ISO build script
 ├── overlay/                             # FreeBSD filesystem overlay
 │   └── usr/local/etc/rc.d/
 │       ├── glyphd                       # rc.d script for glyphd service
 │       └── glyph_spu                    # rc.d script for glyph-spu service
+├── PRODUCTION_ISO.md                    # Complete production guide
+├── QUICKREF.md                          # Quick reference card
+├── QUICK_START.md                       # Quick start guide
+├── IMPLEMENTATION_SUMMARY.txt           # Implementation summary
 └── README.md                            # This file
 ```
 
 ## Overview
 
-The build system creates a bootable FreeBSD ISO with the following components:
+The build system creates a bootable FreeBSD ISO with the following core components:
 
 - **glyphd**: Main glyph daemon service that manages glyph persistence and operations
 - **glyph-spu**: Glyph Specialized Processing Unit service for parallel processing

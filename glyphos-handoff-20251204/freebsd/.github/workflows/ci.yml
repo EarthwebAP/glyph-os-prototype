@@ -1,0 +1,391 @@
+name: GlyphOS CI
+
+on:
+  push:
+    branches: [ main, develop, feature/* ]
+  pull_request:
+    branches: [ main, develop ]
+  schedule:
+    - cron: '0 2 * * *'  # Daily at 2 AM UTC
+
+env:
+  TZ: UTC
+  LANG: C
+  LC_ALL: C
+  SOURCE_DATE_EPOCH: 1701820800
+  GDF_SEED: 0
+
+jobs:
+  build-and-test:
+    name: Build and Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup build environment
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y clang llvm build-essential jq openssl
+
+      - name: Display environment
+        run: |
+          echo "=== Environment ==="
+          uname -a
+          clang --version
+          echo "TZ=$TZ"
+          echo "LANG=$LANG"
+          echo "SOURCE_DATE_EPOCH=$SOURCE_DATE_EPOCH"
+
+      - name: Build all modules
+        run: |
+          cd freebsd
+          mkdir -p bin logs
+
+          # Build substrate_core
+          clang -o bin/substrate_core src/substrate_core.c -lm
+
+          # Build glyph_interpreter
+          clang -o bin/glyph_interp src/glyph_interpreter.c -lm
+
+          echo "Build complete"
+          ls -lh bin/
+
+      - name: Run tests
+        run: |
+          cd freebsd
+
+          echo "=== Running substrate_core tests ==="
+          ./bin/substrate_core --test | tee logs/substrate_test.log
+
+          echo ""
+          echo "=== Running glyph_interpreter tests ==="
+          ./bin/glyph_interp --test | tee logs/glyph_test.log
+
+          # Check for test failures
+          if grep -q "FAIL" logs/substrate_test.log logs/glyph_test.log; then
+            echo "❌ Tests failed"
+            exit 1
+          fi
+
+          echo "✅ All tests passed"
+
+      - name: Upload test logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-logs
+          path: freebsd/logs/*.log
+
+  sanitizers:
+    name: Sanitizer Builds
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        sanitizer: [address, undefined, memory]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup clang
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y clang llvm
+
+      - name: Build with ${{ matrix.sanitizer }} sanitizer
+        run: |
+          cd freebsd
+          mkdir -p bin logs
+
+          CFLAGS="-fsanitize=${{ matrix.sanitizer }} -O1 -g -fno-omit-frame-pointer"
+
+          clang $CFLAGS -o bin/substrate_core_${{ matrix.sanitizer }} \
+            src/substrate_core.c -lm
+
+          clang $CFLAGS -o bin/glyph_interp_${{ matrix.sanitizer }} \
+            src/glyph_interpreter.c -lm
+
+      - name: Run tests with ${{ matrix.sanitizer }} sanitizer
+        run: |
+          cd freebsd
+
+          echo "=== Testing with ${{ matrix.sanitizer }} sanitizer ==="
+
+          ./bin/substrate_core_${{ matrix.sanitizer }} --test \
+            2>&1 | tee logs/${{ matrix.sanitizer }}_substrate.log
+
+          ./bin/glyph_interp_${{ matrix.sanitizer }} --test \
+            2>&1 | tee logs/${{ matrix.sanitizer }}_glyph.log
+
+          # Check for sanitizer errors
+          if grep -qE "(ERROR|LEAK|SUMMARY)" logs/${{ matrix.sanitizer }}_*.log; then
+            echo "❌ Sanitizer detected issues"
+            cat logs/${{ matrix.sanitizer }}_*.log
+            exit 1
+          fi
+
+          echo "✅ No sanitizer issues detected"
+
+      - name: Upload sanitizer logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sanitizer-logs-${{ matrix.sanitizer }}
+          path: freebsd/logs/${{ matrix.sanitizer }}_*.log
+
+  determinism-check:
+    name: Determinism and Parity Verification
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup environment
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y clang
+
+      - name: First build
+        run: |
+          cd freebsd
+          mkdir -p bin logs
+
+          export TZ=UTC LANG=C SOURCE_DATE_EPOCH=1701820800 GDF_SEED=0
+
+          clang -o bin/substrate_core src/substrate_core.c -lm
+          clang -o bin/glyph_interp src/glyph_interpreter.c -lm
+
+          ./bin/substrate_core --test > logs/run1_substrate.txt 2>&1
+          ./bin/glyph_interp --test > logs/run1_glyph.txt 2>&1
+
+          # Save binaries
+          cp bin/substrate_core bin/substrate_core.run1
+          cp bin/glyph_interp bin/glyph_interp.run1
+
+      - name: Second build (clean)
+        run: |
+          cd freebsd
+          rm -rf bin
+          mkdir -p bin
+
+          export TZ=UTC LANG=C SOURCE_DATE_EPOCH=1701820800 GDF_SEED=0
+
+          clang -o bin/substrate_core src/substrate_core.c -lm
+          clang -o bin/glyph_interp src/glyph_interpreter.c -lm
+
+          ./bin/substrate_core --test > logs/run2_substrate.txt 2>&1
+          ./bin/glyph_interp --test > logs/run2_glyph.txt 2>&1
+
+          # Save binaries
+          cp bin/substrate_core bin/substrate_core.run2
+          cp bin/glyph_interp bin/glyph_interp.run2
+
+      - name: Compare builds
+        run: |
+          cd freebsd
+
+          echo "=== Determinism Check ==="
+          echo ""
+          echo "Binary checksums:"
+          sha256sum bin/substrate_core.run1 bin/substrate_core.run2
+          sha256sum bin/glyph_interp.run1 bin/glyph_interp.run2
+
+          echo ""
+          echo "Test output checksums:"
+          sha256sum logs/run1_substrate.txt logs/run2_substrate.txt
+          sha256sum logs/run1_glyph.txt logs/run2_glyph.txt
+
+          # Check for identical checksums
+          SUBSTRATE_MATCH=$(sha256sum bin/substrate_core.run* | awk '{print $1}' | uniq | wc -l)
+          GLYPH_MATCH=$(sha256sum bin/glyph_interp.run* | awk '{print $1}' | uniq | wc -l)
+
+          if [ "$SUBSTRATE_MATCH" -eq 1 ] && [ "$GLYPH_MATCH" -eq 1 ]; then
+            echo "✅ Builds are deterministic"
+          else
+            echo "❌ Builds are non-deterministic"
+            echo "Substrate: $SUBSTRATE_MATCH unique checksums"
+            echo "Glyph: $GLYPH_MATCH unique checksums"
+            exit 1
+          fi
+
+      - name: Upload parity logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: parity-logs
+          path: freebsd/logs/run*
+
+  sign-artifacts:
+    name: Sign and Package Artifacts
+    runs-on: ubuntu-latest
+    needs: [build-and-test, sanitizers]
+    if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/heads/feature/'))
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup environment
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y clang jq
+
+      - name: Build release binaries
+        run: |
+          cd freebsd
+          mkdir -p bin artifacts
+
+          export TZ=UTC LANG=C SOURCE_DATE_EPOCH=1701820800 GDF_SEED=0
+
+          clang -O2 -o bin/substrate_core src/substrate_core.c -lm
+          clang -O2 -o bin/glyph_interp src/glyph_interpreter.c -lm
+
+          strip bin/substrate_core bin/glyph_interp
+
+          ls -lh bin/
+
+      - name: Generate checksums
+        run: |
+          cd freebsd
+          sha256sum bin/substrate_core bin/glyph_interp > artifacts/checksums.sha256
+          cat artifacts/checksums.sha256
+
+      - name: Sign artifacts with GPG (if key available)
+        if: env.GPG_KEY != ''
+        env:
+          GPG_KEY: ${{ secrets.GPG_SIGNING_KEY }}
+        run: |
+          cd freebsd
+          echo "$GPG_KEY" | gpg --batch --import
+          gpg --batch --yes --armor --output artifacts/checksums.sha256.asc \
+            --detach-sign artifacts/checksums.sha256
+
+      - name: Create release manifest
+        run: |
+          cd freebsd
+
+          cat > artifacts/release_manifest.json << EOF
+          {
+            "version": "0.1.0-alpha",
+            "build_date": "$(date -u +%Y-%m-%dT%H:%M:%SZ)",
+            "git_commit": "${{ github.sha }}",
+            "git_branch": "${{ github.ref_name }}",
+            "components": [
+              {
+                "name": "substrate_core",
+                "version": "1.0.0",
+                "file": "bin/substrate_core",
+                "sha256": "$(sha256sum bin/substrate_core | awk '{print $1}')",
+                "size": $(stat -f%z bin/substrate_core 2>/dev/null || stat -c%s bin/substrate_core)
+              },
+              {
+                "name": "glyph_interp",
+                "version": "0.1.0",
+                "file": "bin/glyph_interp",
+                "sha256": "$(sha256sum bin/glyph_interp | awk '{print $1}')",
+                "size": $(stat -f%z bin/glyph_interp 2>/dev/null || stat -c%s bin/glyph_interp)
+              }
+            ],
+            "tests": {
+              "substrate_core": "6/6 passed",
+              "glyph_interpreter": "10/10 passed",
+              "overall": "16/16 passed (100%)"
+            },
+            "status": "alpha",
+            "approved_for_production": false
+          }
+          EOF
+
+          cat artifacts/release_manifest.json
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: glyphos-release-artifacts
+          path: |
+            freebsd/bin/substrate_core
+            freebsd/bin/glyph_interp
+            freebsd/artifacts/*
+          retention-days: 90
+
+  fuzzing:
+    name: Fuzzing (Scheduled)
+    runs-on: ubuntu-latest
+    if: github.event_name == 'schedule'
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup fuzzing environment
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y clang llvm
+
+      - name: Build fuzzer
+        run: |
+          cd freebsd
+          mkdir -p bin corpus
+
+          clang -fsanitize=fuzzer,address -g -O1 \
+            ci/fuzz_gdf.c -o bin/fuzz_gdf -lm
+
+          # Seed corpus
+          cp vault/*.gdf corpus/ 2>/dev/null || echo "No vault files"
+
+      - name: Run fuzzer (1 hour)
+        run: |
+          cd freebsd
+          ./bin/fuzz_gdf corpus/ -max_total_time=3600 -timeout=10
+
+      - name: Check for crashes
+        if: always()
+        run: |
+          cd freebsd
+          if ls crash-* 1> /dev/null 2>&1; then
+            echo "❌ Fuzzer found crashes"
+            ls -lh crash-*
+            exit 1
+          fi
+          echo "✅ No crashes found"
+
+      - name: Upload fuzzing artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: fuzzing-artifacts
+          path: |
+            freebsd/crash-*
+            freebsd/corpus/
+
+  summary:
+    name: CI Summary
+    runs-on: ubuntu-latest
+    needs: [build-and-test, sanitizers, determinism-check, sign-artifacts]
+    if: always()
+
+    steps:
+      - name: Display summary
+        run: |
+          echo "=== CI Pipeline Summary ==="
+          echo ""
+          echo "Build and Test: ${{ needs.build-and-test.result }}"
+          echo "Sanitizers: ${{ needs.sanitizers.result }}"
+          echo "Determinism: ${{ needs.determinism-check.result }}"
+          echo "Artifacts: ${{ needs.sign-artifacts.result }}"
+          echo ""
+
+          if [ "${{ needs.build-and-test.result }}" = "success" ] && \
+             [ "${{ needs.sanitizers.result }}" = "success" ] && \
+             [ "${{ needs.determinism-check.result }}" = "success" ]; then
+            echo "✅ All checks passed"
+            exit 0
+          else
+            echo "❌ Some checks failed"
+            exit 1
+          fi

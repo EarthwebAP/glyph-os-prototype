@@ -1,0 +1,242 @@
+================================================================================
+                    GLYPHOS PHASES 1-4 INTEGRATION
+                          QUICK REFERENCE CARD
+================================================================================
+
+COPY & PASTE THESE COMMANDS IN ORDER:
+
+Step 1: Setup Directories
+  sudo mkdir -p /usr/src/glyphos/{src,bin,scripts,logs,data}
+  sudo chown -R $(whoami) /usr/src/glyphos
+
+Step 2: Copy Phase Files
+  cp /tmp/phase1_unified_pipeline.sh /usr/src/glyphos/scripts/unified_pipeline.sh
+  cp /tmp/phase2_cse_core.c /usr/src/glyphos/src/cse_core.c
+  cp /tmp/phase3_substrate_core.c /usr/src/glyphos/src/substrate_core.c
+  cp /tmp/phase4_glyph_interpreter.c /usr/src/glyphos/src/glyph_interpreter.c
+
+Step 3: Make Executable
+  chmod +x /usr/src/glyphos/scripts/unified_pipeline.sh
+
+Step 4: Build Everything
+  cd /usr/src/glyphos/scripts
+  ./unified_pipeline.sh --clean --verbose
+
+Step 5: Verify Success
+  cat /usr/src/glyphos/logs/status_report_*.txt
+
+Expected: "6/6 succeeded" and "6/6 passed"
+
+================================================================================
+                          QUICK VERIFICATION
+================================================================================
+
+List binaries:
+  ls -lh /usr/src/glyphos/bin/
+
+Test Phase 2 (CSE Core):
+  /usr/src/glyphos/bin/cse_core --test
+  Expected: "CSE Core operational" with PASS
+
+Test Phase 3 (Substrate Core):
+  /usr/src/glyphos/bin/substrate_core --test
+  Expected: "operational" with PASS
+
+Test Phase 4 (Glyph Interpreter):
+  /usr/src/glyphos/bin/glyph_interp --test
+  Expected: "operational" with PASS
+
+Check Status Report:
+  tail -50 /usr/src/glyphos/logs/status_report_*.txt
+
+================================================================================
+                         FILE PLACEMENT MAP
+================================================================================
+
+Phase 1: unified_pipeline.sh
+  FROM: /tmp/phase1_unified_pipeline.sh
+  TO:   /usr/src/glyphos/scripts/unified_pipeline.sh
+  TEST: ./unified_pipeline.sh --clean
+
+Phase 2: cse_core.c
+  FROM: /tmp/phase2_cse_core.c
+  TO:   /usr/src/glyphos/src/cse_core.c
+  COMPILE: cc -o /usr/src/glyphos/bin/cse_core /usr/src/glyphos/src/cse_core.c
+  TEST: /usr/src/glyphos/bin/cse_core --test
+
+Phase 3: substrate_core.c
+  FROM: /tmp/phase3_substrate_core.c
+  TO:   /usr/src/glyphos/src/substrate_core.c
+  COMPILE: cc -o /usr/src/glyphos/bin/substrate_core /usr/src/glyphos/src/substrate_core.c -lm
+  NOTE: Requires -lm flag for math library
+  TEST: /usr/src/glyphos/bin/substrate_core --test
+
+Phase 4: glyph_interpreter.c
+  FROM: /tmp/phase4_glyph_interpreter.c
+  TO:   /usr/src/glyphos/src/glyph_interpreter.c
+  COMPILE: cc -o /usr/src/glyphos/bin/glyph_interp /usr/src/glyphos/src/glyph_interpreter.c
+  TEST: /usr/src/glyphos/bin/glyph_interp --test
+
+================================================================================
+                        COMMON TROUBLESHOOTING
+================================================================================
+
+Error: "cc: command not found"
+FIX:   Install compiler
+       pkg install gcc        (FreeBSD)
+       apt-get install gcc    (Debian/Ubuntu)
+
+Error: "undefined reference to sqrt"
+FIX:   Add -lm flag to Phase 3 compilation
+       cc -o /usr/src/glyphos/bin/substrate_core \
+          /usr/src/glyphos/src/substrate_core.c -lm
+
+Error: "/usr/src/glyphos: not found"
+FIX:   Create directories
+       sudo mkdir -p /usr/src/glyphos/{src,bin,scripts,logs,data}
+
+Error: "Permission denied"
+FIX:   Make script executable
+       chmod +x /usr/src/glyphos/scripts/unified_pipeline.sh
+
+Tests fail but don't know why
+FIX:   Check logs
+       cat /usr/src/glyphos/logs/build_*.log
+       cat /usr/src/glyphos/logs/test_*.log
+
+Pipeline hangs
+FIX:   Kill with Ctrl+C, then run individual tests
+       /usr/src/glyphos/bin/cse_core --test
+       /usr/src/glyphos/bin/substrate_core --test
+       /usr/src/glyphos/bin/glyph_interp --test
+
+================================================================================
+                          EXPECTED SUCCESS
+================================================================================
+
+When everything is working:
+
+BUILD PHASE: 6/6 succeeded
+  ✓ glyphos_main
+  ✓ cse_runtime
+  ✓ substrate_layer
+  ✓ cse_core
+  ✓ substrate_core
+  ✓ glyph_interp
+
+TEST PHASE: 6/6 passed
+  ✓ smoke_glyphos.sh (or skipped)
+  ✓ smoke_cse.sh (or skipped)
+  ✓ smoke_substrate.sh (or skipped)
+  ✓ cse_core --test
+  ✓ substrate_core --test
+  ✓ glyph_interp --test
+
+FINAL MESSAGE:
+  ✓ PIPELINE SUCCESS
+
+CI READY:
+  Exit code: 0 (PASS)
+
+================================================================================
+                        VERIFICATION CHECKLIST
+================================================================================
+
+Before integration:
+  [ ] All 4 phase files in /tmp/
+  [ ] FreeBSD or Linux system with gcc/cc
+  [ ] /usr/src/glyphos/ directory writable
+
+After setup:
+  [ ] All phase files copied to /usr/src/glyphos/
+  [ ] unified_pipeline.sh is executable
+  [ ] All .c files are in /usr/src/glyphos/src/
+
+After build:
+  [ ] No "error" or "failed" messages
+  [ ] 6 binaries in /usr/src/glyphos/bin/
+  [ ] All binaries are executable
+
+After testing:
+  [ ] cse_core --test shows PASS
+  [ ] substrate_core --test shows PASS
+  [ ] glyph_interp --test shows PASS
+  [ ] Status report shows 6/6 PASS
+
+Integration complete when:
+  [ ] Status report exists: /usr/src/glyphos/logs/status_report_*.txt
+  [ ] Report shows "BUILD PHASE: 6/6 succeeded, 0 failed"
+  [ ] Report shows "TEST PHASE: 6/6 passed, 0 failed"
+  [ ] Final message shows "✓ PIPELINE SUCCESS"
+
+================================================================================
+                         DIRECTORY STRUCTURE
+================================================================================
+
+After integration, you should have:
+
+/usr/src/glyphos/
+├── src/
+│   ├── cse_core.c
+│   ├── substrate_core.c
+│   └── glyph_interpreter.c
+├── bin/
+│   ├── glyphos_main
+│   ├── cse_runtime
+│   ├── substrate_layer
+│   ├── cse_core
+│   ├── substrate_core
+│   └── glyph_interp
+├── scripts/
+│   └── unified_pipeline.sh
+├── logs/
+│   ├── build_*.log
+│   ├── test_*.log
+│   └── status_report_*.txt
+└── data/
+    └── (runtime data goes here)
+
+================================================================================
+                          NEXT COMMANDS
+================================================================================
+
+View full guide:
+  cat /home/daveswo/glyph-os-prototype/glyphos-handoff-20251204/INTEGRATION_GUIDE.md
+
+Rebuild everything:
+  /usr/src/glyphos/scripts/unified_pipeline.sh --clean --verbose
+
+Incremental rebuild:
+  /usr/src/glyphos/scripts/unified_pipeline.sh
+
+CI mode build (strict):
+  /usr/src/glyphos/scripts/unified_pipeline.sh --ci
+
+Individual tests:
+  /usr/src/glyphos/bin/cse_core --test
+  /usr/src/glyphos/bin/substrate_core --test
+  /usr/src/glyphos/bin/glyph_interp --test
+
+Load a GDF file:
+  /usr/src/glyphos/bin/glyph_interp --load /path/to/file.gdf
+
+View build log:
+  tail -100 /usr/src/glyphos/logs/build_*.log
+
+View test log:
+  tail -100 /usr/src/glyphos/logs/test_*.log
+
+View status report:
+  cat /usr/src/glyphos/logs/status_report_*.txt
+
+================================================================================
+
+For detailed information, see:
+  INTEGRATION_GUIDE.md (818 lines, complete reference)
+  INTEGRATION_QUICK_REF.txt (this file, quick reference)
+
+Ready to integrate? Run the commands in "COPY & PASTE THESE COMMANDS IN ORDER"
+
+Estimated time: 20-30 minutes (no issues)
+
+================================================================================

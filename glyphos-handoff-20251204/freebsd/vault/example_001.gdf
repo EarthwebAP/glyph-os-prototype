@@ -1,0 +1,20 @@
+# GlyphOS Example Glyph Definition File (GDF)
+# This demonstrates the 18-field GDF schema
+
+glyph_id: 001
+chronocode: 20250101_120000
+parent: 000
+resonance_freq: 440.0
+field_magnitude: 1.0
+coherence: 100
+contributor_inheritance: system
+material_spec: quantum_field_v1
+frequency_signature: harmonic_a4
+activation: resonate(2.0) | entangle(parent)
+entanglement_coeff: 1.5
+phase_offset: 0.0
+quantum_state: 1
+metadata: Example glyph for demonstration
+dependencies: 000
+outputs: field_state
+constraints: coherence >= 80

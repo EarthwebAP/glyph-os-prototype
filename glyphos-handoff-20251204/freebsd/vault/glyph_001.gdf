@@ -1,0 +1,20 @@
+# GlyphOS Glyph Definition Format (GDF) v2.0
+# First Child Glyph
+
+glyph_id: 001
+chronocode: 20250101_120000
+parent_glyphs: 000
+resonance_freq: 880.0
+field_magnitude: 1.2
+coherence: 95
+contributor_inheritance: genesis
+material_spec: substrate_base
+frequency_signature: harmonic_2x
+activation_simulation: resonate(2.0) | entangle(000) | amplify(1.5)
+entanglement_coeff: 1.5
+phase_offset: 45.0
+quantum_state: 1
+metadata: first_harmonic
+dependencies: 000
+outputs: field_state, resonance
+constraints: requires_parent_active
