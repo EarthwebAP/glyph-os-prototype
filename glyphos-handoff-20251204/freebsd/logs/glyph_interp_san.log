@@ -1,0 +1,47 @@
+=== SANITIZER BUILD ===
+CFLAGS: -Wall -Wextra -fsanitize=address,undefined -O1 -g -fno-omit-frame-pointer
+
+==================================================
+  GlyphOS Unified Build Pipeline
+==================================================
+
+Compiler:  gcc
+CFLAGS:    -Wall -Wextra -fsanitize=address,undefined -O1 -g -fno-omit-frame-pointer
+LDFLAGS:   -lm
+Sanitizer: ENABLED
+
+[1/2] Building substrate_core...
+  ✓ substrate_core built successfully
+-rwxr-xr-x 1 daveswo daveswo 204K Dec  5 15:53 bin/substrate_core_san
+
+[2/2] Building glyph_interpreter...
+  ✓ glyph_interp built successfully
+-rwxr-xr-x 1 daveswo daveswo 280K Dec  5 15:53 bin/glyph_interp_san
+
+==================================================
+  Running Test Suite
+==================================================
+
+[1/2] Testing substrate_core...
+  ✓ substrate_core tests PASSED
+Test 1: Substrate Initialization... PASS
+Test 2: Cell Read/Write... PASS
+Test 3: Parity Checks... PASS
+Test 4: Wave Propagation... PASS
+Test 5: Force Application... PASS
+Test 6: Quantum Pouch... PASS
+
+[2/2] Testing glyph_interpreter...
+  ✓ glyph_interp tests PASSED
+Tests Passed: 10
+Tests Failed: 0
+
+==================================================
+  Build Summary
+==================================================
+
+Builds:  2/2 passed
+Tests:   2/2 passed
+
+✅ ALL CHECKS PASSED
+
