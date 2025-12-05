@@ -1,0 +1,49 @@
+==================================================
+  GlyphOS Backup and Recovery Test
+==================================================
+
+[1/6] Computing original checksums...
+✓ Computed checksums for 11 files
+
+[2/6] Creating backup archives...
+✓ Vault backup: backups/vault_backup_20251205_210519.tar.gz (4.0K)
+✓ Logs backup: backups/logs_backup_20251205_210519.tar.gz (4.0K)
+
+[3/6] Testing glyph listing before deletion...
+✓ Found 0
+0 glyphs in vault
+
+[4/6] Deleting vault (simulating data loss)...
+✓ Vault deleted (moved to vault_deleted_20251205_210519)
+
+[5/6] Restoring from backup...
+✓ Vault restored from backups/vault_backup_20251205_210519.tar.gz
+
+[6/6] Verifying restore integrity...
+✓ Checksums match - restore successful
+✓ Glyph count matches: 0
+0 glyphs
+
+==================================================
+  Backup and Recovery Summary
+==================================================
+
+Original files:   11
+Backup size:      4.0K
+Restored files:   11
+Checksum status:  VERIFIED
+Glyph count:      0
+0 (verified)
+
+✅ BACKUP AND RECOVERY TEST PASSED
+
+Backup files:
+  - backups/vault_backup_20251205_210519.tar.gz
+  - backups/logs_backup_20251205_210519.tar.gz
+
+To restore manually:
+  tar -xzf backups/vault_backup_20251205_210519.tar.gz
+
+Cleaning up temporary files...
+✓ Cleanup complete
+
