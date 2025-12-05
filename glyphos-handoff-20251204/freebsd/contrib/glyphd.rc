@@ -1,0 +1,131 @@
+#!/bin/sh
+#
+# PROVIDE: glyphd
+# REQUIRE: NETWORKING SERVERS
+# BEFORE:  DAEMON
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable glyphd:
+#
+# glyphd_enable="YES"
+# glyphd_user="glyphos"          # User to run as (default: glyphos)
+# glyphd_group="glyphos"         # Group to run as (default: glyphos)
+# glyphd_vault="/var/db/glyphos/vault"  # Vault directory
+# glyphd_log="/var/log/glyphos/glyphd.log"  # Log file
+# glyphd_flags=""                # Additional flags
+#
+
+. /etc/rc.subr
+
+name="glyphd"
+rcvar=glyphd_enable
+
+load_rc_config $name
+
+: ${glyphd_enable:="NO"}
+: ${glyphd_user:="glyphos"}
+: ${glyphd_group:="glyphos"}
+: ${glyphd_vault:="/var/db/glyphos/vault"}
+: ${glyphd_log:="/var/log/glyphos/glyphd.log"}
+: ${glyphd_pidfile:="/var/run/glyphd.pid"}
+: ${glyphd_flags:=""}
+
+# Paths
+command="/usr/local/bin/glyph_interp"
+pidfile="${glyphd_pidfile}"
+command_args="--vault ${glyphd_vault} --daemon ${glyphd_flags}"
+
+# Process management
+start_cmd="glyphd_start"
+stop_cmd="glyphd_stop"
+status_cmd="glyphd_status"
+
+# Check required directories and permissions
+glyphd_precmd()
+{
+    # Check if binary exists
+    if [ ! -x "${command}" ]; then
+        err 1 "glyph_interp not found at ${command}"
+    fi
+
+    # Create log directory if needed
+    log_dir=$(dirname "${glyphd_log}")
+    if [ ! -d "${log_dir}" ]; then
+        mkdir -p "${log_dir}"
+        chown ${glyphd_user}:${glyphd_group} "${log_dir}"
+        chmod 750 "${log_dir}"
+    fi
+
+    # Check vault directory exists
+    if [ ! -d "${glyphd_vault}" ]; then
+        err 1 "Vault directory not found: ${glyphd_vault}"
+    fi
+
+    # Check vault permissions (should be owned by glyphos user)
+    vault_owner=$(stat -f %Su "${glyphd_vault}")
+    if [ "${vault_owner}" != "${glyphd_user}" ]; then
+        warn "Vault directory not owned by ${glyphd_user}, attempting to fix..."
+        chown -R ${glyphd_user}:${glyphd_group} "${glyphd_vault}"
+    fi
+
+    # Ensure vault is not world-readable
+    chmod 700 "${glyphd_vault}"
+
+    # Create PID directory
+    pid_dir=$(dirname "${pidfile}")
+    if [ ! -d "${pid_dir}" ]; then
+        mkdir -p "${pid_dir}"
+    fi
+}
+
+# Start daemon
+glyphd_start()
+{
+    glyphd_precmd
+
+    echo "Starting ${name}..."
+
+    # Run as non-root user
+    /usr/sbin/daemon -u ${glyphd_user} -o ${glyphd_log} -p ${pidfile} \
+        ${command} ${command_args}
+
+    if [ $? -eq 0 ]; then
+        echo "${name} started"
+    else
+        echo "${name} failed to start"
+        return 1
+    fi
+}
+
+# Stop daemon
+glyphd_stop()
+{
+    if [ -f "${pidfile}" ]; then
+        pid=$(cat "${pidfile}")
+        echo "Stopping ${name} (PID: ${pid})..."
+        kill "${pid}"
+        rm -f "${pidfile}"
+        echo "${name} stopped"
+    else
+        echo "${name} is not running"
+    fi
+}
+
+# Check status
+glyphd_status()
+{
+    if [ -f "${pidfile}" ]; then
+        pid=$(cat "${pidfile}")
+        if ps -p "${pid}" > /dev/null 2>&1; then
+            echo "${name} is running (PID: ${pid})"
+        else
+            echo "${name} is not running (stale PID file)"
+            return 1
+        fi
+    else
+        echo "${name} is not running"
+        return 1
+    fi
+}
+
+run_rc_command "$1"
