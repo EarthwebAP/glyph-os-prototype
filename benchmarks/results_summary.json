@@ -1,0 +1,51 @@
+{
+  "timestamp": "2025-12-05T00:21:04.076163Z",
+  "commit": "9470aad",
+  "persistence": {
+    "median_ms": 6.809,
+    "p95_ms": 11.49,
+    "p99_ms": 12.796,
+    "total_glyphs": 1000,
+    "success_rate": 1.0
+  },
+  "dynamics": {
+    "deterministic": true,
+    "seeds_tested": 10
+  },
+  "spu": [
+    {
+      "primitive": "merge",
+      "avg_latency_us": 5.33,
+      "ops_per_sec": 187652
+    },
+    {
+      "primitive": "transform",
+      "avg_latency_us": 1.04,
+      "ops_per_sec": 965767
+    },
+    {
+      "primitive": "match",
+      "avg_latency_us": 0.8,
+      "ops_per_sec": 1257561
+    },
+    {
+      "primitive": "resonate",
+      "avg_latency_us": 1.18,
+      "ops_per_sec": 848573
+    },
+    {
+      "primitive": "prune",
+      "avg_latency_us": 0.75,
+      "ops_per_sec": 1327111
+    }
+  ],
+  "fabric": {
+    "p50_ms": 0.0147,
+    "p95_ms": 0.0181,
+    "p99_ms": 0.0495,
+    "avg_ms": 0.0161,
+    "transport": "loopback",
+    "rdma_available": false
+  },
+  "notes": "All benchmarks passed successfully"
+}

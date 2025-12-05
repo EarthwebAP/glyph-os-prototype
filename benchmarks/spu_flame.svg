@@ -1,0 +1,12 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" width="1200" height="400" xmlns="http://www.w3.org/2000/svg">
+  <text x="10" y="30" font-family="monospace" font-size="16">SPU Flamegraph - Slowest Primitive: merge</text>
+  <text x="10" y="60" font-family="monospace" font-size="14">Avg latency: 5.33 µs</text>
+  <text x="10" y="90" font-family="monospace" font-size="14">Ops/sec: 187,652</text>
+  <text x="10" y="130" font-family="monospace" font-size="12" fill="#666">
+    Note: Full flamegraph requires profiling tools (py-spy, cProfile, etc.)
+  </text>
+  <rect x="10" y="150" width="800" height="40" fill="#e74c3c" />
+  <text x="15" y="175" font-family="monospace" font-size="14" fill="white">merge - 5.33 µs</text>
+</svg>

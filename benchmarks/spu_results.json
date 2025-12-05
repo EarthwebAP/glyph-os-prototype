@@ -1,0 +1,27 @@
+[
+  {
+    "primitive": "merge",
+    "avg_latency_us": 5.33,
+    "ops_per_sec": 187652
+  },
+  {
+    "primitive": "transform",
+    "avg_latency_us": 1.04,
+    "ops_per_sec": 965767
+  },
+  {
+    "primitive": "match",
+    "avg_latency_us": 0.8,
+    "ops_per_sec": 1257561
+  },
+  {
+    "primitive": "resonate",
+    "avg_latency_us": 1.18,
+    "ops_per_sec": 848573
+  },
+  {
+    "primitive": "prune",
+    "avg_latency_us": 0.75,
+    "ops_per_sec": 1327111
+  }
+]

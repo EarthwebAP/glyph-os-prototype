@@ -1,0 +1,5013 @@
+{
+  "stats": {
+    "median_ms": 6.809,
+    "p95_ms": 11.49,
+    "p99_ms": 12.796,
+    "mean_ms": 7.309,
+    "total": 1000,
+    "success": 1000,
+    "failed": 0
+  },
+  "results": [
+    {
+      "id": "f4c3a99520795b61fccc2425c7f8a1f0d03d22e7bb66df81fd8b365be04fb625",
+      "write_latency_ms": 9.659,
+      "fsync_ok": true
+    },
+    {
+      "id": "4af7f318e2100307dbb5e28ab62869d3cb466027837a950d312fecc837b9d3b3",
+      "write_latency_ms": 7.023,
+      "fsync_ok": true
+    },
+    {
+      "id": "1b0acafd92fb93a44c9613d73a5adb13a2b0329c9e7a4cb66b8c06f910c9d153",
+      "write_latency_ms": 6.859,
+      "fsync_ok": true
+    },
+    {
+      "id": "7b19e42233a76a7ebb97ad7a468d0a3aad30c8b7f7df15c49df54cca4bef5fa1",
+      "write_latency_ms": 7.345,
+      "fsync_ok": true
+    },
+    {
+      "id": "7b911b7f16009dd544b79d9deac48bf3d4ba56f1e95075b5aae40729938a91d0",
+      "write_latency_ms": 6.663,
+      "fsync_ok": true
+    },
+    {
+      "id": "b5c6f5337c015173edde4e9247f55fb5daf32d6354186f0d80529c077ff7a2d4",
+      "write_latency_ms": 7.326,
+      "fsync_ok": true
+    },
+    {
+      "id": "490f72d6e9a764e047a90bf0ef2f931f14cab4d042ae31df668abeaf703b1aaf",
+      "write_latency_ms": 7.013,
+      "fsync_ok": true
+    },
+    {
+      "id": "3f190d471609ce3d65f8b7a9c3c67c7a0a657aacb4f3ac199fc90bcf153e4477",
+      "write_latency_ms": 6.99,
+      "fsync_ok": true
+    },
+    {
+      "id": "fc0c94838f03c3a3e08090a53a5d9557c99f221eb731bb3d4e533fe5046d1efc",
+      "write_latency_ms": 7.465,
+      "fsync_ok": true
+    },
+    {
+      "id": "221c629c83b37465956c7e502c6a5b3da28d6898d7c43689eae257e7ccd2f586",
+      "write_latency_ms": 6.833,
+      "fsync_ok": true
+    },
+    {
+      "id": "04ccf4314ccae9694fafddce7d61406f1ce62a292a17827718a6b98900ec86c5",
+      "write_latency_ms": 7.027,
+      "fsync_ok": true
+    },
+    {
+      "id": "38fcf6ab93c0730015564d2eb58fb9cb4e4098928fcfed1ccf4eb8f08eb09441",
+      "write_latency_ms": 7.398,
+      "fsync_ok": true
+    },
+    {
+      "id": "7812d79ec9972dd4b812e8c30f6db7a9eee40d348aeea711267eccd0209035f2",
+      "write_latency_ms": 7.084,
+      "fsync_ok": true
+    },
+    {
+      "id": "d9986aaccd8461a7f3d885f2d9d2fac653788fde7136ee31e50cde8684c64cef",
+      "write_latency_ms": 7.162,
+      "fsync_ok": true
+    },
+    {
+      "id": "5d52033568f92da66102c30815a2001fff3128ba48250d838d84ac603e32091a",
+      "write_latency_ms": 7.303,
+      "fsync_ok": true
+    },
+    {
+      "id": "26beb0c890045675a13cca80252b62b2ffe4448ab7f370bc5f998972f3f06e5b",
+      "write_latency_ms": 7.264,
+      "fsync_ok": true
+    },
+    {
+      "id": "776ae142e34cd3d956301c4ae4344a17ef96e3e7a32819784a8458b7a42ef769",
+      "write_latency_ms": 7.304,
+      "fsync_ok": true
+    },
+    {
+      "id": "5cc96b3b8e4fbf18d27c60fe647b6d7005beb1e0799ee0d07b5f81528b40119e",
+      "write_latency_ms": 11.715,
+      "fsync_ok": true
+    },
+    {
+      "id": "b1e70ce1703e90d207fff99f1eeeb26de6a7b6e00c89778b40269a7376b81451",
+      "write_latency_ms": 8.062,
+      "fsync_ok": true
+    },
+    {
+      "id": "89b91440744d9e7d811d362ac734966ca01e931fa6b370fb2c4998e413e07776",
+      "write_latency_ms": 7.231,
+      "fsync_ok": true
+    },
+    {
+      "id": "7e96d17e7ffe2127f3feda950077a18692b965dc88a2c9f34d9030c28d359c56",
+      "write_latency_ms": 7.469,
+      "fsync_ok": true
+    },
+    {
+      "id": "169a995ad11e7380c972d0cd3bf842fae11118a30e7bcc0bec2bf86092a641c5",
+      "write_latency_ms": 7.721,
+      "fsync_ok": true
+    },
+    {
+      "id": "c4dc28b25ab6cdca9fa09e5e6cd48472b3843dc98d96509daaa90db08b772f46",
+      "write_latency_ms": 6.886,
+      "fsync_ok": true
+    },
+    {
+      "id": "abbcf14a8a8ffc605b33a465f34ad76622697977bf9901025e8a7e824fed5fb4",
+      "write_latency_ms": 6.927,
+      "fsync_ok": true
+    },
+    {
+      "id": "88030052e06b42e633c8e5fa9fd6b3e60325e46c096c5722af2e52a749bbce00",
+      "write_latency_ms": 7.61,
+      "fsync_ok": true
+    },
+    {
+      "id": "c48900b4ae6aa62e78102236b0d91fc93421a97cff3c9cc57637538be652a4ba",
+      "write_latency_ms": 6.427,
+      "fsync_ok": true
+    },
+    {
+      "id": "f5cd4dd21c60700ec7bd76de027cd16921b93b2981397761701687cebc293651",
+      "write_latency_ms": 7.032,
+      "fsync_ok": true
+    },
+    {
+      "id": "c86c343624a6ab6474f7c7b3eedbd28ec63765f99cb9811383144138e006cfa7",
+      "write_latency_ms": 7.367,
+      "fsync_ok": true
+    },
+    {
+      "id": "461eb05598266f8065afef0ad78478ccb3ebcc7bb2d6d2c6e6931babb5912ab8",
+      "write_latency_ms": 6.797,
+      "fsync_ok": true
+    },
+    {
+      "id": "d9371f74f20a7281f99fc4938c95d1acc1c84ac234758cb16a6fd48d58df3c9c",
+      "write_latency_ms": 6.828,
+      "fsync_ok": true
+    },
+    {
+      "id": "124c08e926aa43a8690aad18ff1a000d71f26e7e467a08b5c8a853353c40eaa3",
+      "write_latency_ms": 8.251,
+      "fsync_ok": true
+    },
+    {
+      "id": "dd8a299592fadb93eb9005352f1bcb3207bec82a6519fc1895f0eb2c4a372368",
+      "write_latency_ms": 7.029,
+      "fsync_ok": true
+    },
+    {
+      "id": "e728610cab8fe4f3f5b53d56004fd66bda062583a003f53ec689d3f6d9a92f03",
+      "write_latency_ms": 7.289,
+      "fsync_ok": true
+    },
+    {
+      "id": "1009aac3f94da6958ac17ac16189bffed15b77968cfe702c6b45951151a8bd8a",
+      "write_latency_ms": 7.04,
+      "fsync_ok": true
+    },
+    {
+      "id": "957d96295ff837208a30ec4b2c088497d4047856d50170760aec45f5d83d0eb1",
+      "write_latency_ms": 6.914,
+      "fsync_ok": true
+    },
+    {
+      "id": "10437e83c909980d80eeb0e62fc18d325fb2a7db50addf37c10719116c775d66",
+      "write_latency_ms": 6.762,
+      "fsync_ok": true
+    },
+    {
+      "id": "a84cdc996b19d099a8ad02a29d380d8ad73c16cc32a6735238d5078676b639be",
+      "write_latency_ms": 7.136,
+      "fsync_ok": true
+    },
+    {
+      "id": "dff2535ea0fe39f3fa46c7c0f9e1b06650f3fe297222e6618bf21673744e40f3",
+      "write_latency_ms": 7.196,
+      "fsync_ok": true
+    },
+    {
+      "id": "5699a7879dc56f2c873c5d9888cb0c801433925c1bd12df3fbbf9da2fb901ae6",
+      "write_latency_ms": 6.92,
+      "fsync_ok": true
+    },
+    {
+      "id": "59d10c7fd533ffcef94e71d1d581c7a0dc10311c0f75d45f316f9ec3dc613b8a",
+      "write_latency_ms": 6.915,
+      "fsync_ok": true
+    },
+    {
+      "id": "ac5486f251eeab4b3eda12d0c39d4d7a2102e275adc5ec48ead447e0fb20ba9a",
+      "write_latency_ms": 6.853,
+      "fsync_ok": true
+    },
+    {
+      "id": "69141329836a26c86b8bf92a3b5bc576047758822c56653e2c076d776fefc102",
+      "write_latency_ms": 7.165,
+      "fsync_ok": true
+    },
+    {
+      "id": "1ea24db023a1b36bfb2fd54d6c29b5a6f25c08d2dd52293f0cd6cbdb60f70bbe",
+      "write_latency_ms": 6.928,
+      "fsync_ok": true
+    },
+    {
+      "id": "404d114768e6c64c328c0ea88daeff52c966d3c22cd895e2897427bf582c13ab",
+      "write_latency_ms": 6.972,
+      "fsync_ok": true
+    },
+    {
+      "id": "49926b4039c6027963772949f4e98e13f984f8c0625a19f0da84f181dbb50e0b",
+      "write_latency_ms": 12.019,
+      "fsync_ok": true
+    },
+    {
+      "id": "9c0316c14bda6eb17190f590b9f68b246989dda1fc7a4bc5eb29b161aa77cd53",
+      "write_latency_ms": 6.758,
+      "fsync_ok": true
+    },
+    {
+      "id": "04f0d03b3e274f2c08a32d4ba40a1a7313fd7a2651a68401c76c62da544376cd",
+      "write_latency_ms": 6.72,
+      "fsync_ok": true
+    },
+    {
+      "id": "73a88012a26c9c551d20e236499a185d9892eaf241a7d7dd12185682e2a1e1f9",
+      "write_latency_ms": 7.089,
+      "fsync_ok": true
+    },
+    {
+      "id": "03fd8975cefcf63eb2dc427079f96fda85242fc60f6a230cc52e89bde7fab601",
+      "write_latency_ms": 7.065,
+      "fsync_ok": true
+    },
+    {
+      "id": "8c66b19549bd27dd80fd18dc697492b10a861f490866ef9783d55afb8daff400",
+      "write_latency_ms": 7.022,
+      "fsync_ok": true
+    },
+    {
+      "id": "24856ca60d1cf9ae3462e4e81228117281457c4eba8001c3323284dfb1d2a3b0",
+      "write_latency_ms": 6.915,
+      "fsync_ok": true
+    },
+    {
+      "id": "2004806e309a3159256664613f5f575cbba5d65d65ffb9270a71b83bae066d35",
+      "write_latency_ms": 7.286,
+      "fsync_ok": true
+    },
+    {
+      "id": "95208a0367dc2c9938c830996b730409449fa237c0f49cc74a046c253dc36257",
+      "write_latency_ms": 6.755,
+      "fsync_ok": true
+    },
+    {
+      "id": "fea8c421a19b5590116521a58a587e735fd760d131201cceaa1833d7ef8e3418",
+      "write_latency_ms": 7.142,
+      "fsync_ok": true
+    },
+    {
+      "id": "fef4e5a8c09429bc89703f67baf2008fab50ff19523f6255a3dadedf9ffc2882",
+      "write_latency_ms": 6.394,
+      "fsync_ok": true
+    },
+    {
+      "id": "4f622bf1541dc6cba7bf796b8490225c3a1fd64c82d33e1acb519cbf7d437cc8",
+      "write_latency_ms": 8.619,
+      "fsync_ok": true
+    },
+    {
+      "id": "020b60ec0936d656c6421530e7086ee946ac0c5527f48486cf649d8c7be1d4d3",
+      "write_latency_ms": 7.044,
+      "fsync_ok": true
+    },
+    {
+      "id": "23abd9550899e2f53c43a07d78f79979b4876c00ef039ac985eb5186fa8abcd8",
+      "write_latency_ms": 7.029,
+      "fsync_ok": true
+    },
+    {
+      "id": "5e90e5ad2422b5b6ddaec3c320e2b477b482187383f47c360be0f4bdde51d26b",
+      "write_latency_ms": 6.86,
+      "fsync_ok": true
+    },
+    {
+      "id": "0b377b102bb6ea58617f7b608fd16137f150a2283b71334b8d3bb9b47520f250",
+      "write_latency_ms": 11.463,
+      "fsync_ok": true
+    },
+    {
+      "id": "5bf32d6f6ba992c565cc53ca813145c8a1e99ad574abe87b68d9362b1da7fc7a",
+      "write_latency_ms": 11.489,
+      "fsync_ok": true
+    },
+    {
+      "id": "1245c38de0526f6efd1705f2d8e4d2e21ac60ca2c79a9e7d80ac9e13932f9ab3",
+      "write_latency_ms": 12.285,
+      "fsync_ok": true
+    },
+    {
+      "id": "d193e92f42bf6a22ad754644abe111bf16568d9bf1e13efe2d7bace0bcac8091",
+      "write_latency_ms": 6.96,
+      "fsync_ok": true
+    },
+    {
+      "id": "8f706920fdf72ce1cd5476eca9092bb25f497eee5d255ca85c4054810dd9edfd",
+      "write_latency_ms": 7.095,
+      "fsync_ok": true
+    },
+    {
+      "id": "0584c408ac12000bebbad60392765b232400592e9dba00e7345013c655cc970d",
+      "write_latency_ms": 7.063,
+      "fsync_ok": true
+    },
+    {
+      "id": "b82336c29898c9474c85ecd90ddbcf248768ea1405c0806a2e09adf37b70807d",
+      "write_latency_ms": 6.894,
+      "fsync_ok": true
+    },
+    {
+      "id": "26e4f52788056959957fd12ef338b65d517f70197c409c05f224c7ac59cd0e65",
+      "write_latency_ms": 6.96,
+      "fsync_ok": true
+    },
+    {
+      "id": "99094d55c35af3611e7bc9424b0f0b031ca10dec1bd9f7aad7cebda4de39672d",
+      "write_latency_ms": 6.998,
+      "fsync_ok": true
+    },
+    {
+      "id": "1e4fd4b86f747d688dafdbef74ea45b7f2c33528389b50a9a820ff4aa03caec9",
+      "write_latency_ms": 6.512,
+      "fsync_ok": true
+    },
+    {
+      "id": "777ceae252b15d1a56623d7d527d739e7a0b544d5d52d2bdaa3030d78e6ac0d1",
+      "write_latency_ms": 6.475,
+      "fsync_ok": true
+    },
+    {
+      "id": "ad1431412b04e0ea250796d5b2d70db7c6a41314424e86544c44aacba4ca71fb",
+      "write_latency_ms": 6.926,
+      "fsync_ok": true
+    },
+    {
+      "id": "0830d17d1ec4e284d37bde79f83d2a0b6617d02fa891ea59993d0d42aa254e6f",
+      "write_latency_ms": 7.18,
+      "fsync_ok": true
+    },
+    {
+      "id": "e3920f833ca4e43cb19a28203568d3e6baee5f2e24df82910a21fbda6f8ab4ae",
+      "write_latency_ms": 6.935,
+      "fsync_ok": true
+    },
+    {
+      "id": "d5a4f8dc63fd3b9870e8a6f2264693bf4e28bb7e1b82623312ed9c64a1f6a2fe",
+      "write_latency_ms": 7.163,
+      "fsync_ok": true
+    },
+    {
+      "id": "b5e336689f7e64147acd7cd8fa604771eb6813260694dfb0b4363ee2d79de3f7",
+      "write_latency_ms": 6.761,
+      "fsync_ok": true
+    },
+    {
+      "id": "f8a3ab160b970d4c6f59c68c1056470be10875348cb0b34e646a490813cb5c69",
+      "write_latency_ms": 7.103,
+      "fsync_ok": true
+    },
+    {
+      "id": "6d2b53b0e904b04714514c01afa6cc1af99fb018ea8f071e1deee746cff4cc96",
+      "write_latency_ms": 6.788,
+      "fsync_ok": true
+    },
+    {
+      "id": "be4e87692471de634b011212059e4cf3d99f3cdb64e42c4fe32778fa7ef58b38",
+      "write_latency_ms": 6.992,
+      "fsync_ok": true
+    },
+    {
+      "id": "5f8522efd496953808522140ef21348a2cbdd11ac8c1f6689bf8c4e90ec87a35",
+      "write_latency_ms": 6.924,
+      "fsync_ok": true
+    },
+    {
+      "id": "81d89700c62349b206bd7d25b017595c9bd8aa1e8a30ccec7bc19bdf516fc29d",
+      "write_latency_ms": 11.563,
+      "fsync_ok": true
+    },
+    {
+      "id": "1eabfd95b6336fcda4922ba7e7ad3cc3a052aafd2b598804aa1a671343b008f2",
+      "write_latency_ms": 6.649,
+      "fsync_ok": true
+    },
+    {
+      "id": "29ccdd4cf38b3b3128f60f1ba857f0ae072d724cda74d698116e92bca07ed07e",
+      "write_latency_ms": 6.975,
+      "fsync_ok": true
+    },
+    {
+      "id": "264aa0e83bf8b790cfcfe5e44a5f914e0141732653bb646df58a67a20b28c3c0",
+      "write_latency_ms": 6.792,
+      "fsync_ok": true
+    },
+    {
+      "id": "3f713e7208aa9b5e1721517a4a83d3a1f0cb00e0c26800358573d3fa63df6665",
+      "write_latency_ms": 6.545,
+      "fsync_ok": true
+    },
+    {
+      "id": "c0db9a92a2be8208b9d82ea43ad891d5e3ce884c792ff80ffd35f6d9031c565f",
+      "write_latency_ms": 7.077,
+      "fsync_ok": true
+    },
+    {
+      "id": "0c3bc525cce48604e1d35832633bcdc9b3b7ef3f555dce3a679f32891c292769",
+      "write_latency_ms": 6.917,
+      "fsync_ok": true
+    },
+    {
+      "id": "beea2187ade1c5bb674db7efd7774c6677872a4d14ae1007d65bf69ea8968372",
+      "write_latency_ms": 7.001,
+      "fsync_ok": true
+    },
+    {
+      "id": "60298d1f57fa4a2ac7aa8766ab60af4c89de64d7977dc11a438cd60f4528dc6e",
+      "write_latency_ms": 7.022,
+      "fsync_ok": true
+    },
+    {
+      "id": "c76a646830bb4c42e6b479400c0e71b8a220a81646585ba46db2930f32888c82",
+      "write_latency_ms": 11.553,
+      "fsync_ok": true
+    },
+    {
+      "id": "5891600fbb7a0aead43050f84030cd13ceeb138ad4ec1a184dd3718713d73ad0",
+      "write_latency_ms": 6.943,
+      "fsync_ok": true
+    },
+    {
+      "id": "5fb98bd782b3cf29835bb2af835c5cb5b7a3d84342a3cc3a2948e9771914e8bb",
+      "write_latency_ms": 6.434,
+      "fsync_ok": true
+    },
+    {
+      "id": "885849ca904c33c991a359bb23d2b593228ea66e93fc4cfa3ed27c0d44c5e69c",
+      "write_latency_ms": 12.042,
+      "fsync_ok": true
+    },
+    {
+      "id": "399b2be54b2e214d22a6ac938267bdcf31312d2e835b5255f0f9644fdde847dd",
+      "write_latency_ms": 7.174,
+      "fsync_ok": true
+    },
+    {
+      "id": "76eb44822756f6026bf3d818448640af3fa6da41aef18564ad51d6ae179213d9",
+      "write_latency_ms": 7.038,
+      "fsync_ok": true
+    },
+    {
+      "id": "ac0631ad8dc95c6c672f7bbf9b8a1bd49c35d9eb73f18f514e667741f7b2de78",
+      "write_latency_ms": 7.127,
+      "fsync_ok": true
+    },
+    {
+      "id": "1837c282f262b7a884bfd923ba0cbbf92ef5ae7f617fe3e98ed27b5ac57884f7",
+      "write_latency_ms": 7.153,
+      "fsync_ok": true
+    },
+    {
+      "id": "b896340a3fb10c634431df060ecddab7f1aa2d6baa7b671bbcbcfabff71b48ca",
+      "write_latency_ms": 6.692,
+      "fsync_ok": true
+    },
+    {
+      "id": "8b9125e136a2ef0eb0d0e150727b15adbfa1d87454bd8423697aae980d4be02f",
+      "write_latency_ms": 7.313,
+      "fsync_ok": true
+    },
+    {
+      "id": "edb6111943b950dd591776867f10a0d5a19ca61b8294732648569f6a64818717",
+      "write_latency_ms": 8.187,
+      "fsync_ok": true
+    },
+    {
+      "id": "781ffe58cbdb1062cfb070297e22f123f49a8eae8954017833cc9962985598b7",
+      "write_latency_ms": 11.102,
+      "fsync_ok": true
+    },
+    {
+      "id": "425c18bbfb7c021f01e4eb062d2c463f5762f69f988dcd534fc3a947dba06de1",
+      "write_latency_ms": 7.172,
+      "fsync_ok": true
+    },
+    {
+      "id": "3d4418a40434014b657cbe36e8e629d94691e166e1d915da0bc739856b6386f1",
+      "write_latency_ms": 7.051,
+      "fsync_ok": true
+    },
+    {
+      "id": "d16e5e1cf4818ea889fb5c787156872de1b7fca0eb5980b4c4ef02b7d0cd55e6",
+      "write_latency_ms": 6.485,
+      "fsync_ok": true
+    },
+    {
+      "id": "593342498f22939f7b8982d8e2e8d2c91309d5ed3cd22cd49ee47c9178b3f5fe",
+      "write_latency_ms": 7.028,
+      "fsync_ok": true
+    },
+    {
+      "id": "ebabc85c724bb64a707e38e450c4a8723302a951115be4efbfb0c51978480477",
+      "write_latency_ms": 6.879,
+      "fsync_ok": true
+    },
+    {
+      "id": "90d9c020e31a9652cd9cc4ec1fb8465db5eb542b1032d803e9cb7e9ee09d2319",
+      "write_latency_ms": 7.134,
+      "fsync_ok": true
+    },
+    {
+      "id": "b4a37231d09f022c59c65dae786c0dfa6262fcd37dc200e035260482f59aac5b",
+      "write_latency_ms": 7.189,
+      "fsync_ok": true
+    },
+    {
+      "id": "295781f64790fb635e2f3575c72922e093d6817b966b629f09ba617ec2fab32e",
+      "write_latency_ms": 6.753,
+      "fsync_ok": true
+    },
+    {
+      "id": "be726cc320f608eebb0cd693211843076375abe6b821fbf2586b0ca2776afa77",
+      "write_latency_ms": 6.887,
+      "fsync_ok": true
+    },
+    {
+      "id": "94db6c973129f003582f8a9ff819aaeb275f7abf2cc8e72753e9211484a1c489",
+      "write_latency_ms": 7.178,
+      "fsync_ok": true
+    },
+    {
+      "id": "f266b6ee4296cc28f1e00f2dbbe2a1a1c97e58a28debafc81bd40732b8756e92",
+      "write_latency_ms": 7.021,
+      "fsync_ok": true
+    },
+    {
+      "id": "470884c016e87461aba29e64bbacc81b2c4b10c79d5887e5e9b0e7a2a739dba8",
+      "write_latency_ms": 7.45,
+      "fsync_ok": true
+    },
+    {
+      "id": "c58af33fceaf3c8b8fa6b3a516a9f4bb78c0c14c29f176c1ebe30c80c56b3817",
+      "write_latency_ms": 7.037,
+      "fsync_ok": true
+    },
+    {
+      "id": "95c745ce35b29c2082cedf1ea3981bf49c84c2cf7750792320522dd136078fdf",
+      "write_latency_ms": 7.275,
+      "fsync_ok": true
+    },
+    {
+      "id": "feb8155b8f9371720af31148e9cc1e21e4b15aecd786c03da6928eea3521fc85",
+      "write_latency_ms": 6.888,
+      "fsync_ok": true
+    },
+    {
+      "id": "555ecc6cf6929b79fe047e0b95ace9cdc7dc8775d811016ad1782aa3ed670fe4",
+      "write_latency_ms": 7.743,
+      "fsync_ok": true
+    },
+    {
+      "id": "a9499fa5c65b5907fe0646942713d8267b64c9cf2fa066e1de7dca56fbd16cb5",
+      "write_latency_ms": 11.739,
+      "fsync_ok": true
+    },
+    {
+      "id": "9338c3c131771e2969c20ef462ced6c7ddb34947e9ecb94d2306a50fd0fcb046",
+      "write_latency_ms": 6.878,
+      "fsync_ok": true
+    },
+    {
+      "id": "99bd92fd5f4c16fa6c97ca58ac7851b7df885fb4a9c0b7b4d8e3a801ad2a3f60",
+      "write_latency_ms": 7.394,
+      "fsync_ok": true
+    },
+    {
+      "id": "65cfb85bff7636324baa15bc19c5eaa729b8bccf3a264422664a34097127b719",
+      "write_latency_ms": 7.979,
+      "fsync_ok": true
+    },
+    {
+      "id": "64e42e3f53db374184fec0826b03059fc59aab22d68d07ec6b55769ead7ff93d",
+      "write_latency_ms": 11.636,
+      "fsync_ok": true
+    },
+    {
+      "id": "f014c90c9447b512946ef6719ba2bd3f8a90f288fecafab8681751baa4c616b0",
+      "write_latency_ms": 7.295,
+      "fsync_ok": true
+    },
+    {
+      "id": "b29eef832ca878ab9514ae6a7ee7c9a6b8adb426c2422136aa49836a97b82fdd",
+      "write_latency_ms": 13.344,
+      "fsync_ok": true
+    },
+    {
+      "id": "41f73337e54e9eeb3dcfbd3ac66e907e7285fd16bcfd7c153edeffac96fa1332",
+      "write_latency_ms": 6.971,
+      "fsync_ok": true
+    },
+    {
+      "id": "8b52c34310012b518bfc87d7538b7352435f3f543fe6938d27fed4da95a8129b",
+      "write_latency_ms": 6.823,
+      "fsync_ok": true
+    },
+    {
+      "id": "18c5dc297724b059519dc446db89d7442fce7f72919665d38e228403660d73c3",
+      "write_latency_ms": 6.791,
+      "fsync_ok": true
+    },
+    {
+      "id": "bde5969a40310bff4589a367d0acc3355ecab3ebb37cb5c5ec1779bfd802fa29",
+      "write_latency_ms": 6.896,
+      "fsync_ok": true
+    },
+    {
+      "id": "2db986cc9efa9c4fce16ed1468603cf240c8992b3f8e299c51abaa13883049f6",
+      "write_latency_ms": 7.038,
+      "fsync_ok": true
+    },
+    {
+      "id": "265279b556b28e95828e04112170f51612c1c97396da84b366e941e5954e7c40",
+      "write_latency_ms": 6.333,
+      "fsync_ok": true
+    },
+    {
+      "id": "0db3a5bf569f1d37b8fa35c4b9135376d2c0b4c8d837ae2e7da202ba9a7566d4",
+      "write_latency_ms": 7.314,
+      "fsync_ok": true
+    },
+    {
+      "id": "ecc0b0744ee664612fcbafdb0b26deddd57ab59c7e9bc9e7108667204d89bffc",
+      "write_latency_ms": 6.847,
+      "fsync_ok": true
+    },
+    {
+      "id": "0b22a29840b57bd62cfdc6cba0d2501ed00f4b16bc0834a2cacd2fa854245666",
+      "write_latency_ms": 6.853,
+      "fsync_ok": true
+    },
+    {
+      "id": "f6aa5e5b65a441e286ec4bef17ef86edb3eb143490164d5992e408e591fcdaf0",
+      "write_latency_ms": 7.174,
+      "fsync_ok": true
+    },
+    {
+      "id": "a6d4585380006f58444891a154d8f33c41d072b96a80a4eefa4b5e3bbea2fa19",
+      "write_latency_ms": 6.689,
+      "fsync_ok": true
+    },
+    {
+      "id": "6448c6fe8dfc7ec6f2ce78285b192c037293cb98afda263d8df64a2960b44dac",
+      "write_latency_ms": 6.451,
+      "fsync_ok": true
+    },
+    {
+      "id": "ffc72855e7feb5cd0136635d8f99b400918423450c7ee8816a3251c47a034db2",
+      "write_latency_ms": 11.986,
+      "fsync_ok": true
+    },
+    {
+      "id": "6eaffe09b5613e90ee346686b89f690fd0907b5252e06dd780541724329e312b",
+      "write_latency_ms": 7.902,
+      "fsync_ok": true
+    },
+    {
+      "id": "b68ea14c12b8aa37c635f45a17f42da4c2b727cfdb311d4b138d46358425d1c6",
+      "write_latency_ms": 6.992,
+      "fsync_ok": true
+    },
+    {
+      "id": "36cff30488f3392c8b75067376d8b2975292b71e37691ac35e42d6246fd8d22b",
+      "write_latency_ms": 12.547,
+      "fsync_ok": true
+    },
+    {
+      "id": "9aba067354ef510c635a13385ce7d20e278d08e18e7f841f6a931c0171d02cb7",
+      "write_latency_ms": 6.943,
+      "fsync_ok": true
+    },
+    {
+      "id": "a875f718e5094810b8b3cf1091e94be83e53082a06568ce2bb9d9254702b9f89",
+      "write_latency_ms": 6.734,
+      "fsync_ok": true
+    },
+    {
+      "id": "0d3b02fec2753361d8fbf65cd734c042da2bfe963fa0c85a893a4bf6d39b0536",
+      "write_latency_ms": 6.562,
+      "fsync_ok": true
+    },
+    {
+      "id": "f783da6051d65983edcea43a807530760ec657f893159018e96c0291d96eb83f",
+      "write_latency_ms": 11.142,
+      "fsync_ok": true
+    },
+    {
+      "id": "719a3273c5c6d36f190b188ae816315125a809f81513e9308ffc3f7bc16cdfcd",
+      "write_latency_ms": 6.658,
+      "fsync_ok": true
+    },
+    {
+      "id": "ce3ba81b36c1d57303d62e0216ecb96cef8e433702cc38b681c7a78a4733faa3",
+      "write_latency_ms": 6.945,
+      "fsync_ok": true
+    },
+    {
+      "id": "028b98924eec27ada8369f0363a29a2cc000b78600d312c66468e42644db1caf",
+      "write_latency_ms": 6.531,
+      "fsync_ok": true
+    },
+    {
+      "id": "7da20e6e775e2a17155216853e286f8c9bf3760f3f76bf048bccf07deb6a07d3",
+      "write_latency_ms": 12.925,
+      "fsync_ok": true
+    },
+    {
+      "id": "75045a48144bb6b446eb1cd3e0c9d08958722821cb3597226b80b853ce91e1a6",
+      "write_latency_ms": 7.242,
+      "fsync_ok": true
+    },
+    {
+      "id": "966078401eccbe7a393b620b5d2cf6db3feb21657dc185d37f82e9d0f476d4dd",
+      "write_latency_ms": 11.246,
+      "fsync_ok": true
+    },
+    {
+      "id": "7b06563d2f71cbc8644c281a0a2c5c66e9b72ae910c9179a6a8e58d34941e36d",
+      "write_latency_ms": 6.851,
+      "fsync_ok": true
+    },
+    {
+      "id": "413e6b995a35aea91ed4dff0100bd5f96d5a4b86ffc891c3f5c1938e9ce373ee",
+      "write_latency_ms": 6.494,
+      "fsync_ok": true
+    },
+    {
+      "id": "cecba32423870d748a7e23557d959509bcb564b6ba23b29dbc92b76a60f19777",
+      "write_latency_ms": 6.495,
+      "fsync_ok": true
+    },
+    {
+      "id": "4100a7dce0b8c61be6746511b6fee02a5775030c81dd94b1b958cd3744290377",
+      "write_latency_ms": 11.264,
+      "fsync_ok": true
+    },
+    {
+      "id": "58ded115a48540c57e91ee494a73d9c09abf274c24bf2611d17a46833f90f358",
+      "write_latency_ms": 6.668,
+      "fsync_ok": true
+    },
+    {
+      "id": "4bf439093a4439a53d3c86dd9e8be3699023bddbd40381c0ce5fc31eca78d994",
+      "write_latency_ms": 11.6,
+      "fsync_ok": true
+    },
+    {
+      "id": "f7c07698fd5ba38c4983d9dc6f92a9ceb748bc3fca34eb562aa4c5bc928c6515",
+      "write_latency_ms": 6.425,
+      "fsync_ok": true
+    },
+    {
+      "id": "2deec2dad7b2e5d5045abcd71db528ecfdeab8bd4ed8f446512156f9aa770b1d",
+      "write_latency_ms": 6.637,
+      "fsync_ok": true
+    },
+    {
+      "id": "ce4d1875d6a0f0203d6c30aaf5504193e089c52d45754995174675f66ff1bdc2",
+      "write_latency_ms": 6.879,
+      "fsync_ok": true
+    },
+    {
+      "id": "b32f92acb38156492a7a52a6e945b7600c3af4a092511d7efa8bf59cdfad9935",
+      "write_latency_ms": 7.263,
+      "fsync_ok": true
+    },
+    {
+      "id": "b76b8b7a732261468293d490b907899fc8979c9601cbdf2b46020fe82e311e4f",
+      "write_latency_ms": 6.949,
+      "fsync_ok": true
+    },
+    {
+      "id": "1a5aeec15433fed8d46b947eada167c202b55496fb791697080166ba9ccbe347",
+      "write_latency_ms": 7.262,
+      "fsync_ok": true
+    },
+    {
+      "id": "d3220d517023d3c60ec4a85c6ebdb7f77c7112ac3a5a29a49b4f14662f9f6fa9",
+      "write_latency_ms": 7.262,
+      "fsync_ok": true
+    },
+    {
+      "id": "c2826156ea944626c84c284cafc927b4c3e570778e49d102fdb22303e79569ce",
+      "write_latency_ms": 7.211,
+      "fsync_ok": true
+    },
+    {
+      "id": "e51695fbb50acd0eddac7fa5a3f866aff15d0e25c2709546d142f447e4e12933",
+      "write_latency_ms": 11.645,
+      "fsync_ok": true
+    },
+    {
+      "id": "ea88cde88b2386aaeb0831aa420e35688a266fad05e4e4f0dd77ae93ac2d8c6c",
+      "write_latency_ms": 7.071,
+      "fsync_ok": true
+    },
+    {
+      "id": "6c028542c7f1a31432e19accf37b10aaa203119dc9553e277cbc2571164bb69f",
+      "write_latency_ms": 7.267,
+      "fsync_ok": true
+    },
+    {
+      "id": "87f182519e35557edf73ce348dc59896a0adb8882d36285be2eb6e3068a5cb3d",
+      "write_latency_ms": 7.003,
+      "fsync_ok": true
+    },
+    {
+      "id": "60e5e91a4a04e1ebef866253dc36d79a0b569859289ae78001053631f30c0f0c",
+      "write_latency_ms": 6.518,
+      "fsync_ok": true
+    },
+    {
+      "id": "9e3cd4a6d80d1c31ca20155973d8b62948fdf2d2b1e11d24df6d4356455175a7",
+      "write_latency_ms": 7.023,
+      "fsync_ok": true
+    },
+    {
+      "id": "17f8e4af7b4c7a34034a4987f99c25090af499bbe90003a459e79831c4b9e3b8",
+      "write_latency_ms": 7.05,
+      "fsync_ok": true
+    },
+    {
+      "id": "302ed9870ff96cc337438af8be740a3477ee2bcc52738f746c8ba753dff6666a",
+      "write_latency_ms": 6.896,
+      "fsync_ok": true
+    },
+    {
+      "id": "8add3f4971b8cf374f102e883be5cf4e67f5639cfd0aa4ba80d549e74d8dd380",
+      "write_latency_ms": 7.753,
+      "fsync_ok": true
+    },
+    {
+      "id": "255fa2e423731511655feb2063b7f293e63b9d94623f33247fcc1a15b0231d2f",
+      "write_latency_ms": 7.355,
+      "fsync_ok": true
+    },
+    {
+      "id": "6aa914aef778be874f53e3b825c03c43e7b700fe1c37db2639c771ff5a87c482",
+      "write_latency_ms": 7.149,
+      "fsync_ok": true
+    },
+    {
+      "id": "baf00d0ad7317fac8d6636078c67e0ef692dccef0858fae5217c66b340ff993f",
+      "write_latency_ms": 7.076,
+      "fsync_ok": true
+    },
+    {
+      "id": "134caf5a20ecb92ec4e959178101c32a103d0bf699b764941a3a34a968e0b6e1",
+      "write_latency_ms": 11.412,
+      "fsync_ok": true
+    },
+    {
+      "id": "5436a1b53e4033ef3ce7127b74dd848cc7815ebb42c232a8d25d8533d578406d",
+      "write_latency_ms": 11.605,
+      "fsync_ok": true
+    },
+    {
+      "id": "6f0b0c806017e1f97716e2fcae1b5b22c6afa2cf82ba6ec696e305cb59a9393d",
+      "write_latency_ms": 7.265,
+      "fsync_ok": true
+    },
+    {
+      "id": "e01bc20a0951e8d5f463080220af9a47761cbe2a09bcbd7a4d9488ebe065aa9c",
+      "write_latency_ms": 7.129,
+      "fsync_ok": true
+    },
+    {
+      "id": "41f2eebec3a0671407402303a2e5c9a128683ff992f6463bfbcb7e66958520fb",
+      "write_latency_ms": 6.342,
+      "fsync_ok": true
+    },
+    {
+      "id": "b85bd818aa0d22a69b018d783ef350041f2ae5352751152676ce6e100b81c3e5",
+      "write_latency_ms": 6.92,
+      "fsync_ok": true
+    },
+    {
+      "id": "57af3b91dc6c55eea23edfd25695118f51ff117a0aa64645c1d56313b088bbeb",
+      "write_latency_ms": 7.011,
+      "fsync_ok": true
+    },
+    {
+      "id": "5b7a8ef988d680b33e7924b9e80e0c29de219f62129de82a3dbbd4e8834208b5",
+      "write_latency_ms": 6.513,
+      "fsync_ok": true
+    },
+    {
+      "id": "4ed093d390167c4046a376dc0504b0c89a66dcdd7b750abbde08ec4279102ab7",
+      "write_latency_ms": 7.282,
+      "fsync_ok": true
+    },
+    {
+      "id": "510fd74b79d77954a8c02dc4ec39c1443b3676324e29e91b45a7e955584f3517",
+      "write_latency_ms": 7.178,
+      "fsync_ok": true
+    },
+    {
+      "id": "d813daaf6d9639d3d8063f4acd7da6c02aee9796f10921d8e8aa80274405d3e5",
+      "write_latency_ms": 7.27,
+      "fsync_ok": true
+    },
+    {
+      "id": "8add7cf36fbc1f2148c8c69acac75784c63e56829cbbaec76adee88f737a5a6e",
+      "write_latency_ms": 6.869,
+      "fsync_ok": true
+    },
+    {
+      "id": "ec994f47980f3a4c396e3e73e7da86b67576df15eaeac3f2d26c429b1584118a",
+      "write_latency_ms": 6.775,
+      "fsync_ok": true
+    },
+    {
+      "id": "508c2b37fded6bf7bea3a49b5b61eebaf16f87f213c1e01fd0857099bd45ba51",
+      "write_latency_ms": 7.125,
+      "fsync_ok": true
+    },
+    {
+      "id": "a2efc7844436fc3b41da0fec867c7408dbe29f60c7a5ad7a91df5a4aa5ccaf73",
+      "write_latency_ms": 7.112,
+      "fsync_ok": true
+    },
+    {
+      "id": "b2ae2cd12da2735e5213c16943ea3ef2ca9cf11b9e0eaf4d21283f65b7b519b0",
+      "write_latency_ms": 7.135,
+      "fsync_ok": true
+    },
+    {
+      "id": "4f12e83af32b1a19709b380f0856273a233bf5316577619502e03224e3fabd74",
+      "write_latency_ms": 6.52,
+      "fsync_ok": true
+    },
+    {
+      "id": "3541e38db08146bbb01b78af39761d780e7ccf7729f91de6b73c9eb6b8794ce4",
+      "write_latency_ms": 10.999,
+      "fsync_ok": true
+    },
+    {
+      "id": "181270d16999588b3226874df182f64dcaaaae2c22f2fe2fac618b24bd2ed915",
+      "write_latency_ms": 14.952,
+      "fsync_ok": true
+    },
+    {
+      "id": "706dd4f0f9a8df69edc391f3b10e2269c62fa80fda50e8cde728b4d54cedcd18",
+      "write_latency_ms": 7.456,
+      "fsync_ok": true
+    },
+    {
+      "id": "7e01ca70caa67e19f76fd71145e086422eb2b94307f6d778c40a09bf11fc7d66",
+      "write_latency_ms": 6.456,
+      "fsync_ok": true
+    },
+    {
+      "id": "68c74f398abeabf693eb1ebbd5843d7209d5dd1cc9c78f144968bf968d968e0b",
+      "write_latency_ms": 7.194,
+      "fsync_ok": true
+    },
+    {
+      "id": "c7a5b9367a9ca8200a567459720c3f01a2ba14b2cbd1c08f733eca5f02e57409",
+      "write_latency_ms": 6.914,
+      "fsync_ok": true
+    },
+    {
+      "id": "10cc105ce4a65b9273840fcc7de0a11ff3fbf7a1035779a2675be22e9c59cedc",
+      "write_latency_ms": 7.439,
+      "fsync_ok": true
+    },
+    {
+      "id": "ad374efa8b6da61dad941a721fd9b66f9829df3ea81ac9e99762615c379b6980",
+      "write_latency_ms": 6.77,
+      "fsync_ok": true
+    },
+    {
+      "id": "d1c8f86e54bf694d7b30c7c2dc33b7c28b11610bb8f5cd4fb485bc84a770ce4e",
+      "write_latency_ms": 7.693,
+      "fsync_ok": true
+    },
+    {
+      "id": "fe99c046072d8ee2a7101a4a640b3d33eac55e299bf098cbf3953fd8dd90e959",
+      "write_latency_ms": 6.479,
+      "fsync_ok": true
+    },
+    {
+      "id": "7f332442b0d14e37cfab5f56ae372a59b545614d784658511c873a5e9ec211f4",
+      "write_latency_ms": 7.15,
+      "fsync_ok": true
+    },
+    {
+      "id": "c052ffc89ea8eecfb3f7a3eff58f7b2ae914d0a5299a2b75792e4fd13757ceb4",
+      "write_latency_ms": 11.077,
+      "fsync_ok": true
+    },
+    {
+      "id": "b2e33523e3204ebceef45a4b0445fd683aef2842603a6a96a4b51b834598ed1e",
+      "write_latency_ms": 6.544,
+      "fsync_ok": true
+    },
+    {
+      "id": "f9d4aff424fbdce15375c926caa4a9da02b3f94187d16dbe588a6c938735be71",
+      "write_latency_ms": 7.047,
+      "fsync_ok": true
+    },
+    {
+      "id": "ea52e8afe89fae93b9c28cf08ed027346191c943195d0e18a8889857c2e27991",
+      "write_latency_ms": 6.879,
+      "fsync_ok": true
+    },
+    {
+      "id": "dddb644dd13cab8036ef7ceca5e6437503e92212a9a703a5bec39df1dd25bddc",
+      "write_latency_ms": 6.719,
+      "fsync_ok": true
+    },
+    {
+      "id": "8b41ce549d7c55bbeb50d7a4a3e17ad32c99c8f1753057bcb77a42513a2f688d",
+      "write_latency_ms": 6.592,
+      "fsync_ok": true
+    },
+    {
+      "id": "2fa6a06162b19e2f245917be30b7097bc4442362818ad2f478b4ed3df8c57aef",
+      "write_latency_ms": 7.049,
+      "fsync_ok": true
+    },
+    {
+      "id": "936517a896674c146b1e8cb73175af4cfa0c53a4839a9d6f4a1d9306c05c7859",
+      "write_latency_ms": 6.783,
+      "fsync_ok": true
+    },
+    {
+      "id": "e561442947075d4a6f6dd8a5367d271f834cb3c317f11fa1a6a3c9365a1ad19a",
+      "write_latency_ms": 6.662,
+      "fsync_ok": true
+    },
+    {
+      "id": "848ec374bb2ce2eead463122978264974b8e57a3378ab22cf9c7081b54b39e9d",
+      "write_latency_ms": 7.201,
+      "fsync_ok": true
+    },
+    {
+      "id": "c942dcfe9af66c6269c62f5bfdf0fd1b631f7520aae7ec2fffb70ec691408bf4",
+      "write_latency_ms": 7.26,
+      "fsync_ok": true
+    },
+    {
+      "id": "fe0cfb3e90111250010d296a2dc7189758c466d44b9522c60919a08cded2f0c2",
+      "write_latency_ms": 6.572,
+      "fsync_ok": true
+    },
+    {
+      "id": "90e68338bc02c0ab867af825bfd37992bf631b2b090725e3e02c9d2f2fc34508",
+      "write_latency_ms": 7.812,
+      "fsync_ok": true
+    },
+    {
+      "id": "c6460638873472bd4838a2c345d5c647352324014c4822f2d3cd7cdd98190923",
+      "write_latency_ms": 6.813,
+      "fsync_ok": true
+    },
+    {
+      "id": "9f47ed2d1258caaeb87377bb5ace8445afa1fd634bf3e7e75dc3d57bab39bffe",
+      "write_latency_ms": 7.372,
+      "fsync_ok": true
+    },
+    {
+      "id": "4f5d59bbeec040c886b39922f5712c1544e4158741bac881179e3fc6e6fbba5b",
+      "write_latency_ms": 6.863,
+      "fsync_ok": true
+    },
+    {
+      "id": "8da7b27901883543e3c7dd4c18b9a67d41629315b3ffdd22bd942b5599f1879c",
+      "write_latency_ms": 9.398,
+      "fsync_ok": true
+    },
+    {
+      "id": "be625a7a0c8e1da98ae2d35710d807183f295a28ec3f18e6adf833a2141415b5",
+      "write_latency_ms": 7.085,
+      "fsync_ok": true
+    },
+    {
+      "id": "7f555d320a473cbb9b2502e7bce021214d28114342a733687fbb1160a42f8ca8",
+      "write_latency_ms": 6.816,
+      "fsync_ok": true
+    },
+    {
+      "id": "a8e31a3d5b00d46ed927fc94d9bc376cdbe36b77d8487addf782d6553af600b8",
+      "write_latency_ms": 6.878,
+      "fsync_ok": true
+    },
+    {
+      "id": "d1fa3c1a59be83f9dc8c1f8b13afd40f060deb50609305460798aff979a73862",
+      "write_latency_ms": 6.482,
+      "fsync_ok": true
+    },
+    {
+      "id": "fc7fbb27ab8100be792b4280a217829c859efbb724f859d06095c574b7f817c6",
+      "write_latency_ms": 6.975,
+      "fsync_ok": true
+    },
+    {
+      "id": "acaeafaaef6bc954c1dcdc0b1eb17b42e3f65fca496e9b4b195da2f90c42665a",
+      "write_latency_ms": 8.045,
+      "fsync_ok": true
+    },
+    {
+      "id": "acfbbb968667cd05a264f30b89d508f7c349a7e841a37490c17abfe3ad76c3bd",
+      "write_latency_ms": 6.852,
+      "fsync_ok": true
+    },
+    {
+      "id": "920d7a9f7e9a4b69ad470dbead3cd425a566e4b5411e225a652109c55c708907",
+      "write_latency_ms": 6.828,
+      "fsync_ok": true
+    },
+    {
+      "id": "36b87d7af63acaa7ceb2b5d48a582e33134f408cdad98034a7c8d5952c265e35",
+      "write_latency_ms": 6.35,
+      "fsync_ok": true
+    },
+    {
+      "id": "a65792e8813b2d1dc26c17cf9d5eb4f46dcba65f70c19be9b35cf86cd3a0309d",
+      "write_latency_ms": 6.564,
+      "fsync_ok": true
+    },
+    {
+      "id": "620286b82bf8265861205426fed98c6cf1ba48af5e65d70785e2aebd47b357fb",
+      "write_latency_ms": 7.089,
+      "fsync_ok": true
+    },
+    {
+      "id": "9c76a8ea7ea7a41782cc7fea57d8aee3f8659711bcc989f6cac3ea79117e689b",
+      "write_latency_ms": 6.741,
+      "fsync_ok": true
+    },
+    {
+      "id": "2d1467ed02231ecdaa3c66284133bdaaafba686b86575fb54026844819587d1d",
+      "write_latency_ms": 7.541,
+      "fsync_ok": true
+    },
+    {
+      "id": "d609b8f092939d66ca36591e4e43ef1eb4c2a04d09106247e207335ada94836b",
+      "write_latency_ms": 7.371,
+      "fsync_ok": true
+    },
+    {
+      "id": "4b1e902d14f125db1a315a209e2cf0741b691c5536a010becf88f723e7ca9434",
+      "write_latency_ms": 6.832,
+      "fsync_ok": true
+    },
+    {
+      "id": "089c0b90a438dd7b2356997bb756884a7f474388d7fca8afd69fe390dde7d4f5",
+      "write_latency_ms": 11.455,
+      "fsync_ok": true
+    },
+    {
+      "id": "30cd5e31be6546642d0cf5351c03219d757bf978fb7003637a31802f53ed9fe7",
+      "write_latency_ms": 6.486,
+      "fsync_ok": true
+    },
+    {
+      "id": "7e40082227315b5dee86a7ecd30c249074be5641e21f6e7e7dc8b9e831a5d0aa",
+      "write_latency_ms": 8.263,
+      "fsync_ok": true
+    },
+    {
+      "id": "ccf9b71db24dffd7dc53313a2e2925ff1273f3ab4be5e4466e25128ed95b3ced",
+      "write_latency_ms": 8.041,
+      "fsync_ok": true
+    },
+    {
+      "id": "0270d0889dc439fb0cb86efa995cecafcb926706f15da431f09ed6348e872b27",
+      "write_latency_ms": 8.363,
+      "fsync_ok": true
+    },
+    {
+      "id": "6a8a01a34fe478300c7e2752532762d6246c3c92c75339cad314525fe47962bf",
+      "write_latency_ms": 6.857,
+      "fsync_ok": true
+    },
+    {
+      "id": "1f580e2f4191757e31f1b1b5cce6d1d0782118f6be5b7ceb12d9005c191445a2",
+      "write_latency_ms": 6.889,
+      "fsync_ok": true
+    },
+    {
+      "id": "5b4f33fd3d0753f909594b0d503e31c135e75940ed1cccfe2a1521abbb170828",
+      "write_latency_ms": 6.5,
+      "fsync_ok": true
+    },
+    {
+      "id": "0629b00f193631f1b6ad08f665bc9123c49e9e5c802744c11cfe98bfdcf3c375",
+      "write_latency_ms": 7.181,
+      "fsync_ok": true
+    },
+    {
+      "id": "52687ce3bf09338b5da5cdd6d3924a155ba15eff6c86f80df0d2eebc87d1436f",
+      "write_latency_ms": 11.757,
+      "fsync_ok": true
+    },
+    {
+      "id": "48132ed700fd014a51d2a6141f5edbf7d1be02e4424e67aabf8655375409fb9c",
+      "write_latency_ms": 6.909,
+      "fsync_ok": true
+    },
+    {
+      "id": "ed2045b2f09029f35dc0a7b715d77cbc6aacc1ae8f115771905c60c7e8beeb6c",
+      "write_latency_ms": 6.951,
+      "fsync_ok": true
+    },
+    {
+      "id": "29321870e39bc2826747bbc1195e4b79f84178c0571a3fde9d226ed009f5fa4b",
+      "write_latency_ms": 6.617,
+      "fsync_ok": true
+    },
+    {
+      "id": "2731d2930107473bddf129655ef56ae6bea8467ad955635fe4159bbfa372e385",
+      "write_latency_ms": 6.644,
+      "fsync_ok": true
+    },
+    {
+      "id": "d72f2ff54408fb4283366fa45abaf6f4ab38ed1d0154157667654fa02dddc007",
+      "write_latency_ms": 6.94,
+      "fsync_ok": true
+    },
+    {
+      "id": "5294e77259f3cc22e022a7d8d49e54950d8c5f4b149f63a0f1454600cd47b86e",
+      "write_latency_ms": 7.098,
+      "fsync_ok": true
+    },
+    {
+      "id": "1e4eb139f72f909e92eb95b870de239406d953992dc7f4f59e46949f2f878888",
+      "write_latency_ms": 6.843,
+      "fsync_ok": true
+    },
+    {
+      "id": "dcabc59dc138f86a2fb173e2d00af12d5a4d7889fcfe6e5b2d3427df8ee36029",
+      "write_latency_ms": 6.972,
+      "fsync_ok": true
+    },
+    {
+      "id": "4533126744d5645ae69579971d649a3f8e13e0b6fbc88b25014c8df3f8c28ffe",
+      "write_latency_ms": 7.74,
+      "fsync_ok": true
+    },
+    {
+      "id": "57b8b249d5513c31335b0a1cb47393847cae896b6e198d98dcad639d57393d2b",
+      "write_latency_ms": 6.499,
+      "fsync_ok": true
+    },
+    {
+      "id": "4cdba60b593e157bc2f448d75e26ed7c8a7ac27b7f286f51ad23c78e70b7cf2e",
+      "write_latency_ms": 7.333,
+      "fsync_ok": true
+    },
+    {
+      "id": "2434bdfb157d957940ce3962ebd7b0bc3cb207c24907ad25da4e0e6d1ed266d8",
+      "write_latency_ms": 12.073,
+      "fsync_ok": true
+    },
+    {
+      "id": "7fb289386e4ae25ff80883a0312837ba2d2f9cbc5b6adb7bf52aec20c80fd420",
+      "write_latency_ms": 7.381,
+      "fsync_ok": true
+    },
+    {
+      "id": "304282e1cb1615d7046c01103f5f3cdf6917868bc2b422632530e16c10a8429f",
+      "write_latency_ms": 7.267,
+      "fsync_ok": true
+    },
+    {
+      "id": "4a40e533b23720cba8824e08f94b847fd3f9edc5cfb45476f66b2dbfd9f92b61",
+      "write_latency_ms": 6.574,
+      "fsync_ok": true
+    },
+    {
+      "id": "12b8eefb791f07e8e227f58072120d6b0e2a3f032740eb34274dd370c0958acc",
+      "write_latency_ms": 6.541,
+      "fsync_ok": true
+    },
+    {
+      "id": "3cc6df4731aef6f1aa713a8af2e2810b5774f03f548d698ba614a4ae20cfc561",
+      "write_latency_ms": 7.08,
+      "fsync_ok": true
+    },
+    {
+      "id": "3dc05b6f48c34feb026d3f1c6241d42654dd2d6a1624b7bb658a46dd84f20fe6",
+      "write_latency_ms": 6.702,
+      "fsync_ok": true
+    },
+    {
+      "id": "bebb127e7b5d4de9aec88838d38e8149c413d6959e61136a881c2663e9ce0f05",
+      "write_latency_ms": 6.582,
+      "fsync_ok": true
+    },
+    {
+      "id": "f682f72a67e1fe833502a31e1c270b6019d8b0a77c085a35c0f65925c1b0a795",
+      "write_latency_ms": 6.756,
+      "fsync_ok": true
+    },
+    {
+      "id": "2edff8b45c6ddd84f2b7632fdbaeafbbf6e10c6e5ac636e08c771a3f8832e9b9",
+      "write_latency_ms": 6.93,
+      "fsync_ok": true
+    },
+    {
+      "id": "a5a57d465e4d00365caf8b88a32832a6d1231a1cde95c28111af45fe5526bfde",
+      "write_latency_ms": 6.864,
+      "fsync_ok": true
+    },
+    {
+      "id": "3e251ed47353d84ff687c1e4192cc84462467bdfb593f883994af133cb04094e",
+      "write_latency_ms": 6.861,
+      "fsync_ok": true
+    },
+    {
+      "id": "2b892cac054d87e4c0945c2f32b799fed8da8d7410764f8da301e6074b18d743",
+      "write_latency_ms": 6.802,
+      "fsync_ok": true
+    },
+    {
+      "id": "a710d743a82433c40ded932377910f4cd146bdb639c895a1edc62f794e8fa09c",
+      "write_latency_ms": 6.726,
+      "fsync_ok": true
+    },
+    {
+      "id": "2401309a4366d45773c9cda76ec73633ff4e1a8e52595203fabeb2d1a23ffa7c",
+      "write_latency_ms": 6.461,
+      "fsync_ok": true
+    },
+    {
+      "id": "a1d6dde85587a0023d3f1d2a8535ec984c0e9ab288beaa6a137794d7495c0977",
+      "write_latency_ms": 6.706,
+      "fsync_ok": true
+    },
+    {
+      "id": "87da98e18c69858cc3447e6dc843595cfe868e1af9fa390a5cbae7452fea69e0",
+      "write_latency_ms": 6.936,
+      "fsync_ok": true
+    },
+    {
+      "id": "7de30b9a4cdd0d86dd88752f9da06e90235fd6963d3674e8f53f99b8ca0fba79",
+      "write_latency_ms": 7.28,
+      "fsync_ok": true
+    },
+    {
+      "id": "97d0b9278bb24b9da07ff8cd5b044bf493f82a5a3a92650921a54f74e8e70a06",
+      "write_latency_ms": 7.088,
+      "fsync_ok": true
+    },
+    {
+      "id": "184447b2962422eba139eb3a162a2187f5a600003a03bbb35839a11e44c4394a",
+      "write_latency_ms": 7.923,
+      "fsync_ok": true
+    },
+    {
+      "id": "d51b87a5b4b8a673feb5cd58550d76763106bd8c60eba98a72c30160f05f1ec6",
+      "write_latency_ms": 6.742,
+      "fsync_ok": true
+    },
+    {
+      "id": "cf201bf3646e921db017134c6b4f004c46c5a221eb4e5cf40678542bcb7730f7",
+      "write_latency_ms": 6.976,
+      "fsync_ok": true
+    },
+    {
+      "id": "f6d20194d85ccee7cf88e38bd88808450b4132608dde15bf57520e3c33938f8f",
+      "write_latency_ms": 6.804,
+      "fsync_ok": true
+    },
+    {
+      "id": "313d30d3f1126d850598d846bf3eb150d5ecea1169b2831a64fec4c1c3252e4a",
+      "write_latency_ms": 7.424,
+      "fsync_ok": true
+    },
+    {
+      "id": "d39a81b240caf424b34fb27d62aa5c418ee810b50a24220b289135d3e3a86eab",
+      "write_latency_ms": 6.829,
+      "fsync_ok": true
+    },
+    {
+      "id": "3ccb0f71ace00aa0c6e9b3deb11d5bbcbb3369e18516a0c39eb0d8259be9bf53",
+      "write_latency_ms": 6.322,
+      "fsync_ok": true
+    },
+    {
+      "id": "dd6e77131e07a54e2b5e646388d53c29831e0a2638511010e5c66730c9688037",
+      "write_latency_ms": 6.58,
+      "fsync_ok": true
+    },
+    {
+      "id": "89bdbb10746f21a53c9ce96787754b758c5a2e0b2804e96969a077f972f76f91",
+      "write_latency_ms": 6.613,
+      "fsync_ok": true
+    },
+    {
+      "id": "c3b6f85d7160513a8701de785e58371728706f462b05dedf58bfc0f305b6cf66",
+      "write_latency_ms": 6.599,
+      "fsync_ok": true
+    },
+    {
+      "id": "b8673e4fbdcd600e465c6ebf97f7d7b179c24a3ab6ae81c011e9174e433ccfef",
+      "write_latency_ms": 6.86,
+      "fsync_ok": true
+    },
+    {
+      "id": "56fc5f75a1d24ff09a40bd3cb38b6799df06c4204f6ba5984dbea8385615f972",
+      "write_latency_ms": 6.715,
+      "fsync_ok": true
+    },
+    {
+      "id": "0fe905f2a160d6f254a6e46c16929af49b28644c15151bf24198fdded0d557c2",
+      "write_latency_ms": 6.95,
+      "fsync_ok": true
+    },
+    {
+      "id": "937a251639ff600a207e4aacb5278b95a2ab564a110f44b1a9a4392839874970",
+      "write_latency_ms": 6.929,
+      "fsync_ok": true
+    },
+    {
+      "id": "06314a0d02acbfc8a4e2f2bf2b4caae0bba742ebd52eebe6ad8a09400eb8cb29",
+      "write_latency_ms": 6.697,
+      "fsync_ok": true
+    },
+    {
+      "id": "65f33ca6496f9fa9c6fb90427e2866d97c60a8388ef38f9b22c52584b62bf6d5",
+      "write_latency_ms": 6.693,
+      "fsync_ok": true
+    },
+    {
+      "id": "9c5b51c33ec0231f5ac3e17eb443bd326896de63f26de88952abe2cc21802d87",
+      "write_latency_ms": 7.149,
+      "fsync_ok": true
+    },
+    {
+      "id": "cbc93d5c09aad5495f87a581df02f49a9bbdd631e44c0a083eb99f5ace58edc0",
+      "write_latency_ms": 7.795,
+      "fsync_ok": true
+    },
+    {
+      "id": "cb3a76bb702199aa313fd076794fe3f44a1d670f439e42893a9aaa4e73b048cb",
+      "write_latency_ms": 6.645,
+      "fsync_ok": true
+    },
+    {
+      "id": "ab21cec86eed2c75aae6ec624522fe18294c10ea8650098b48c605df38a3feee",
+      "write_latency_ms": 6.424,
+      "fsync_ok": true
+    },
+    {
+      "id": "1c0b59fc8edc5b9e760487afa54f851c4ad74f11ededbda8044eec2f64bff158",
+      "write_latency_ms": 6.944,
+      "fsync_ok": true
+    },
+    {
+      "id": "68737b9a57730feec7676aa6d54f404f51a92aea2e5abb9675797c214e88df62",
+      "write_latency_ms": 6.487,
+      "fsync_ok": true
+    },
+    {
+      "id": "7e74a25264642f954b2a2f45de91e368bba7ec43069c85ad8aabccba697db8c0",
+      "write_latency_ms": 6.975,
+      "fsync_ok": true
+    },
+    {
+      "id": "949a0d60f734a9efb3d5fdf91f9ae7480cefa0b50240e2cfe545fd7ca3a25629",
+      "write_latency_ms": 11.045,
+      "fsync_ok": true
+    },
+    {
+      "id": "c2df7dbbae035c480aa29e43694561a7b0aa4388bd792843d287960103444fe3",
+      "write_latency_ms": 7.218,
+      "fsync_ok": true
+    },
+    {
+      "id": "f52fd6d3ab71521851d0f2d6677b375fd0ff306e6c30f3d5e886fc3042a25e92",
+      "write_latency_ms": 6.364,
+      "fsync_ok": true
+    },
+    {
+      "id": "720899e508b735dd87617ca15cc714bccddbbfcd248157f24df59e3986694a78",
+      "write_latency_ms": 8.418,
+      "fsync_ok": true
+    },
+    {
+      "id": "a30a9f3c47daf20e5490a0ca9d7a1c40cab9526c50c12608b6aee9c12822770c",
+      "write_latency_ms": 11.86,
+      "fsync_ok": true
+    },
+    {
+      "id": "5ee905a62c820cad827eaa346df1cc748dda4964eff52bb4c6d4e8755a548f55",
+      "write_latency_ms": 7.02,
+      "fsync_ok": true
+    },
+    {
+      "id": "b99ab31576fef3ebf79477561f3fa2c91a74f9becbef402d40c229c1a6ceddaa",
+      "write_latency_ms": 6.916,
+      "fsync_ok": true
+    },
+    {
+      "id": "b42d5d082d160e06d8281a8b9c820d268da43b1f5b286f166edc93ffbac0bb62",
+      "write_latency_ms": 6.855,
+      "fsync_ok": true
+    },
+    {
+      "id": "fc46f292743d916e1e8b0dcca6abf611603fc6bfb2db9b5bd7a423962dd877ca",
+      "write_latency_ms": 6.432,
+      "fsync_ok": true
+    },
+    {
+      "id": "610d933620db38797a6796b60ee14c664c9466237f1f87f27c09ae916b083068",
+      "write_latency_ms": 7.133,
+      "fsync_ok": true
+    },
+    {
+      "id": "e3ea4a7b1639c7ab26cd3852ce5e0b2d6dde5ef6f1606c13a512ca9c1b71c4d4",
+      "write_latency_ms": 7.223,
+      "fsync_ok": true
+    },
+    {
+      "id": "20635264b0d2c5c8b9597cb24db8ae784ed0a8c67375f26e332a102858f72c41",
+      "write_latency_ms": 6.917,
+      "fsync_ok": true
+    },
+    {
+      "id": "d8738d31b75bf8c476afc5b2f106641bfb5b61120b3e660f182d657ecd40bc84",
+      "write_latency_ms": 6.573,
+      "fsync_ok": true
+    },
+    {
+      "id": "a81240bc3e811ca7b1cb421fd133e4d2f8d415af17f5bdcb5980579c3cd03c05",
+      "write_latency_ms": 6.312,
+      "fsync_ok": true
+    },
+    {
+      "id": "c925027d3bd41226eb23b265eebcfa0aee03645cfc898cce6095061e70b65cf9",
+      "write_latency_ms": 6.826,
+      "fsync_ok": true
+    },
+    {
+      "id": "2bf0ba40c7d61f005288a42069594e45c61bca7539619132f56b79ff56e9a65a",
+      "write_latency_ms": 6.767,
+      "fsync_ok": true
+    },
+    {
+      "id": "82af08fc9f419b47106e505a24d2da58f361d1bb1eb56fab80c8821474053357",
+      "write_latency_ms": 7.689,
+      "fsync_ok": true
+    },
+    {
+      "id": "73c3a40102398511621b0332b9a594cedacc2baab25f100144b476d3a8f333cf",
+      "write_latency_ms": 6.971,
+      "fsync_ok": true
+    },
+    {
+      "id": "b4ca879381a536e1e5390fdf127eab7ad8f1927b85af10bbb971aece7c2fffe2",
+      "write_latency_ms": 6.473,
+      "fsync_ok": true
+    },
+    {
+      "id": "ccfec170ab48bb9f351dc635021245e119aff91f8e4cbd275ac888cb9680e904",
+      "write_latency_ms": 6.695,
+      "fsync_ok": true
+    },
+    {
+      "id": "0eb5b27f304990526aad05d18250aef0b6dc96a19d9968f70151e7a442b3b57d",
+      "write_latency_ms": 6.923,
+      "fsync_ok": true
+    },
+    {
+      "id": "6fc869273ec7a9bf2f8b990f873f3eaa2f46f354bb3d675027c7b7a7ec0bc43a",
+      "write_latency_ms": 6.389,
+      "fsync_ok": true
+    },
+    {
+      "id": "8e83e6493a0c16581788e71ee7789369e0085b3b22912c0c9dfc44bd236c2a17",
+      "write_latency_ms": 7.282,
+      "fsync_ok": true
+    },
+    {
+      "id": "576273852854605d98bc9c47dc63dbf12f65b7fec61bd35d8a058b203f94334b",
+      "write_latency_ms": 6.842,
+      "fsync_ok": true
+    },
+    {
+      "id": "63ec539aac3bd88ef06806fa1a9eb54819eca446b3902c9ec54de9c2fb4c9371",
+      "write_latency_ms": 7.25,
+      "fsync_ok": true
+    },
+    {
+      "id": "018c7070f84a4f298f1a2b2888c9477f25678db53105d9bf146c50ccc7b34f5a",
+      "write_latency_ms": 6.881,
+      "fsync_ok": true
+    },
+    {
+      "id": "4b2727cf255f465689a992525f46f95b24baecd31f988e3b3313c7cde54df25a",
+      "write_latency_ms": 6.727,
+      "fsync_ok": true
+    },
+    {
+      "id": "47748f47b5e440efd036bd9a6087f929ae20020af6bc14c7780ee58ab9098534",
+      "write_latency_ms": 6.856,
+      "fsync_ok": true
+    },
+    {
+      "id": "5573e800ad54c115b41a2c33f8f0980964dfc10b1c5d248abee6653ff09f7e75",
+      "write_latency_ms": 6.703,
+      "fsync_ok": true
+    },
+    {
+      "id": "0ab2deddfae13157a870164f41d48d014e2a825a25f02bbb23b1b480edf4fdb9",
+      "write_latency_ms": 6.822,
+      "fsync_ok": true
+    },
+    {
+      "id": "fd4124e55859d96cb819734fa5fa417cedf0dfc5328fcf0f4240cfccc36f0206",
+      "write_latency_ms": 6.896,
+      "fsync_ok": true
+    },
+    {
+      "id": "0f5d93e28d353f7a3b55bf44a1ecd25119c4bd69c530732623b1b5ade4098041",
+      "write_latency_ms": 10.587,
+      "fsync_ok": true
+    },
+    {
+      "id": "a4ee0cd6c144bae16bad9d19f965e0c40768e5aad9bd052f624b5aea45da5616",
+      "write_latency_ms": 13.089,
+      "fsync_ok": true
+    },
+    {
+      "id": "5ed0a1f63f60001f04bbda38f7d4d84a66c08a8136b304ccef8e95af94946662",
+      "write_latency_ms": 7.092,
+      "fsync_ok": true
+    },
+    {
+      "id": "6095dac2d0e21a88f86f7fd94d7e0f8a70b2f417db430d374a76639301ef22e4",
+      "write_latency_ms": 6.871,
+      "fsync_ok": true
+    },
+    {
+      "id": "574c63a08c671c5a3d747714c937ea3cc8fb0b4a1776fc4dd25db6dbca02b716",
+      "write_latency_ms": 6.784,
+      "fsync_ok": true
+    },
+    {
+      "id": "c6b110606c3e0d866eea17e5bc867b8a0edc7ad35f5903d215fbccd4b439e71a",
+      "write_latency_ms": 6.532,
+      "fsync_ok": true
+    },
+    {
+      "id": "5e576c0b55ee9cfd87b62471d56637b2d402131996d258c1f044881870c5847f",
+      "write_latency_ms": 11.936,
+      "fsync_ok": true
+    },
+    {
+      "id": "d224fb4a52efdfa1f13905791f32accaa0c7461af8ec5079561a1ec207b4e3ef",
+      "write_latency_ms": 7.614,
+      "fsync_ok": true
+    },
+    {
+      "id": "20c0c034293bc6a93501d296885e902adfec93c2466ecfe3ce081304c42b7c36",
+      "write_latency_ms": 6.779,
+      "fsync_ok": true
+    },
+    {
+      "id": "c9ec7260bc7648d06ee646912ac4877bac71bd5fe67ef61dee8c2912b9355836",
+      "write_latency_ms": 6.653,
+      "fsync_ok": true
+    },
+    {
+      "id": "fd5b65cba7b7b6da269e41fa0df7f7e8beb761a62e02ac118a7e7a858dfeee10",
+      "write_latency_ms": 6.791,
+      "fsync_ok": true
+    },
+    {
+      "id": "1f284646baa69ee58820955c818354b8dc50d61d81152636230edcd6aeb42ed5",
+      "write_latency_ms": 6.574,
+      "fsync_ok": true
+    },
+    {
+      "id": "0830239576aa754a278182720d65baaa7ecb9f150f9c3378a4db802f7b44ae56",
+      "write_latency_ms": 10.985,
+      "fsync_ok": true
+    },
+    {
+      "id": "5f56581e726ede4379e9d8c797c686d92978670433f61636214dc1d34f771e03",
+      "write_latency_ms": 6.291,
+      "fsync_ok": true
+    },
+    {
+      "id": "4878eb59cd26667538914f02923c55f18bdf95e665228acb12b289c1de9a4910",
+      "write_latency_ms": 6.377,
+      "fsync_ok": true
+    },
+    {
+      "id": "32527624d4f1fbe7ba52b1942282c50347ce1b54c737545dd2e7592d9e03673d",
+      "write_latency_ms": 12.602,
+      "fsync_ok": true
+    },
+    {
+      "id": "1844da7c59f6db5f15b151153e13bc036831bbbc59c4f95e9ecf9bc4944fcafe",
+      "write_latency_ms": 6.43,
+      "fsync_ok": true
+    },
+    {
+      "id": "abd78006c429d3996e49584d9c3e8aaaf7ef3c064af690cfeb49ed262bd27406",
+      "write_latency_ms": 7.068,
+      "fsync_ok": true
+    },
+    {
+      "id": "5564a15b6e7e7f828ecacc8dc85dc3ac691806d97e6bb035a036e5884be65ca4",
+      "write_latency_ms": 12.077,
+      "fsync_ok": true
+    },
+    {
+      "id": "5aea905edc321e26627c8ed51740b57a53022ebb56074f640cd6937ec9695c4a",
+      "write_latency_ms": 6.814,
+      "fsync_ok": true
+    },
+    {
+      "id": "d2efa15cf2a469f6d3e222589ab26ee4264db14ea9ca3071658a7c7bda24cf29",
+      "write_latency_ms": 6.493,
+      "fsync_ok": true
+    },
+    {
+      "id": "02107a72c6326294e47e8fba12558c6ab18165b1be567fb238c25082cf2339de",
+      "write_latency_ms": 6.486,
+      "fsync_ok": true
+    },
+    {
+      "id": "f2eadaea4c065655c614b3adfc626f84b141bad0e9df3be57fdbfde3c6d12722",
+      "write_latency_ms": 6.529,
+      "fsync_ok": true
+    },
+    {
+      "id": "dbe7296639524dd61540949deb551ce580e6a8027be4ded17f926554f0e9d0db",
+      "write_latency_ms": 6.793,
+      "fsync_ok": true
+    },
+    {
+      "id": "9249038b50b27b3f9bf38614dbb7a349b6186608c9d555475980740e2eb6a901",
+      "write_latency_ms": 6.356,
+      "fsync_ok": true
+    },
+    {
+      "id": "c05ed451f0470cdc534dc513c682725e27a3005bdce927c2fdfd4a2512f4128e",
+      "write_latency_ms": 6.803,
+      "fsync_ok": true
+    },
+    {
+      "id": "b43000d08fba0d5b843acd331558cc154b642dde925be957f02015d61447d479",
+      "write_latency_ms": 6.587,
+      "fsync_ok": true
+    },
+    {
+      "id": "38c4d7895b5127e2b6c2cc5c601b9847bf8cc3cf14dcb39e25379452018fa09f",
+      "write_latency_ms": 6.352,
+      "fsync_ok": true
+    },
+    {
+      "id": "e51ca097fa027a7ab01eb8ace7ff7b4fffbc4d71db6b41be7ae7c70b83f860d7",
+      "write_latency_ms": 6.713,
+      "fsync_ok": true
+    },
+    {
+      "id": "99d02dc4adc01de13ab68595a1e44f3042016b691933bd88b68dbdc3e197acd3",
+      "write_latency_ms": 8.324,
+      "fsync_ok": true
+    },
+    {
+      "id": "8d3b65ee7543d2f22af3c26c8b92665802b054152582df68481548a084111331",
+      "write_latency_ms": 6.578,
+      "fsync_ok": true
+    },
+    {
+      "id": "df034b9a94696750f15f75338af15a79a4fb9cddea450af5577ba507e409779a",
+      "write_latency_ms": 6.771,
+      "fsync_ok": true
+    },
+    {
+      "id": "020ba7aa38644ed1078dc6e06c746d80171d22aa459f048a88117a41f378ce0c",
+      "write_latency_ms": 6.21,
+      "fsync_ok": true
+    },
+    {
+      "id": "d3dce729dec4679a7383e9c4320fd2e4fcde9e0989bb4031ee7fb6fcffe041af",
+      "write_latency_ms": 6.968,
+      "fsync_ok": true
+    },
+    {
+      "id": "52b876e1a1663233b581aa4643e0f250ec83b5e244e5668bd9149fb9335c4400",
+      "write_latency_ms": 6.415,
+      "fsync_ok": true
+    },
+    {
+      "id": "14fea786bd90f8900003402016c6b226933677879a00aa8653b45d25c2c42545",
+      "write_latency_ms": 6.898,
+      "fsync_ok": true
+    },
+    {
+      "id": "d92cbefbe1692d3a8b6d0f3fec2a89a553885e62458cf8136eaecaf4679dcdf3",
+      "write_latency_ms": 6.689,
+      "fsync_ok": true
+    },
+    {
+      "id": "41ac2b5867be5c5f1d724ead7417e4375f43c6d700c31e64864e9fbc36c97a5c",
+      "write_latency_ms": 6.756,
+      "fsync_ok": true
+    },
+    {
+      "id": "74b7d0f75669fa79309b005347c4b65199bc8bed613b98292864e20fc8a9e5de",
+      "write_latency_ms": 7.09,
+      "fsync_ok": true
+    },
+    {
+      "id": "520695af4e1103225e26d8747ab3b58362f96df55cfddb1143647f6ce99d154d",
+      "write_latency_ms": 7.667,
+      "fsync_ok": true
+    },
+    {
+      "id": "32e15990d68eb12d512b206d3408652f21fdfd0d28d37534240588aa76f225f5",
+      "write_latency_ms": 7.474,
+      "fsync_ok": true
+    },
+    {
+      "id": "b03f62e798c726fca7fd47eedeea0e594586aa4714410bc90e9eb7581ae43371",
+      "write_latency_ms": 8.234,
+      "fsync_ok": true
+    },
+    {
+      "id": "8e6362d74e1abd549df51c15e015e51353e3fba6cceefbea36e2fb0e2c12c0db",
+      "write_latency_ms": 6.637,
+      "fsync_ok": true
+    },
+    {
+      "id": "2f1773a7895660d5be315b1debe18bf15b1211a4bf8eab5d1addd8658f830efa",
+      "write_latency_ms": 6.768,
+      "fsync_ok": true
+    },
+    {
+      "id": "eb20ec325836d4eae9042e8501080a153bd6f3b8a234e12c664aef23baeb40b3",
+      "write_latency_ms": 6.667,
+      "fsync_ok": true
+    },
+    {
+      "id": "37194bfb36eb9b1708cfbd9e56ebb96f0829a4cf5ce11b3196cc4d566c6fffc5",
+      "write_latency_ms": 7.813,
+      "fsync_ok": true
+    },
+    {
+      "id": "649c1d8b6d3bbab8091747a999930e97a2885fc8db60c77c2157c05bd132c6c9",
+      "write_latency_ms": 6.867,
+      "fsync_ok": true
+    },
+    {
+      "id": "851496a9503f997293a6ecccd12f1d2ab0c1a053c6ebc5ceb611140392c4f0ba",
+      "write_latency_ms": 6.831,
+      "fsync_ok": true
+    },
+    {
+      "id": "2e693f91988be07d5eef6e48453a1b085436b778bd7f960d4627ff7b239c3933",
+      "write_latency_ms": 6.47,
+      "fsync_ok": true
+    },
+    {
+      "id": "02f94200f74e7aa082437544eb36d6fc653eba78e7f97ad4aba480d497be756a",
+      "write_latency_ms": 12.796,
+      "fsync_ok": true
+    },
+    {
+      "id": "497fe3a6f733c1cce5136f3200ca9fc84a9385979eb04b31e5d63bbc1dd5461c",
+      "write_latency_ms": 6.529,
+      "fsync_ok": true
+    },
+    {
+      "id": "7a4b01e81b991abeac61b9dc880114c790cd0787efca49047ef0e3967cdffa47",
+      "write_latency_ms": 6.8,
+      "fsync_ok": true
+    },
+    {
+      "id": "6184c89556c598d1e30ad3d4af5ecb1f83936fca887b80b3aa4d15da2259386f",
+      "write_latency_ms": 7.944,
+      "fsync_ok": true
+    },
+    {
+      "id": "0e3c86fc024646125d02a7fa5a37449f3e87cf764d48c6f762052b46b25dd42b",
+      "write_latency_ms": 6.862,
+      "fsync_ok": true
+    },
+    {
+      "id": "69a15ed4cc73c890ada2c4da693cada123e706bdc60db8fbd9480f0dc80d1075",
+      "write_latency_ms": 7.601,
+      "fsync_ok": true
+    },
+    {
+      "id": "2169699d89365f434e280644fcb7eb6e213dededa1833ebf39f7751539765c0d",
+      "write_latency_ms": 7.522,
+      "fsync_ok": true
+    },
+    {
+      "id": "b6e8b01dfa8f737fe65aea1a58068a8c2935654c08c3d79cec53d3f62d046c6c",
+      "write_latency_ms": 6.197,
+      "fsync_ok": true
+    },
+    {
+      "id": "956200a4d6c5de0498be34abb4500bf70a3debdd8ed9717fc9a3d5388f8ba11e",
+      "write_latency_ms": 6.193,
+      "fsync_ok": true
+    },
+    {
+      "id": "c55f5931decea95732cc292e40ddf26fe9c3741e7bc6dda110efde4866370cd0",
+      "write_latency_ms": 6.238,
+      "fsync_ok": true
+    },
+    {
+      "id": "1926a352e45a6a81df6614bff4cd167934eefd38505e7756903ec4cb3da94fe3",
+      "write_latency_ms": 6.628,
+      "fsync_ok": true
+    },
+    {
+      "id": "14ec43f2f8645cc1d4151d73a7139436da9bf08b5dd87c8cb3aed4773fa04955",
+      "write_latency_ms": 6.286,
+      "fsync_ok": true
+    },
+    {
+      "id": "734b13b93f836826774d7a7c91624c48653dc5a17d690515e4050fabd215dfe8",
+      "write_latency_ms": 6.624,
+      "fsync_ok": true
+    },
+    {
+      "id": "449c6662c52af0cf815f142dbf782c34faf03ed8cef46ceb7f84c66871466140",
+      "write_latency_ms": 6.763,
+      "fsync_ok": true
+    },
+    {
+      "id": "0ed9e593e3eae4ca2476c9d54704a827670476f48a1cccb83f37c169c2e5cb86",
+      "write_latency_ms": 6.487,
+      "fsync_ok": true
+    },
+    {
+      "id": "ca546279040a620b5d3693327dafe53231208fadcea41f3f796c816cb7a76484",
+      "write_latency_ms": 6.449,
+      "fsync_ok": true
+    },
+    {
+      "id": "cb2e976c7182d747fe1bf72c3202f1abec2ee5a26f2e679247134011417eff5e",
+      "write_latency_ms": 6.366,
+      "fsync_ok": true
+    },
+    {
+      "id": "9018b3d24b2ee97653ef3c241d431fbdf81eee66cc1f6ea0e098c4f1b672c0f1",
+      "write_latency_ms": 6.765,
+      "fsync_ok": true
+    },
+    {
+      "id": "00167cf60ca89c45816b9e60ef5b77f046ed3aa1c0d85f3405881f9ad09e2b08",
+      "write_latency_ms": 7.036,
+      "fsync_ok": true
+    },
+    {
+      "id": "204113b9380a84de885d3ddff8e5856c9756208ba188f651a8f37a872319ea94",
+      "write_latency_ms": 6.545,
+      "fsync_ok": true
+    },
+    {
+      "id": "3993b819a6306ec4085b616407811c0fddac2c83859da4326ac6b6606e6456f3",
+      "write_latency_ms": 6.448,
+      "fsync_ok": true
+    },
+    {
+      "id": "00e864cb1592dc74b162faea73b2b503cee7f07cc429cb27f93ea3e3b17f4181",
+      "write_latency_ms": 6.464,
+      "fsync_ok": true
+    },
+    {
+      "id": "c3a27fface2815ba7bd7a7ae901698c3ecaf29226daa61a41c03bfdc4303e8ce",
+      "write_latency_ms": 6.63,
+      "fsync_ok": true
+    },
+    {
+      "id": "85a3b0b9bfd90854ec1d14f1e86e4f0f99c13c8cbb6ef5b4e41416e48c22f5c8",
+      "write_latency_ms": 6.32,
+      "fsync_ok": true
+    },
+    {
+      "id": "064c15b63a9e5c8623e793c5b7611e538d8e479a76192eef91f7fca3cb812232",
+      "write_latency_ms": 6.937,
+      "fsync_ok": true
+    },
+    {
+      "id": "4a6cb5b64eaa9a4832d092d50da106b9c736c0a8689d05e698f9d182cb7dfb1e",
+      "write_latency_ms": 6.171,
+      "fsync_ok": true
+    },
+    {
+      "id": "19c3066fff382366f1f43389b1aad55746611a4da10a9a2ef6dc95ee9a5b3d7a",
+      "write_latency_ms": 8.361,
+      "fsync_ok": true
+    },
+    {
+      "id": "e230b8428afe7389a211515ac082f1efaa13fafc34ff6933e1b9b210eab81abc",
+      "write_latency_ms": 6.704,
+      "fsync_ok": true
+    },
+    {
+      "id": "7f708863a0681315d517926c044042aa90753e908acb8e4f044a8aa770c5eaa2",
+      "write_latency_ms": 6.158,
+      "fsync_ok": true
+    },
+    {
+      "id": "883ba28c1c6d56eb73638edee9be90d1217d5f5a7f3d34dee28971efe50811cc",
+      "write_latency_ms": 6.433,
+      "fsync_ok": true
+    },
+    {
+      "id": "6faac6e505a15119099096417e6b54034f9312f0354d2c593b6063e637d94ff0",
+      "write_latency_ms": 6.492,
+      "fsync_ok": true
+    },
+    {
+      "id": "98bcf2c998ab2ab0759ac11ae9348bee4c6efe49738bdbeeb0414b05a5f28cad",
+      "write_latency_ms": 6.939,
+      "fsync_ok": true
+    },
+    {
+      "id": "ce98d4be43b13cb310e799450ae7b755e0bec70c8a381cc1b942b67ec610fcee",
+      "write_latency_ms": 8.003,
+      "fsync_ok": true
+    },
+    {
+      "id": "c43410dcd584316ede173b176c8d7389fd71674d36e911acf77fdd0c4e190e2a",
+      "write_latency_ms": 6.469,
+      "fsync_ok": true
+    },
+    {
+      "id": "fe358d32dd85766a1cb7b9f7f4ceebbdb29101eff52ad87503e2980d24e924ca",
+      "write_latency_ms": 7.385,
+      "fsync_ok": true
+    },
+    {
+      "id": "8f2a92b38a86d05c2238a13f0398ea3153a1830e74cb200bb382801ef35d03c6",
+      "write_latency_ms": 6.4,
+      "fsync_ok": true
+    },
+    {
+      "id": "2a74b62326ea304ba8647ca0dd96660ecc81364093969442d8be28127875e75a",
+      "write_latency_ms": 11.639,
+      "fsync_ok": true
+    },
+    {
+      "id": "cf82ddd78a47e054a01aa45471a35e1e0bcaa660bdb29d9c173e3d2856482e9e",
+      "write_latency_ms": 6.236,
+      "fsync_ok": true
+    },
+    {
+      "id": "9cf86b3c1c05bcf269a20d59e2057f7a4ba6dad6e16db63a818302ad204863c1",
+      "write_latency_ms": 6.364,
+      "fsync_ok": true
+    },
+    {
+      "id": "1cb6abb4b67f30f5435cf3bd61c09085a6e2f4adf7c0e52fb975bf648e493af0",
+      "write_latency_ms": 6.396,
+      "fsync_ok": true
+    },
+    {
+      "id": "2df991ab8528a23351393a05b72396be38c6d5cb7b2ac5b283aed1529e64c21d",
+      "write_latency_ms": 11.076,
+      "fsync_ok": true
+    },
+    {
+      "id": "d6c69458a24942fc53f436ed1c1b3a25897dee0b01f90676be314cb4886e3bf9",
+      "write_latency_ms": 7.031,
+      "fsync_ok": true
+    },
+    {
+      "id": "b4978469e30d4e5041ebd52ac558a6ff8726d6ca8de36a5864d5fc09780ce78c",
+      "write_latency_ms": 6.822,
+      "fsync_ok": true
+    },
+    {
+      "id": "ba8281648c11c315fb3bb43e70a63084391612542ddfeb11192cb5fb74f42c69",
+      "write_latency_ms": 7.072,
+      "fsync_ok": true
+    },
+    {
+      "id": "0cd505ed0ef6418e10d099195b1c105d81883aa648134a3f016a07d650d09c36",
+      "write_latency_ms": 6.35,
+      "fsync_ok": true
+    },
+    {
+      "id": "1f288f147f579d9e713b6ca335640db098301898dbccdeda733cfd61062e983d",
+      "write_latency_ms": 5.992,
+      "fsync_ok": true
+    },
+    {
+      "id": "a3d2476833397e24d31fbb779110f7dcb3c9a6cc45f4a86ab4063ccc7d577828",
+      "write_latency_ms": 6.893,
+      "fsync_ok": true
+    },
+    {
+      "id": "74c2d58deb6fcb935ae0802829d8418f93dc31262ec220e67e140fe5731388c4",
+      "write_latency_ms": 6.846,
+      "fsync_ok": true
+    },
+    {
+      "id": "949b5d253486bfb8195cda305da6b9aaf9655ea77105c13390f0dd788c3eac24",
+      "write_latency_ms": 6.588,
+      "fsync_ok": true
+    },
+    {
+      "id": "bd5e97b3551cb70b00389aa3c9f6a688bc8a5ece7476e73133f10bb374e96e5a",
+      "write_latency_ms": 6.481,
+      "fsync_ok": true
+    },
+    {
+      "id": "2fe02d512d54e72d7cf88d2d73fe0697ed83a2436ed4100a2c6731169dc05e69",
+      "write_latency_ms": 6.695,
+      "fsync_ok": true
+    },
+    {
+      "id": "4619b7995d7a3535b4d4e2edb5d171a21e4d93932e202588c78ea19b18670c81",
+      "write_latency_ms": 6.523,
+      "fsync_ok": true
+    },
+    {
+      "id": "90436b372c751149df19c67ad64a775678bcfce3c124d242fec961a2ca7bb08d",
+      "write_latency_ms": 6.406,
+      "fsync_ok": true
+    },
+    {
+      "id": "21eaec18a8bc5193d2f8ee62615521b7ab0b26510011c3e5289547c4e9246751",
+      "write_latency_ms": 6.608,
+      "fsync_ok": true
+    },
+    {
+      "id": "b4a06059ad8f1e485ff4a015c11a61940fe4e5808fa6f8f81a48311d9a31f3d4",
+      "write_latency_ms": 6.706,
+      "fsync_ok": true
+    },
+    {
+      "id": "0f8c718b544ee4076e1e113092589639c4c337146a69f426921bead23fc82116",
+      "write_latency_ms": 6.693,
+      "fsync_ok": true
+    },
+    {
+      "id": "e971f6ac5111499844ce5f27647734999354ca04afa9a63ff6f606955476f2d1",
+      "write_latency_ms": 7.094,
+      "fsync_ok": true
+    },
+    {
+      "id": "0f189654592be5c904faf422e2422d836ebb08f67caa8a6eab1f8715d1693cff",
+      "write_latency_ms": 6.462,
+      "fsync_ok": true
+    },
+    {
+      "id": "c0808c22cac6db94eb81994e81d5ae5cfe4084dc4a1df3ab1c8f0759ef68a34a",
+      "write_latency_ms": 6.271,
+      "fsync_ok": true
+    },
+    {
+      "id": "4400d89981be753e4757718c905c6cbbf4225f58b61d1a583f7b05bbb73cb51d",
+      "write_latency_ms": 6.172,
+      "fsync_ok": true
+    },
+    {
+      "id": "1093c829bce7d7fb84bed6e86cf9105e1f935e6b4e10c83e03b24c174b429d7c",
+      "write_latency_ms": 6.45,
+      "fsync_ok": true
+    },
+    {
+      "id": "10c480bb79ebd801d078078f03d2cf0d55281b94be9ba370192eca71db58e3ca",
+      "write_latency_ms": 6.535,
+      "fsync_ok": true
+    },
+    {
+      "id": "079978dd051ebcae0c8df3008d3434d02e5b0786c28739131985ad24229577d5",
+      "write_latency_ms": 6.956,
+      "fsync_ok": true
+    },
+    {
+      "id": "5351901959f255fd736ae8251da6ecd91765d7ba332e1589df5520a8674fdb7b",
+      "write_latency_ms": 10.89,
+      "fsync_ok": true
+    },
+    {
+      "id": "50351dc75eecc213ae2cd9702b32175c8a041f5bcf08be78e0a4acfff745bff6",
+      "write_latency_ms": 6.401,
+      "fsync_ok": true
+    },
+    {
+      "id": "da435dee464ae2ae18e7aba614153b3202c87c2462b57c4c1f3266f6ee21b9e9",
+      "write_latency_ms": 6.702,
+      "fsync_ok": true
+    },
+    {
+      "id": "6200d3b83ca595f4171ebad4b280379419597a24c2e9e09ec9deb0c29bc59efa",
+      "write_latency_ms": 11.302,
+      "fsync_ok": true
+    },
+    {
+      "id": "56f5499049f6e59832711b14faea02fffa9303181643dbc60337fe6a73dc4aa3",
+      "write_latency_ms": 6.684,
+      "fsync_ok": true
+    },
+    {
+      "id": "1c6fe30067de265821ca524a2b33e63bbfd35043ef1fc8deabd76bb18159346b",
+      "write_latency_ms": 6.957,
+      "fsync_ok": true
+    },
+    {
+      "id": "6a542ad0dc2556853535b00cf8b7821a5d6a5635316541ba6a7f2e41339be5d6",
+      "write_latency_ms": 6.611,
+      "fsync_ok": true
+    },
+    {
+      "id": "c49e082727a464f2d17cb248adf62d2b71b48dc4e6a41ac7a0b9a55c8015d138",
+      "write_latency_ms": 6.708,
+      "fsync_ok": true
+    },
+    {
+      "id": "7df674672d313cd2fa5a1dfb1c9613f7e04e1ea8e507884db2ba6f8ed0843b27",
+      "write_latency_ms": 6.182,
+      "fsync_ok": true
+    },
+    {
+      "id": "b75f266796ee76642827f253069c5cc721c65dabee40dc7d203966d5401146ad",
+      "write_latency_ms": 6.606,
+      "fsync_ok": true
+    },
+    {
+      "id": "2c9ef1de565edf200fed1fe0e0bd01576dd094374947d678d3090aa37c057a92",
+      "write_latency_ms": 12.09,
+      "fsync_ok": true
+    },
+    {
+      "id": "bcbe2b439c5d2e0f283c3c4cbf5a28f532d376144db85b562aa5dade82887a13",
+      "write_latency_ms": 7.797,
+      "fsync_ok": true
+    },
+    {
+      "id": "a7ddeca9d8aa4e37315024d14205c29b8d394fb9eba4b538eeef267604107d86",
+      "write_latency_ms": 6.598,
+      "fsync_ok": true
+    },
+    {
+      "id": "ea7d448bc42fe57380b89632ebf56af4e22c85f77d6310aa861c10802cbd69e7",
+      "write_latency_ms": 6.614,
+      "fsync_ok": true
+    },
+    {
+      "id": "34ec6339c9c5690d9a2f6db0981fe34e93aa2ad8e8200c33e4ec62564c5e2384",
+      "write_latency_ms": 7.867,
+      "fsync_ok": true
+    },
+    {
+      "id": "391abbfe5ee20237751605b7281b20106fd26da07dea688aada23dfe85105ff2",
+      "write_latency_ms": 6.578,
+      "fsync_ok": true
+    },
+    {
+      "id": "88ec87debfa4ab5c967df23b3352eddc40b80f26dbfaf51049e7c0fb098cba25",
+      "write_latency_ms": 6.582,
+      "fsync_ok": true
+    },
+    {
+      "id": "72bf25e3fad004536ef58ce57b6b727e5d016d8db1173ae6e2e72edd56a887c4",
+      "write_latency_ms": 6.375,
+      "fsync_ok": true
+    },
+    {
+      "id": "ca97493e36b886ac980be9a67a519d38b50789c3cc61524f3ff70a1d5588d992",
+      "write_latency_ms": 6.297,
+      "fsync_ok": true
+    },
+    {
+      "id": "a7d267bed5e1312691d949264b0d3db96dec7c7accd4fd1741e1c8f8bb344ebf",
+      "write_latency_ms": 6.745,
+      "fsync_ok": true
+    },
+    {
+      "id": "cd7f8776ebbbea9c19b98ca3588912fb0dc4f936b5ca6a7c69e140d675c0396c",
+      "write_latency_ms": 6.8,
+      "fsync_ok": true
+    },
+    {
+      "id": "0e8600aac746c660819a45d75e9ad1944daae1bff4b6bac8e33a2b21af60716c",
+      "write_latency_ms": 11.405,
+      "fsync_ok": true
+    },
+    {
+      "id": "c592e05e4203ce6f87f9d6493df6f7cae90cb342570327ea5dd8a2bdb0255aef",
+      "write_latency_ms": 6.524,
+      "fsync_ok": true
+    },
+    {
+      "id": "a6c3111d68e36edc7c2f606a915e9a717ab45adf7b65b541866075ab8e78be2e",
+      "write_latency_ms": 6.515,
+      "fsync_ok": true
+    },
+    {
+      "id": "eaa47cee62ed73ac2b295c55d1aeccef54fb8f60412ca78572ff2cbeca30ddac",
+      "write_latency_ms": 6.563,
+      "fsync_ok": true
+    },
+    {
+      "id": "4f7bb309d46b5289149ffe1456a04b767284956bf584acbdb3ec098f5767996a",
+      "write_latency_ms": 6.973,
+      "fsync_ok": true
+    },
+    {
+      "id": "8d0d203ce23aad111c06497cecef10362f02dcc460896d38a9de78bf31cb12d8",
+      "write_latency_ms": 6.578,
+      "fsync_ok": true
+    },
+    {
+      "id": "04b1067eb1d24efdf280520875e2d732e3bcdf8aed50f2868e778804597d8d41",
+      "write_latency_ms": 6.626,
+      "fsync_ok": true
+    },
+    {
+      "id": "69138904847b5302fefedf80c198d15d1c94dc8d16f3bec21ab8fb8ed0495655",
+      "write_latency_ms": 6.622,
+      "fsync_ok": true
+    },
+    {
+      "id": "3b4eaed52a3ef5da2acc67e84334a423212bc178e164ee04d12d063af2bb291f",
+      "write_latency_ms": 6.578,
+      "fsync_ok": true
+    },
+    {
+      "id": "8753010efb40d2aba994e949d3c5771332cfd6196a740a774cebc26a659afa2b",
+      "write_latency_ms": 6.611,
+      "fsync_ok": true
+    },
+    {
+      "id": "6e1fe4304728bb73158041ccfdb2dd3369fc26bb8cc02cba6ef58089d66ec00c",
+      "write_latency_ms": 6.855,
+      "fsync_ok": true
+    },
+    {
+      "id": "682a8668d83ceeb2dab3c02f80e6d84843f814f864c6496cc0bfdadf1f7a9a25",
+      "write_latency_ms": 6.358,
+      "fsync_ok": true
+    },
+    {
+      "id": "be9b4cae79b3e5505fdadc195e17fcf1cdc90b626518cc25e40eb44e184f3692",
+      "write_latency_ms": 11.872,
+      "fsync_ok": true
+    },
+    {
+      "id": "bf5e1db61897cce8ecefda19d0b84fbd030da4b70b7c98697ea9db7040431ed1",
+      "write_latency_ms": 7.155,
+      "fsync_ok": true
+    },
+    {
+      "id": "cb65aa31212f333f5f0fa09c4ed99e2bb9f78fe7eb18c906aea54c571ac6f09b",
+      "write_latency_ms": 11.637,
+      "fsync_ok": true
+    },
+    {
+      "id": "d803528ea002aed4d7d364cf8b9ac26637f5a250eaca9e7256aa24d6879f72a9",
+      "write_latency_ms": 6.313,
+      "fsync_ok": true
+    },
+    {
+      "id": "9e3ad7b91acb1012271709db6839c73ee9bdd186cd2e68f37fc01451790ffc43",
+      "write_latency_ms": 6.332,
+      "fsync_ok": true
+    },
+    {
+      "id": "038c759ae4043025efd151e5a13d3fe742839dcede49aa1ceef8313d1085ce88",
+      "write_latency_ms": 6.316,
+      "fsync_ok": true
+    },
+    {
+      "id": "6afbd0c55fd80a5d8e95b70683562da5f98fce67a445553e1017da328cc17581",
+      "write_latency_ms": 16.097,
+      "fsync_ok": true
+    },
+    {
+      "id": "85c2b6afad2688e6f999fdc391f5c755dc93eb7b697f2a17715aee1830ac4679",
+      "write_latency_ms": 6.733,
+      "fsync_ok": true
+    },
+    {
+      "id": "2342705601c91778543344bc400a5e0776d20525ea53ab80d18439b521c1a5b1",
+      "write_latency_ms": 6.741,
+      "fsync_ok": true
+    },
+    {
+      "id": "c88a7aad52ff6754c03a6627d6e68958dbb5baff6170c5b6bbbfceee3b2403f7",
+      "write_latency_ms": 6.869,
+      "fsync_ok": true
+    },
+    {
+      "id": "22f44730453df08384e795114d7b0accecc32f90bb7d5aa5c6548f5e26c1ae64",
+      "write_latency_ms": 7.563,
+      "fsync_ok": true
+    },
+    {
+      "id": "d7b94e9f5787ea5fd6ad45ba41281072c264e7fb694990b208a6e7919a6c2d49",
+      "write_latency_ms": 6.442,
+      "fsync_ok": true
+    },
+    {
+      "id": "a5465a2a9872f4ae2db81b7f48f2ec5f41a3342cc05b267f95e08efa51163917",
+      "write_latency_ms": 6.596,
+      "fsync_ok": true
+    },
+    {
+      "id": "a9bfa5e2ad242dda6bbdf14a05e1b73ac0978ba24a0f95afdc31a2219009558b",
+      "write_latency_ms": 7.964,
+      "fsync_ok": true
+    },
+    {
+      "id": "4d9223b6a6c653c0c0b6dfd44281bd83da62f6ad2980203190e07bc241a2b936",
+      "write_latency_ms": 6.953,
+      "fsync_ok": true
+    },
+    {
+      "id": "e90add46539ac96d0b662414fe3e125325012782d5df8f25c7a5a806235b2ed4",
+      "write_latency_ms": 6.678,
+      "fsync_ok": true
+    },
+    {
+      "id": "87315de52b9ae017fa6ab8dfc8df61d1c44332b9d152bf3f9a0eebb781854976",
+      "write_latency_ms": 6.913,
+      "fsync_ok": true
+    },
+    {
+      "id": "4e365c7dc45d044408963b0166e3bafd783f20db30b7b4901b8a36052292ab59",
+      "write_latency_ms": 7.003,
+      "fsync_ok": true
+    },
+    {
+      "id": "e4a54bbb097ec1adc8f5ae0c8a6a5eb2d8400414017541cf19b280fab094db65",
+      "write_latency_ms": 7.114,
+      "fsync_ok": true
+    },
+    {
+      "id": "5d1c7281de78b091a9c22a377377aee36c1132d297a98b5b21e1d5698a45048b",
+      "write_latency_ms": 6.605,
+      "fsync_ok": true
+    },
+    {
+      "id": "f2a2290c597eaa9c64197fe238c4e373a50a42cedabfec96c45a418a56bc63c1",
+      "write_latency_ms": 6.312,
+      "fsync_ok": true
+    },
+    {
+      "id": "6681bbd3a1d410c5102feb97fd921f0621bf3cb0848ade6f65ec21cd6d751e47",
+      "write_latency_ms": 12.197,
+      "fsync_ok": true
+    },
+    {
+      "id": "a293259af4542a3d510b393aa5c66a2b8a94cda3a201dd740545d11494f3f253",
+      "write_latency_ms": 6.989,
+      "fsync_ok": true
+    },
+    {
+      "id": "3a09d284288085c6c9de22c2865e5bd47883ee0e266ae0a6afecfa0a9ee65020",
+      "write_latency_ms": 7.108,
+      "fsync_ok": true
+    },
+    {
+      "id": "53b155c15b43a927826291467eb1a0ab994e5e312d5e7029bbf6c748e065e193",
+      "write_latency_ms": 6.481,
+      "fsync_ok": true
+    },
+    {
+      "id": "9d1c065fbfd60b680722d05cd01e8d13f499db32c2735a278bff78296f194220",
+      "write_latency_ms": 7.083,
+      "fsync_ok": true
+    },
+    {
+      "id": "9c957d46b4c05ed053faeb95627efd4e12ce2cf4cce59b78a7f17d7f994c41f2",
+      "write_latency_ms": 6.675,
+      "fsync_ok": true
+    },
+    {
+      "id": "eecfdb4983f25f6a85743448637bce3fa6b265bfea50939c313fe9fe634c79fa",
+      "write_latency_ms": 11.373,
+      "fsync_ok": true
+    },
+    {
+      "id": "96851c938bd6f0af17ab325ea529895a37b1ff3f3d8ad3882755f04feb3bb77a",
+      "write_latency_ms": 11.677,
+      "fsync_ok": true
+    },
+    {
+      "id": "e7a6548dc0296cc99e59a5ae02d3376782f31c9a37ac2ba5bfa4a09f4ca7d212",
+      "write_latency_ms": 6.643,
+      "fsync_ok": true
+    },
+    {
+      "id": "6752cac513bed9d9e00622570b92f37315fe8d268a634515f1ecd8fe1eab2543",
+      "write_latency_ms": 6.84,
+      "fsync_ok": true
+    },
+    {
+      "id": "3d51f21e99fe60d94181ce1674327c06d0cee9488ea4ad175c6e999d9e738d43",
+      "write_latency_ms": 6.449,
+      "fsync_ok": true
+    },
+    {
+      "id": "5143f742196b5f39f1a5b0c9f7a252f3e5e23293762f76a03916b4b77b8801d4",
+      "write_latency_ms": 6.318,
+      "fsync_ok": true
+    },
+    {
+      "id": "aa20d27435caaa78d03c9f4b26cf2c7eba52980f31d12bf9256ffe9ed9c1acaa",
+      "write_latency_ms": 11.689,
+      "fsync_ok": true
+    },
+    {
+      "id": "cd2c8809d6c1151074cafaf3676932300ee574cb2ea810ec081c9ebf04709393",
+      "write_latency_ms": 6.512,
+      "fsync_ok": true
+    },
+    {
+      "id": "9d10658638dca37f9978c07672f72b89d2dc2323816a4854710f78a6e2b7c0c4",
+      "write_latency_ms": 11.252,
+      "fsync_ok": true
+    },
+    {
+      "id": "e66a898e4e7a897632154ba8c3f939c5794d9f2115099ab8ccde045b4e5728da",
+      "write_latency_ms": 6.816,
+      "fsync_ok": true
+    },
+    {
+      "id": "41af138a02cf91ffb0d26f6054834da069f9c24d433cc2f8efaadef872d48c2e",
+      "write_latency_ms": 6.813,
+      "fsync_ok": true
+    },
+    {
+      "id": "5783828fd02900ed2c1ee27a7069c94adee7675d8bf4d8ed74368123074b1dc2",
+      "write_latency_ms": 6.566,
+      "fsync_ok": true
+    },
+    {
+      "id": "2224e9e4b729c5a18607df4384afdedb35b4a43df170755eb421b1b4b949f80f",
+      "write_latency_ms": 11.101,
+      "fsync_ok": true
+    },
+    {
+      "id": "f5d28296d0b78200dc662e5e959687f2698d9adbc99b6def7c13b276c34a3903",
+      "write_latency_ms": 11.533,
+      "fsync_ok": true
+    },
+    {
+      "id": "de744d0500046acfbc7bc56e750b7d955d0a98078a8622dfe0c8152650cb43b8",
+      "write_latency_ms": 7.205,
+      "fsync_ok": true
+    },
+    {
+      "id": "cf33083223d30bb5b075092376b0efcbd8679dc865bad78ee188cda9d4136a00",
+      "write_latency_ms": 6.639,
+      "fsync_ok": true
+    },
+    {
+      "id": "03af313302124da944010f8c6c65cbe85b0ce70ac1b6b2744cdeae4d080a7966",
+      "write_latency_ms": 6.619,
+      "fsync_ok": true
+    },
+    {
+      "id": "a6c6bd9cc3f2b297c80a267d4c3588161745556bd4234b51130283a4e88fefce",
+      "write_latency_ms": 6.478,
+      "fsync_ok": true
+    },
+    {
+      "id": "63b1060ecc2dad533a78498f866294de14fc7ae2a04e43d2c8319a2104cec614",
+      "write_latency_ms": 6.432,
+      "fsync_ok": true
+    },
+    {
+      "id": "e83bd4ef4e806edf17eded50bea5fdcde1ec1089437211a574cb066fd10092a6",
+      "write_latency_ms": 7.222,
+      "fsync_ok": true
+    },
+    {
+      "id": "cfd9fb92d4648531a89407c7cc74291243bad36e8c3c9c080eb58fba487f097e",
+      "write_latency_ms": 6.538,
+      "fsync_ok": true
+    },
+    {
+      "id": "4f5f3e4b8fd0d77d47a8b58d7e0d4da69121f1cc5ce7f345929be4aa70f24568",
+      "write_latency_ms": 11.652,
+      "fsync_ok": true
+    },
+    {
+      "id": "e04e1d342538830cee936afbbfb267d88426a016043883eafbd96f997d637913",
+      "write_latency_ms": 6.62,
+      "fsync_ok": true
+    },
+    {
+      "id": "a21c0d709c2fc83715e87e76a22cdeeb0222251bac5240c1f3ed2428e5a97cf3",
+      "write_latency_ms": 6.581,
+      "fsync_ok": true
+    },
+    {
+      "id": "670a5f9aeca16e8457ca01f5cdf66fe3f25dc2b2427fecf7a4ecd2e3b95dfeb6",
+      "write_latency_ms": 6.669,
+      "fsync_ok": true
+    },
+    {
+      "id": "65df4ca4770054e780881e33a47394daa5e680d97dc156e02ba9352291a361a5",
+      "write_latency_ms": 7.191,
+      "fsync_ok": true
+    },
+    {
+      "id": "70d991c1a58455cc3883e20133ab14b769432119ca495e292a836e70c728e1bb",
+      "write_latency_ms": 8.564,
+      "fsync_ok": true
+    },
+    {
+      "id": "2880b164df769362bcefa6001c7001db3d13757d217f79fbc5e1c29ab0bd27d1",
+      "write_latency_ms": 6.602,
+      "fsync_ok": true
+    },
+    {
+      "id": "2cc355be17e9158ccdf94d693ff63853275c0b350ffb01769377b32f8916ec4a",
+      "write_latency_ms": 6.687,
+      "fsync_ok": true
+    },
+    {
+      "id": "c8657ae2e7d729fa07d385d231419d6f4ff8b3e512bb96902a15af69c84012a3",
+      "write_latency_ms": 6.399,
+      "fsync_ok": true
+    },
+    {
+      "id": "6a55aa12ce4167bf9a1c1c4add0d2341f6cf6563fc1175bd3938225dfb048ab0",
+      "write_latency_ms": 6.646,
+      "fsync_ok": true
+    },
+    {
+      "id": "efdb7fafc9dbcd26c9f4abd6cb09c6063bbdc8111d7f7e0467d2185a056ac778",
+      "write_latency_ms": 7.155,
+      "fsync_ok": true
+    },
+    {
+      "id": "6065e60e8b686a9e84c7add32814b9e741b84cc2638e0b3f294749149eaec0ac",
+      "write_latency_ms": 6.589,
+      "fsync_ok": true
+    },
+    {
+      "id": "691231dde559981b8ead23a5f5aa4dbb4a9239d4a62f5dc6ebc872b8660981ae",
+      "write_latency_ms": 6.632,
+      "fsync_ok": true
+    },
+    {
+      "id": "bf9d75a526891aba2d46d7ff7bf075b69d8601ce79802afa97d7bc4b6f840f8a",
+      "write_latency_ms": 6.276,
+      "fsync_ok": true
+    },
+    {
+      "id": "8cf031ef8993694a526745e96b9a41fa477115f3224211384cf42eb94f88fa8e",
+      "write_latency_ms": 6.485,
+      "fsync_ok": true
+    },
+    {
+      "id": "3746ccf5a2bba15ae7ec2f5fc6bbd696bc0b9d174137d8605e3fcce61b2d7852",
+      "write_latency_ms": 11.149,
+      "fsync_ok": true
+    },
+    {
+      "id": "c12222d3c6d4afcfccddb4747a483af4544df7b0d33a29f6f04d967c82287ac8",
+      "write_latency_ms": 11.737,
+      "fsync_ok": true
+    },
+    {
+      "id": "d7078382d3d41e88d4f4f690ccfa860c0cb5d529989ce7cac9487a2a095868c1",
+      "write_latency_ms": 6.513,
+      "fsync_ok": true
+    },
+    {
+      "id": "22186e8a830a0df322be9179cae8e4444961f868248ad7502b7a9a5554a7d8b8",
+      "write_latency_ms": 6.579,
+      "fsync_ok": true
+    },
+    {
+      "id": "c04ae7cc1b98f6be448b847ab0fb0240c9167e623984545ae76e6f1cf2a888b7",
+      "write_latency_ms": 6.844,
+      "fsync_ok": true
+    },
+    {
+      "id": "60f955a8b1197115685fc6ec2190b961f7360b834f356b6afb87b5460311654b",
+      "write_latency_ms": 6.304,
+      "fsync_ok": true
+    },
+    {
+      "id": "8d31b8edc4752d751474fdd8c9c228f26401f9987af6f01a04b649018440671a",
+      "write_latency_ms": 7.487,
+      "fsync_ok": true
+    },
+    {
+      "id": "3422de67c16852ac629228f00cc3bc5b3362decc0ef587cff555841d151c36b4",
+      "write_latency_ms": 6.625,
+      "fsync_ok": true
+    },
+    {
+      "id": "a38a8bfd5380bb5cb839b8b679435fe4e9810d82a866a02e6557b086d7401a8f",
+      "write_latency_ms": 6.718,
+      "fsync_ok": true
+    },
+    {
+      "id": "4602c64fb78b4133c74b02de75c20d831c465de9df3c66ac303d26f77f7e4f99",
+      "write_latency_ms": 6.62,
+      "fsync_ok": true
+    },
+    {
+      "id": "ac2392d89e7acabdad8af4d99956a91a8bb6bcd581cea0f476cef0cdbbee7a27",
+      "write_latency_ms": 6.836,
+      "fsync_ok": true
+    },
+    {
+      "id": "754b1343175bea15979694f109e622ca9813e2a5ad3acabfd3065a02d70dc9f0",
+      "write_latency_ms": 6.697,
+      "fsync_ok": true
+    },
+    {
+      "id": "f97d377fef2e32b1b6bb3a4f36f505af2f519caa8dec96515aa18a7d38bd293e",
+      "write_latency_ms": 6.481,
+      "fsync_ok": true
+    },
+    {
+      "id": "de81832f7ace46bf1686244d5cec87affc4ae1cd683515ecbfe20293d6470e17",
+      "write_latency_ms": 6.724,
+      "fsync_ok": true
+    },
+    {
+      "id": "115d56bdb43d02b25af024492e58f9f07f59349b5da2d2349535b1fa2e477d5c",
+      "write_latency_ms": 6.952,
+      "fsync_ok": true
+    },
+    {
+      "id": "0f7a4eb580c8d4848b397374987c4ad270206f2e22b320608a9ec40bfca1f13e",
+      "write_latency_ms": 6.378,
+      "fsync_ok": true
+    },
+    {
+      "id": "fadd301fc2dc580df25572568cb5bb2968112af4bd0c8f74aa924b72e7e567c2",
+      "write_latency_ms": 6.908,
+      "fsync_ok": true
+    },
+    {
+      "id": "a4f2359eed5ac612acfb5eeb722c93b871084d316856eb197c2df149a1f7e373",
+      "write_latency_ms": 6.891,
+      "fsync_ok": true
+    },
+    {
+      "id": "f4b9e8ef80c1140547fd59950337cb08fcda3f03fb735504773ca5923158b21a",
+      "write_latency_ms": 7.19,
+      "fsync_ok": true
+    },
+    {
+      "id": "40ccbf781bfbec249fa027e5ba03378846b01e626f859e1c575caa4bfb665206",
+      "write_latency_ms": 6.405,
+      "fsync_ok": true
+    },
+    {
+      "id": "7e51be7a5b6a8c68e0f8303b17a28c5f18e93f5650fe1263f4620086de71176b",
+      "write_latency_ms": 11.49,
+      "fsync_ok": true
+    },
+    {
+      "id": "81a19f154ca5d1488a991fc81a2bcc2d8b267a47a19d981635ca6da49160dff6",
+      "write_latency_ms": 6.729,
+      "fsync_ok": true
+    },
+    {
+      "id": "a8f5c9da39a2a19b8a60140cf2fc5201c9d2a0453c34f805da02f52e2fe81d52",
+      "write_latency_ms": 6.665,
+      "fsync_ok": true
+    },
+    {
+      "id": "e0d6327074cb5d6a3dfc1a43a1714642e66723e699f77d4ed54dd63c1212afe8",
+      "write_latency_ms": 6.534,
+      "fsync_ok": true
+    },
+    {
+      "id": "a784ed696b47ed4e91bd9e383aa4952da709d7499561962f0d2619c755aa8864",
+      "write_latency_ms": 6.839,
+      "fsync_ok": true
+    },
+    {
+      "id": "b05af9ae2a5a64c1b198f9c00b440361a1a56f112e76280af0b388d1bfbbbef8",
+      "write_latency_ms": 6.749,
+      "fsync_ok": true
+    },
+    {
+      "id": "c02bef4f23b72471ce2580df972e009cd6c463a41e2f1d9b70284f6f833a3e88",
+      "write_latency_ms": 7.023,
+      "fsync_ok": true
+    },
+    {
+      "id": "01dc4aea703f432e815c350dfea07692b97d475d4da575b864472a6ce4e4910b",
+      "write_latency_ms": 6.77,
+      "fsync_ok": true
+    },
+    {
+      "id": "e911adcbf89c5e9f9986d303c38b48c61bd8a5fd40fbbc8e90a147deacf12a06",
+      "write_latency_ms": 7.179,
+      "fsync_ok": true
+    },
+    {
+      "id": "0db9ceba1c15261400cf2edf1d18eaa6169f19680b323224e75443417ca4e1f5",
+      "write_latency_ms": 6.555,
+      "fsync_ok": true
+    },
+    {
+      "id": "2b896c78356815f7b37f172c09516e925682b91489f662f6f9afaad68efff0c4",
+      "write_latency_ms": 6.196,
+      "fsync_ok": true
+    },
+    {
+      "id": "87391a1c58817b6d769a2eae0ff1fca40f839d8228bc6da562f98cde718b18e3",
+      "write_latency_ms": 6.723,
+      "fsync_ok": true
+    },
+    {
+      "id": "273c2768339ec323c53c6071fc9df8bdd9317a0fcbf35eecc83cc3fcae18f41a",
+      "write_latency_ms": 11.377,
+      "fsync_ok": true
+    },
+    {
+      "id": "d7a660f7aa550e0ca63dbb19371da22e4a12ee63867f372da9aeebd241e812c6",
+      "write_latency_ms": 7.165,
+      "fsync_ok": true
+    },
+    {
+      "id": "e229018a65efa779f5c5c512ed3308233185d5e942400a9c0778af6fdf08b5b1",
+      "write_latency_ms": 6.974,
+      "fsync_ok": true
+    },
+    {
+      "id": "f4c149d0eb76e40b71299b2d4abbf5a4fb194d9a3cb64d99486972d8a3ef7331",
+      "write_latency_ms": 6.508,
+      "fsync_ok": true
+    },
+    {
+      "id": "8195ce9699e8ef9d5c0effbb5602a758228c977b28d090c849f02587c73a165b",
+      "write_latency_ms": 6.469,
+      "fsync_ok": true
+    },
+    {
+      "id": "c95be42fdebf669c3cb29d097160d8d2aa83eb55e68f6ae62c8f87d7cc7b160f",
+      "write_latency_ms": 6.659,
+      "fsync_ok": true
+    },
+    {
+      "id": "dc432f5724b47e1d8feeb0f07dd3be9970c9cb2c1d13dd173c2f39d9117e657f",
+      "write_latency_ms": 6.324,
+      "fsync_ok": true
+    },
+    {
+      "id": "ebb36a9d39cef404d7b72d931a1bbc605f5bad92a92c1a008bada0cc4b9116dd",
+      "write_latency_ms": 6.701,
+      "fsync_ok": true
+    },
+    {
+      "id": "1b16edcddd51216f013a409c9e0e37eea5fef58a06b17a6e2449aca05da5068f",
+      "write_latency_ms": 6.671,
+      "fsync_ok": true
+    },
+    {
+      "id": "10348dd5c0f75a9474302599f6ed1a219b7a15950ca0247bbbd7341db0341af7",
+      "write_latency_ms": 6.479,
+      "fsync_ok": true
+    },
+    {
+      "id": "3477ff80c40ca43fff35fbd306c7272bb3e46ae3835ca4a5a575e87c5829ca19",
+      "write_latency_ms": 6.718,
+      "fsync_ok": true
+    },
+    {
+      "id": "7d1a7640f0c5c61045264d0fe8698fd8262788133056070580e1ee40534a64dd",
+      "write_latency_ms": 6.936,
+      "fsync_ok": true
+    },
+    {
+      "id": "6857ae84edf288f22b6977ea6dccda9637c7b85954f02d24ee52de27eb3ec9bb",
+      "write_latency_ms": 6.208,
+      "fsync_ok": true
+    },
+    {
+      "id": "5e925a71818ca13aa84810dc964ea949843733981506351b8ac7f4df2ef93699",
+      "write_latency_ms": 6.618,
+      "fsync_ok": true
+    },
+    {
+      "id": "c75e016dbcc1a3137c48a3148eb12f0eba6678046280c7e1689409523be3df5c",
+      "write_latency_ms": 6.691,
+      "fsync_ok": true
+    },
+    {
+      "id": "7b3cc8f3987c7cc54be4a208d62bf3dec09d2d877bf694ebabe839748ed8c14f",
+      "write_latency_ms": 6.509,
+      "fsync_ok": true
+    },
+    {
+      "id": "1d46c7ddc68c3f9fd898c534bb0f071f5fba44117eac8d30bda738619434ef2d",
+      "write_latency_ms": 6.858,
+      "fsync_ok": true
+    },
+    {
+      "id": "e1bcb43bac233954524879116b131ccad308873fd9c0453310013baf02b63b7c",
+      "write_latency_ms": 7.031,
+      "fsync_ok": true
+    },
+    {
+      "id": "7549d6b2e3d67ce16ffba597353c8fee85f44a83971f08f77c41061afa043450",
+      "write_latency_ms": 6.841,
+      "fsync_ok": true
+    },
+    {
+      "id": "c19a5bf1214095fc4e4a35f3abb124a48b0bc8cf856f3b68c6ee8b0a6b2dd9a9",
+      "write_latency_ms": 6.748,
+      "fsync_ok": true
+    },
+    {
+      "id": "811674f6cae6f874448de3ad0fa52f835a1990739d090bb37faecd35e271c544",
+      "write_latency_ms": 6.504,
+      "fsync_ok": true
+    },
+    {
+      "id": "5dc8771d46314a04da4d471d530c4558c9ea757233dd0a0566cc3b39d568059e",
+      "write_latency_ms": 6.406,
+      "fsync_ok": true
+    },
+    {
+      "id": "15f731cd63ecba45b14c8c3a970591bf7152314cf8c68d91f1fd9e7243a791d7",
+      "write_latency_ms": 7.18,
+      "fsync_ok": true
+    },
+    {
+      "id": "96c630784583f9b25f48105b0b1cefdf25eff798643fd269f821da2477d7fe07",
+      "write_latency_ms": 6.521,
+      "fsync_ok": true
+    },
+    {
+      "id": "af4d2567e332429ddf1266715b3347b86c0e80ec27fa397b0fe2428c9826b6f1",
+      "write_latency_ms": 6.933,
+      "fsync_ok": true
+    },
+    {
+      "id": "b1bf2f5ca250c1c4fc98380df67eb5f238958cc2de01fc165071fc7f8cc6f0d8",
+      "write_latency_ms": 6.627,
+      "fsync_ok": true
+    },
+    {
+      "id": "cb8421a1884ccb1c40781845bda6a6c7eef5b001573e24b064e11019e6c5d732",
+      "write_latency_ms": 6.524,
+      "fsync_ok": true
+    },
+    {
+      "id": "fc2c00c5257fe8f5814a7fc713b4d49c6127514f502b5861e58c093cf6bb95c6",
+      "write_latency_ms": 6.74,
+      "fsync_ok": true
+    },
+    {
+      "id": "608dde256215584f5166690cb9f49c20d76b7f067236ce280348a21ec05b63d6",
+      "write_latency_ms": 6.576,
+      "fsync_ok": true
+    },
+    {
+      "id": "205a1f85a87463d755c492a26ecd684d0c8076cd6bdc992273cca5bdcbbcfd93",
+      "write_latency_ms": 11.041,
+      "fsync_ok": true
+    },
+    {
+      "id": "662e00e41d7337103eab77df880a8c3b76a48a8c3baaa2f69626f646b3e9dfaf",
+      "write_latency_ms": 6.679,
+      "fsync_ok": true
+    },
+    {
+      "id": "e48a658ed0de8a652113b6d390b5324c8892d2f9f515869f50bb79c24c423042",
+      "write_latency_ms": 6.439,
+      "fsync_ok": true
+    },
+    {
+      "id": "3b3e65fc24562b984bd2322dd0a7090116fe2e262032855a60c9984d8deddd55",
+      "write_latency_ms": 6.79,
+      "fsync_ok": true
+    },
+    {
+      "id": "0042461ac9dc73292d7aa634cd3a307b0b5731b441330174bcdf9b1d09844119",
+      "write_latency_ms": 6.505,
+      "fsync_ok": true
+    },
+    {
+      "id": "c26100bba54f441067a6da4527daec6fb6b327b6d2f403b57e999f0945412a98",
+      "write_latency_ms": 6.628,
+      "fsync_ok": true
+    },
+    {
+      "id": "a50e65da7c4c414b7125a322391869c6a787dbf2ac8893786dee2b77b00bbbf0",
+      "write_latency_ms": 6.526,
+      "fsync_ok": true
+    },
+    {
+      "id": "881f2e8d6dd2a37db26c1149bf46f0cb70d31e74f9e7e4c283f8793dfe469641",
+      "write_latency_ms": 6.604,
+      "fsync_ok": true
+    },
+    {
+      "id": "e2cc9e2ec063b192ed7a9b2eb88296bb991913adb619f39e002593ceeae1c246",
+      "write_latency_ms": 7.657,
+      "fsync_ok": true
+    },
+    {
+      "id": "99fdf97960d667a73b62ab03cda63930a888c2eee19a8af0ebb2f5ce3d6fe052",
+      "write_latency_ms": 6.976,
+      "fsync_ok": true
+    },
+    {
+      "id": "e48ba93ff529d4989f538acfcdc3160c5ad13f72778f79130fccecdefdf271a2",
+      "write_latency_ms": 6.48,
+      "fsync_ok": true
+    },
+    {
+      "id": "d5ace1bf7dc2e313c6fec8cac91bf05c7471003e72a60ce9ecf9f4d4f2499c63",
+      "write_latency_ms": 6.994,
+      "fsync_ok": true
+    },
+    {
+      "id": "caa702e82eb328de3287420f4b85c3b12dfd0386ac995668fcb7f980f2bb31d7",
+      "write_latency_ms": 11.447,
+      "fsync_ok": true
+    },
+    {
+      "id": "6863300759a55f90110978019142663d0ee9e7e500ea5beebc229c1c931a9a7e",
+      "write_latency_ms": 6.451,
+      "fsync_ok": true
+    },
+    {
+      "id": "9012c6a8c632742b7d48be3f1a0d3c4562af9dc7e6fd9e9c29343c06917951ec",
+      "write_latency_ms": 6.849,
+      "fsync_ok": true
+    },
+    {
+      "id": "acbd9731edbf0590c295191a57da0ed994f0ada792b9be8c4618f7ae4fcf5a5a",
+      "write_latency_ms": 6.582,
+      "fsync_ok": true
+    },
+    {
+      "id": "889f9fe4e879d647b656a43afcfcc355806da0c2f84a10d1eec8e79a55749461",
+      "write_latency_ms": 6.948,
+      "fsync_ok": true
+    },
+    {
+      "id": "70a05c50beb82a8da333d03e76ef52ab5a08072287b0f8ec6606bd0de0a90af0",
+      "write_latency_ms": 6.498,
+      "fsync_ok": true
+    },
+    {
+      "id": "c18fd7bc7ccdb3cbd95dc39dab4160ae4544dd285232045aa50db93a56a0f800",
+      "write_latency_ms": 6.41,
+      "fsync_ok": true
+    },
+    {
+      "id": "8abf4c2c8298798c51d08fe3feec69ad361504e3530059200c63ccaab1cb7441",
+      "write_latency_ms": 6.967,
+      "fsync_ok": true
+    },
+    {
+      "id": "89f247a41aa6d015d43bb92c66f1eedb60967127727afeff30b8fde38efb4478",
+      "write_latency_ms": 12.39,
+      "fsync_ok": true
+    },
+    {
+      "id": "225fa28c78473af3591bf6cf7e17f884ed3b49a4f2efda7dd6b2a9ffed33197a",
+      "write_latency_ms": 11.449,
+      "fsync_ok": true
+    },
+    {
+      "id": "cc9defa1a84310903167af81a7648a1b95f46a441285af7938e155ac64f4e0c4",
+      "write_latency_ms": 6.687,
+      "fsync_ok": true
+    },
+    {
+      "id": "91972f62ed51a58b15774c90d45b423d0f2f4465ae49d22fcd00f070064ee58a",
+      "write_latency_ms": 7.125,
+      "fsync_ok": true
+    },
+    {
+      "id": "4632c5ffe165fa3aee50e1b610120d8f7ddc5de3d1545bc67a4b716dcd33751c",
+      "write_latency_ms": 6.498,
+      "fsync_ok": true
+    },
+    {
+      "id": "9836650b8da791758521d6438dea3b0727458123e495a2789b3e811cadb763c6",
+      "write_latency_ms": 6.574,
+      "fsync_ok": true
+    },
+    {
+      "id": "1928ce1ab2804bd7d61c50553bf65512ec366df8213ce52f42dc485f90876ba8",
+      "write_latency_ms": 6.522,
+      "fsync_ok": true
+    },
+    {
+      "id": "59b2728bc909618264112d0986fcdb47fec1d23033b67c1270871bdfb44177c9",
+      "write_latency_ms": 6.557,
+      "fsync_ok": true
+    },
+    {
+      "id": "ab25c0d75f52c859390a0369e2b9abd841a3061a4616b822fd1304ab044b193c",
+      "write_latency_ms": 6.796,
+      "fsync_ok": true
+    },
+    {
+      "id": "c27472a1232319bc97919255f87a61d5c0a3a9211fe136df0cf344a6dcc2e32f",
+      "write_latency_ms": 6.464,
+      "fsync_ok": true
+    },
+    {
+      "id": "8cbafecf129ef32a55e20e518d2e76a3fadfae18f01517d4e4e3d3af2bb80f12",
+      "write_latency_ms": 7.179,
+      "fsync_ok": true
+    },
+    {
+      "id": "7975ed13fee25e73d4dce9998dc78318d32e2a54c1239806ad787e465995d126",
+      "write_latency_ms": 6.9,
+      "fsync_ok": true
+    },
+    {
+      "id": "38fc847e0e72084e90072084deafaef25f88f332cafeeb0778117eaeedb933f6",
+      "write_latency_ms": 6.256,
+      "fsync_ok": true
+    },
+    {
+      "id": "9086f3d3aea05357f2fce3403a0ef5bcfde5ac09904a3ad63df26578daf3ee91",
+      "write_latency_ms": 7.445,
+      "fsync_ok": true
+    },
+    {
+      "id": "042576a4cc15530f49a84144c412be1cd0e91b949068f797d4ce2ecf31192093",
+      "write_latency_ms": 6.774,
+      "fsync_ok": true
+    },
+    {
+      "id": "781a49193862b0e317c0aa7dcd9de1a1fdf0318b7d708e570a8545a16a35a52d",
+      "write_latency_ms": 6.828,
+      "fsync_ok": true
+    },
+    {
+      "id": "81b7f8f1b994a6d9f20661dcc11bb1c825c536009beace582d3a420740d39e80",
+      "write_latency_ms": 16.328,
+      "fsync_ok": true
+    },
+    {
+      "id": "e858e33ac97bc2621e8a529b1a69dd1ad2cb8453f35e6adcde222ae36c9ed932",
+      "write_latency_ms": 6.726,
+      "fsync_ok": true
+    },
+    {
+      "id": "d2ba6cbadec3e4c610beef29a2873fae98665339db371211795b1ade4798bae7",
+      "write_latency_ms": 6.556,
+      "fsync_ok": true
+    },
+    {
+      "id": "6e1d7cae60ac90ac9d601de57827734e0d3d5520de36de55beceb238bec4651b",
+      "write_latency_ms": 6.36,
+      "fsync_ok": true
+    },
+    {
+      "id": "fee4c602a58ad525d0706fe894a7f392d74137dea35a7fb5e7952d20753ab00e",
+      "write_latency_ms": 6.702,
+      "fsync_ok": true
+    },
+    {
+      "id": "0291ed7c2c7cca6d958248001ad813c7b9309bcc02e1a40b6b80bc6caf11d6a2",
+      "write_latency_ms": 6.269,
+      "fsync_ok": true
+    },
+    {
+      "id": "049c8c98a1ac65f210e82d51e1cad2fc30d57cef0e4956be808cf1c43a537e45",
+      "write_latency_ms": 6.703,
+      "fsync_ok": true
+    },
+    {
+      "id": "38baab7dcf167374f7c97ec301ec349b0b54d7727871031d4216b2e0dbc1192e",
+      "write_latency_ms": 6.859,
+      "fsync_ok": true
+    },
+    {
+      "id": "2c343e1fbd8313275c81c419a2f90b392b023c15709553f76fede23fe832b1af",
+      "write_latency_ms": 6.68,
+      "fsync_ok": true
+    },
+    {
+      "id": "f867e04be6de8829650aacd91ccf1b65bbdaf66cbc4eecbaecba9af8e4d4a0bd",
+      "write_latency_ms": 6.747,
+      "fsync_ok": true
+    },
+    {
+      "id": "8afadbe73a90d8d330b079fa1b3481c8ab7a7a87e27b53e6fb893d078d83f955",
+      "write_latency_ms": 6.591,
+      "fsync_ok": true
+    },
+    {
+      "id": "8dc5a21b6e895639fd1b4e7fea8ce4e49e41537bf4f5796f1d229c01d02a5e1c",
+      "write_latency_ms": 6.618,
+      "fsync_ok": true
+    },
+    {
+      "id": "55e10b57714e388e3f9f7d25230601cd1dba78988c2c6dbadd3fbe59fe234a84",
+      "write_latency_ms": 7.063,
+      "fsync_ok": true
+    },
+    {
+      "id": "1144bb9bef7229f7cee927a1fd3a46fb685dab58a0d6b21c9f8690c8c09caa78",
+      "write_latency_ms": 6.635,
+      "fsync_ok": true
+    },
+    {
+      "id": "1a38c13b15cdd48784eb0999ab2ffa98c2a6e62d6074299ea83fb399d316ed78",
+      "write_latency_ms": 6.85,
+      "fsync_ok": true
+    },
+    {
+      "id": "e5d74e327fea88c8ffff56698b5c3a51102e434821243db2068201848a7cd7e3",
+      "write_latency_ms": 8.307,
+      "fsync_ok": true
+    },
+    {
+      "id": "44cc38bdf2749017b58c07b3518a24933b1dfd5c4d0a87d656410a47c85a9792",
+      "write_latency_ms": 6.721,
+      "fsync_ok": true
+    },
+    {
+      "id": "ea9e9e66c4b3197fd1e3373e8e7de00b334d99cc8c4311c352b3e5a816da754f",
+      "write_latency_ms": 6.867,
+      "fsync_ok": true
+    },
+    {
+      "id": "df81990d6e1845cbb8da422d359450eb78d857c3233b864292bf57175f5c3a0a",
+      "write_latency_ms": 6.939,
+      "fsync_ok": true
+    },
+    {
+      "id": "8c12c436569ad87ad1a95a5be5f792b68c11adae416a0afa6e473d7ffcf1e7f1",
+      "write_latency_ms": 6.429,
+      "fsync_ok": true
+    },
+    {
+      "id": "a7a4fbada8b7525ca7cc5ae12ac347614a236eef44d3ff61f6adc6e9345fadf0",
+      "write_latency_ms": 6.809,
+      "fsync_ok": true
+    },
+    {
+      "id": "5016ec69b54de8d87da78e54f9f6e15eb43224f22bbf894e3e84da9143458798",
+      "write_latency_ms": 6.524,
+      "fsync_ok": true
+    },
+    {
+      "id": "c3ab7d921d8fee5942dc2b1c02d62f75aa8d9a0cfd94a3d725a5d9f9b76e847d",
+      "write_latency_ms": 6.676,
+      "fsync_ok": true
+    },
+    {
+      "id": "e30b9fe72a170eeb917a2fd4bf99d5d8025cf071fe3a6b44a241065a9340487c",
+      "write_latency_ms": 6.506,
+      "fsync_ok": true
+    },
+    {
+      "id": "bce72c94fdc1393a09618084965a9b883ff25a8fbefb19fa6866d73573fc7007",
+      "write_latency_ms": 6.345,
+      "fsync_ok": true
+    },
+    {
+      "id": "71ae3df240f6d39d645aa7a9a828e756cec97f1b6fb03516a9b3fc8c03af9b00",
+      "write_latency_ms": 11.26,
+      "fsync_ok": true
+    },
+    {
+      "id": "d1f472d49ede5983a01c5549ca61a501f73777f2dc3a61faa8cc02fca39db543",
+      "write_latency_ms": 6.643,
+      "fsync_ok": true
+    },
+    {
+      "id": "cd48a8d503a79bac5648fda8efad98d0642024387e26c26e59aacbb1e25b1cc1",
+      "write_latency_ms": 6.302,
+      "fsync_ok": true
+    },
+    {
+      "id": "9e4f251d0002ac4c2af54f382b5f646d7843f69f69e1701a9ee7a9b6886231e7",
+      "write_latency_ms": 6.624,
+      "fsync_ok": true
+    },
+    {
+      "id": "6b6705dc68ab743488f6435b737a783cb2cfb84f2fad788714356806d2d94c76",
+      "write_latency_ms": 7.091,
+      "fsync_ok": true
+    },
+    {
+      "id": "43799584ef7418260212e5cd9057d912ac739f9bebf889f20d384a9c85362849",
+      "write_latency_ms": 6.733,
+      "fsync_ok": true
+    },
+    {
+      "id": "bde09f5acedb011234d2e589bb63d95d63b1d0a65f66fef807f9cd9d9a139b66",
+      "write_latency_ms": 10.993,
+      "fsync_ok": true
+    },
+    {
+      "id": "262cebb8209faf77d065cf462eef911fa2944950af308df55a72e0d0c8a234cf",
+      "write_latency_ms": 6.631,
+      "fsync_ok": true
+    },
+    {
+      "id": "e738c1d3f2c9e2785a68a0f8e4fff7b7397aaca44bda85c1db995b12aaa80057",
+      "write_latency_ms": 6.494,
+      "fsync_ok": true
+    },
+    {
+      "id": "887a3443bfba6cd4b1370a5ddb694607434695fe34b86dc95d6dc94713dad581",
+      "write_latency_ms": 6.698,
+      "fsync_ok": true
+    },
+    {
+      "id": "d98942d0959e0ec56bc397ed6bf1e652f55eb232fecd4cd30e38827dacd01953",
+      "write_latency_ms": 6.545,
+      "fsync_ok": true
+    },
+    {
+      "id": "b0ccf9bd42db157ad43f21621fcb2077ffffbb97245e66e50a5ba003bad6591a",
+      "write_latency_ms": 6.562,
+      "fsync_ok": true
+    },
+    {
+      "id": "b862ec4aca1f5d31086c8100852c9a06413be3de3820d82c16b531a50b656623",
+      "write_latency_ms": 6.406,
+      "fsync_ok": true
+    },
+    {
+      "id": "38168478cf4c6f5ce2928b9070fc4dd64291e2a0a892dcee49cf42d4f6b2df53",
+      "write_latency_ms": 7.021,
+      "fsync_ok": true
+    },
+    {
+      "id": "55189044cd96ddec51d4c7b32f6d0283e0dcbcdc413a48ea289cb443f749ac78",
+      "write_latency_ms": 7.064,
+      "fsync_ok": true
+    },
+    {
+      "id": "2ab85a42a55bf376d59facbc2c406bdd096f0771b4323d14a0d14d68eea29e16",
+      "write_latency_ms": 7.964,
+      "fsync_ok": true
+    },
+    {
+      "id": "0bd37785562c10f894dd6ba154b5763d90f6817a98d65dc1be034996a34e2341",
+      "write_latency_ms": 8.286,
+      "fsync_ok": true
+    },
+    {
+      "id": "71bc0edaf0399c0212f7f7e0a818ba5e233eda99c5fb06abc2604b00c818fea2",
+      "write_latency_ms": 6.599,
+      "fsync_ok": true
+    },
+    {
+      "id": "6e9fb380caf811a5ada83776d0245fe1f42c2806544443e67c5cc6c74dda528d",
+      "write_latency_ms": 7.785,
+      "fsync_ok": true
+    },
+    {
+      "id": "6f7b8031e98ad56ae55c24f4154a1353f076d1ff1687e2c399e8c4d92baf1a56",
+      "write_latency_ms": 8.377,
+      "fsync_ok": true
+    },
+    {
+      "id": "aaea98ac5eca9000c1b3a67d60d138ed9b9a2016f96f7a29c186482bfd83c01b",
+      "write_latency_ms": 8.587,
+      "fsync_ok": true
+    },
+    {
+      "id": "20725bca03c0b1a1159fe9e4591885345a09999f1fd353efe40029e96a6fe28d",
+      "write_latency_ms": 7.166,
+      "fsync_ok": true
+    },
+    {
+      "id": "d7c2906a46337ad104686a5206bcbfab81dea125f176cc23931839bd87ddc626",
+      "write_latency_ms": 6.97,
+      "fsync_ok": true
+    },
+    {
+      "id": "7ac04b8dbaac2c9bb578ab061e0701d1883f815ed7c769cbfe46f748934229d3",
+      "write_latency_ms": 6.607,
+      "fsync_ok": true
+    },
+    {
+      "id": "d2736ce1c1d362cf28f22671e4896741d02ff03887b6d9565dabbf9b84aa9a6b",
+      "write_latency_ms": 6.53,
+      "fsync_ok": true
+    },
+    {
+      "id": "57156d6b65f1ae4f551c2e244df29347a34c3f68805824a64e6ff2347ea929f8",
+      "write_latency_ms": 6.713,
+      "fsync_ok": true
+    },
+    {
+      "id": "79ab960174e7093206486ff7b74952210c9480a544138e9a71a925aba3eee200",
+      "write_latency_ms": 6.837,
+      "fsync_ok": true
+    },
+    {
+      "id": "d5903768071f25f192eb346908ad1918ff6551966e7bb5a9e19eb8382c542cf5",
+      "write_latency_ms": 6.562,
+      "fsync_ok": true
+    },
+    {
+      "id": "157ad483b6b2366736553d409fda1c7ff219eb8cb684d3dfcd35fd4d7913fa72",
+      "write_latency_ms": 6.692,
+      "fsync_ok": true
+    },
+    {
+      "id": "65885e56559471eda685a58dadc309f068b7ecb2888e1203fe38cae07b5b7778",
+      "write_latency_ms": 7.332,
+      "fsync_ok": true
+    },
+    {
+      "id": "70a0b219310e48bebca54c02b6577454cc0492e9821caecf2c76adfed9a45c15",
+      "write_latency_ms": 6.503,
+      "fsync_ok": true
+    },
+    {
+      "id": "69ab2174fba3122416eab4266aee79656e8cb1e8d5592084a68729f63a3c606c",
+      "write_latency_ms": 6.844,
+      "fsync_ok": true
+    },
+    {
+      "id": "e5adf1afce36e69cf890fbb89d3c24b8fc7e4391eb883df5efd00aa382136c59",
+      "write_latency_ms": 6.539,
+      "fsync_ok": true
+    },
+    {
+      "id": "889153b5d9f8f1573821e36007fa36dfd43a09c14d563fda096b58dd9a6b4a13",
+      "write_latency_ms": 11.479,
+      "fsync_ok": true
+    },
+    {
+      "id": "1595615f36ccacf75d54ba59a1761a496e5caa41c82cf71fed84a82db7e8e21c",
+      "write_latency_ms": 6.86,
+      "fsync_ok": true
+    },
+    {
+      "id": "3262441c9eb4d8cd63bb4837768a6d2c86fb03c964bba08ae8ebc756a7bf08d5",
+      "write_latency_ms": 6.802,
+      "fsync_ok": true
+    },
+    {
+      "id": "800ee2a29a3b6652caed27306cbd2cc87dbcb862208b9b5963112e31aca81bed",
+      "write_latency_ms": 6.902,
+      "fsync_ok": true
+    },
+    {
+      "id": "08f3f42c4edee061d591eda54bb2462b57febff086f59cbad7ccf2291b62cb1c",
+      "write_latency_ms": 6.952,
+      "fsync_ok": true
+    },
+    {
+      "id": "5ed94b0a94f538b0a416fedc934ceb2a670eb0f17429318d733f8274cc49d034",
+      "write_latency_ms": 7.007,
+      "fsync_ok": true
+    },
+    {
+      "id": "5756eeffbe3620f72d264e18913a1e9c1568883f3becd44ad998266796c281e7",
+      "write_latency_ms": 6.675,
+      "fsync_ok": true
+    },
+    {
+      "id": "d93927a28e7ebe5be35efbc96732e3479387754df320aa4cd3f80604d6cac2e4",
+      "write_latency_ms": 6.562,
+      "fsync_ok": true
+    },
+    {
+      "id": "6c326b3a841e804835722f9be8d653e4fb11a540afed6fa137072ec0518dbdad",
+      "write_latency_ms": 11.201,
+      "fsync_ok": true
+    },
+    {
+      "id": "c349eac5e922497b401e358f52c69ebb3dbff5126e2e06244fe68e91c0590e4c",
+      "write_latency_ms": 6.654,
+      "fsync_ok": true
+    },
+    {
+      "id": "1452f6c75f7180f0a61807c5a431e9089ffc155d6c8e151b497e83715f2e3eca",
+      "write_latency_ms": 6.624,
+      "fsync_ok": true
+    },
+    {
+      "id": "7dc1ff5d027b07e46d4cf4817443723ea3854879213aeba622e288baa74840da",
+      "write_latency_ms": 6.944,
+      "fsync_ok": true
+    },
+    {
+      "id": "893bbc0145c2ceb7fbfd4fbe52171e8f6263781b296135f271de32479d0e6f16",
+      "write_latency_ms": 7.101,
+      "fsync_ok": true
+    },
+    {
+      "id": "3f867b37b42d3e733cb5160fb3b89e8caa6694d7a357b4b475ac0d955d387e3c",
+      "write_latency_ms": 11.194,
+      "fsync_ok": true
+    },
+    {
+      "id": "541428cff0ebe63807c682a2ae3801a7fa280a2bf1096aa0a3ce72420f4c23e8",
+      "write_latency_ms": 6.773,
+      "fsync_ok": true
+    },
+    {
+      "id": "a63a54be2e9c256721ccd552a5e188617ab61cf5cd0a3c42a6e630583237ed8a",
+      "write_latency_ms": 6.532,
+      "fsync_ok": true
+    },
+    {
+      "id": "42c6017eaea7db7284a566a711b6753135f49694da26d908312d7de2000dbe42",
+      "write_latency_ms": 8.258,
+      "fsync_ok": true
+    },
+    {
+      "id": "f629dde94e70a9e11065e21e86f8c86ff8a30c2d332e535e993cd4b6a818bd60",
+      "write_latency_ms": 11.58,
+      "fsync_ok": true
+    },
+    {
+      "id": "2fceeb75b9f0675be5c1eef1b60536743d099ae31be2388dafccc1269df305fb",
+      "write_latency_ms": 6.431,
+      "fsync_ok": true
+    },
+    {
+      "id": "e622cbd7601363642703c7ebccab020999341c8684f190331dd4f1ec8299d3d9",
+      "write_latency_ms": 6.539,
+      "fsync_ok": true
+    },
+    {
+      "id": "18c4847db6406f3cc4750becce6aa09af9b61fe8fa1cc4f0ba67e4fa931b3cd2",
+      "write_latency_ms": 6.744,
+      "fsync_ok": true
+    },
+    {
+      "id": "f437137d804d27802ca358f4098dcd92859a9b21a27d9350f132e0cf38c9dc40",
+      "write_latency_ms": 7.019,
+      "fsync_ok": true
+    },
+    {
+      "id": "fbabda2bd4995832c1762cb6b8281c1fccae318cecef92ffd09d3db16949be57",
+      "write_latency_ms": 7.242,
+      "fsync_ok": true
+    },
+    {
+      "id": "435b10b3e1f5b785448c42636bfd0f06e21bb4b4be7fc3156ab02ab331f0d55a",
+      "write_latency_ms": 6.801,
+      "fsync_ok": true
+    },
+    {
+      "id": "2dc81ab2ec9701d44639373bf784fa9e1a53506431a2bfc58f140137acb04e34",
+      "write_latency_ms": 6.834,
+      "fsync_ok": true
+    },
+    {
+      "id": "307160296d35e2f6d4d12869363dd292cf075297dff7aa5362108bda6bd46b5b",
+      "write_latency_ms": 6.65,
+      "fsync_ok": true
+    },
+    {
+      "id": "a2b570cadfa40ef7aaf25e9876dd3fae6a5ba6f2e89c469af0bcc9e918130933",
+      "write_latency_ms": 6.632,
+      "fsync_ok": true
+    },
+    {
+      "id": "2b80aaed8b6e628475c688df4792e2587054df30cb07e2c25ba5d00436e9b543",
+      "write_latency_ms": 6.65,
+      "fsync_ok": true
+    },
+    {
+      "id": "0c622a725767858a6f07faaa28f87cc38018ab77596338d3108c4429dd5f472f",
+      "write_latency_ms": 6.677,
+      "fsync_ok": true
+    },
+    {
+      "id": "80671b17eefa8e21271de6e775dc7159483916537269a3786c794728a701ebc2",
+      "write_latency_ms": 6.635,
+      "fsync_ok": true
+    },
+    {
+      "id": "b444ab18fc7055dd217d8e11fb9d5ddb11d5cf73ed6d5737e50f5c4779fe69ef",
+      "write_latency_ms": 6.371,
+      "fsync_ok": true
+    },
+    {
+      "id": "2b0f1c981d55d83fe717fd16230f45457f255c5c4dd4a7913cf93e871aebcdfe",
+      "write_latency_ms": 7.107,
+      "fsync_ok": true
+    },
+    {
+      "id": "22b8ef8f85bcbd03fa6207cf4d7177822645822660b63ae85f6237e67fc51918",
+      "write_latency_ms": 6.701,
+      "fsync_ok": true
+    },
+    {
+      "id": "74fb02b10c72a867995c52c57a2b281257b95ffffd0d92cc58a645eb6e782660",
+      "write_latency_ms": 6.555,
+      "fsync_ok": true
+    },
+    {
+      "id": "2e96d799fd4fe1f2bbfeff053487b19af6aec11cdf2a39e8b04d2649bb67b424",
+      "write_latency_ms": 6.597,
+      "fsync_ok": true
+    },
+    {
+      "id": "4efcdce5bd84c1e796abaaebe0c7fa79f6e2a76271069024b044dd3bcb43a2cb",
+      "write_latency_ms": 6.879,
+      "fsync_ok": true
+    },
+    {
+      "id": "994009029b3df2aa66fab1006ff425c4dd094efe8b44324c468bb379309d426c",
+      "write_latency_ms": 6.719,
+      "fsync_ok": true
+    },
+    {
+      "id": "7452929c6337516469377333e0226a3c168b89ba3e5e5c8887775ba136b93195",
+      "write_latency_ms": 6.808,
+      "fsync_ok": true
+    },
+    {
+      "id": "b225c4aeb176ed7af1a4e548384d3b4f9b3f0fea8ee521660442f92398735f9e",
+      "write_latency_ms": 6.861,
+      "fsync_ok": true
+    },
+    {
+      "id": "b659589af61d48cad4e9cbefdb8caefc3e2f8d2175c3a8c74cfe72b4f33f4750",
+      "write_latency_ms": 6.573,
+      "fsync_ok": true
+    },
+    {
+      "id": "5c64f825f658a8ec763450b95bc4a47435bcd772b381adaa401bf93fd1d8f616",
+      "write_latency_ms": 6.818,
+      "fsync_ok": true
+    },
+    {
+      "id": "17fc115fe1f17367ec10ba592896472fed60785a9d5a76e85f3d5091627438c8",
+      "write_latency_ms": 6.486,
+      "fsync_ok": true
+    },
+    {
+      "id": "e7e3c9ffb23c50ac50da4c7851139791e2e0d0d76868fcb27ae21d62bfce87bb",
+      "write_latency_ms": 7.513,
+      "fsync_ok": true
+    },
+    {
+      "id": "9ccbff734b7546c1353e2245e2c53517061fe4e7ba68ed4079858a4711b043db",
+      "write_latency_ms": 6.546,
+      "fsync_ok": true
+    },
+    {
+      "id": "757689db5c58a726d3ab11b1e0a4c9551aebe6429e6f3be1a8b7f7edd9a55397",
+      "write_latency_ms": 7.465,
+      "fsync_ok": true
+    },
+    {
+      "id": "dcf98e34d3f464691e83f114d2a8319b0caa6674548c52ff17cbda2f2746d63d",
+      "write_latency_ms": 6.57,
+      "fsync_ok": true
+    },
+    {
+      "id": "36dfa947ca93affb3cd9965d6a5b79d2b6e0c6831989f2c83dbb126149e3079d",
+      "write_latency_ms": 6.503,
+      "fsync_ok": true
+    },
+    {
+      "id": "7cad88b4538ff8172ecc65541c9e0486c319db23f8dfa0e05b4a89429624dc2f",
+      "write_latency_ms": 6.766,
+      "fsync_ok": true
+    },
+    {
+      "id": "f0961d49c25bd2f483e58a65366dad6b3e59c4c047837e271b8576bec4815e9b",
+      "write_latency_ms": 6.507,
+      "fsync_ok": true
+    },
+    {
+      "id": "9678023faeacc0b696e2f1beeda27d9ab739a757e67ab7b0d3b3c1ac447322ef",
+      "write_latency_ms": 6.659,
+      "fsync_ok": true
+    },
+    {
+      "id": "0c4caa479cc0f05af5a9eca988aefd9fa6f845574575985f65434571489693b9",
+      "write_latency_ms": 6.81,
+      "fsync_ok": true
+    },
+    {
+      "id": "8396ff01be6fa9263dca99823042c35fe1f391982c854640a50c87bb44ef37ae",
+      "write_latency_ms": 7.428,
+      "fsync_ok": true
+    },
+    {
+      "id": "1bb27f392e44b7674b6fc30a8b9b5a32fcec7877643c13ba086d8ff75b65e465",
+      "write_latency_ms": 6.634,
+      "fsync_ok": true
+    },
+    {
+      "id": "ab613e993861b596001c7770215da33a9e74d0e9d467cc1510a1821ea4e7d89b",
+      "write_latency_ms": 11.471,
+      "fsync_ok": true
+    },
+    {
+      "id": "4e22569934c3db0c9b64ac889474ddda02e7d26853a715d6ba7594e8d41e344b",
+      "write_latency_ms": 6.728,
+      "fsync_ok": true
+    },
+    {
+      "id": "bcb1ed8b35a0eb53f19326d711355c29c134baa98e067e12a084a5480c3f088a",
+      "write_latency_ms": 6.367,
+      "fsync_ok": true
+    },
+    {
+      "id": "9b0d9064bcd11c126b0eca679f9abbacaf6801375a742b1eb9ee1aa7e6320bbc",
+      "write_latency_ms": 6.895,
+      "fsync_ok": true
+    },
+    {
+      "id": "ff1544db9962215d3e4b3007079d448184269ebca1e55fe88767d01620b019e3",
+      "write_latency_ms": 6.465,
+      "fsync_ok": true
+    },
+    {
+      "id": "450f5280250af77b7d4f930dfe659c8e06d0dcdc79066e118cabd4b67fb24897",
+      "write_latency_ms": 6.536,
+      "fsync_ok": true
+    },
+    {
+      "id": "90ed80e16297b4aa6693e0399e6cdb922eee3b2fc6075fad6c75943647ea3e05",
+      "write_latency_ms": 6.525,
+      "fsync_ok": true
+    },
+    {
+      "id": "3a55b00a732b8d3d7623d47e809f24e5251230a551b56cb9ee19e6650ae95bbd",
+      "write_latency_ms": 6.912,
+      "fsync_ok": true
+    },
+    {
+      "id": "bc18f8fe94723e46b0fa0a318841b78582686fb70181c137b67e61c5d2d89f22",
+      "write_latency_ms": 6.44,
+      "fsync_ok": true
+    },
+    {
+      "id": "14f54d2345d400fa12574aaccdc773fa38e9c94de055ab6a7c98d90dc9be7e35",
+      "write_latency_ms": 6.666,
+      "fsync_ok": true
+    },
+    {
+      "id": "14232372d9c383151064535f58443af3cdee96613750aa77d1651370fc8bb1af",
+      "write_latency_ms": 6.654,
+      "fsync_ok": true
+    },
+    {
+      "id": "15e069b39ee80121fe1d98207c61a1f21e19780658c6ebeef3767e7765298192",
+      "write_latency_ms": 6.434,
+      "fsync_ok": true
+    },
+    {
+      "id": "38bc337e8bae60516b206e84b3f40e9db0e930abf4ce14e6df09aac30e7bf27d",
+      "write_latency_ms": 6.46,
+      "fsync_ok": true
+    },
+    {
+      "id": "cfc6f2919060122782f368b4a34c051b85d14aff4b45c71b1d85bde387bb5b15",
+      "write_latency_ms": 7.038,
+      "fsync_ok": true
+    },
+    {
+      "id": "a1f8579a663d48971b9837c5c727c8ffbba7612252bc53ab10f05c99a891686b",
+      "write_latency_ms": 7.208,
+      "fsync_ok": true
+    },
+    {
+      "id": "f26556ef314f439cff9b31f15aab5bf6c616bfd6560056b97f613c933af83237",
+      "write_latency_ms": 6.61,
+      "fsync_ok": true
+    },
+    {
+      "id": "a7b545614f3014d5eced8881bd4292e1f1b52c6fa5ce50bfaad801ea31b37585",
+      "write_latency_ms": 6.783,
+      "fsync_ok": true
+    },
+    {
+      "id": "0d7a7f079810680b4a40c30e5684783e7102aa022af3f7bf0689cdb15186d45e",
+      "write_latency_ms": 6.504,
+      "fsync_ok": true
+    },
+    {
+      "id": "437ff7730cfac1bf8fa05aa58d1533c94e2bd19d2379c8dfddc9e0c73ed517b6",
+      "write_latency_ms": 6.446,
+      "fsync_ok": true
+    },
+    {
+      "id": "7ed440bf0e02d2ca88b1d7c7e1fea69a9237eb9fdfa83336315bf981ef736f07",
+      "write_latency_ms": 6.763,
+      "fsync_ok": true
+    },
+    {
+      "id": "af10c787b93d7b829091d2d3a6183eb49ea3b38e04608cfea538f7b503f3fa8b",
+      "write_latency_ms": 6.757,
+      "fsync_ok": true
+    },
+    {
+      "id": "d0d399c4d16712867755fa57d77ab371a0f3d5b460d74ab0e06ac2074c5b40ea",
+      "write_latency_ms": 6.829,
+      "fsync_ok": true
+    },
+    {
+      "id": "f86c0e6160571e06f1d69d5b631ce4c125c4f8470c3ee475f272fa8a9e8956ca",
+      "write_latency_ms": 6.847,
+      "fsync_ok": true
+    },
+    {
+      "id": "4401dc429b8286cee14e6044730e9e90624d1eae9d5ff2f2f08ec822558a2356",
+      "write_latency_ms": 6.547,
+      "fsync_ok": true
+    },
+    {
+      "id": "17dc1d4cb51e3650b9d549731805dbdf7bfeec1b28d0e66fadd5ba3a86601682",
+      "write_latency_ms": 6.879,
+      "fsync_ok": true
+    },
+    {
+      "id": "235625350f0b6d2a10eca55fbb43edfadba88478de518bc14ae4806d6fbaba04",
+      "write_latency_ms": 6.567,
+      "fsync_ok": true
+    },
+    {
+      "id": "d6c24f00d7a63bc38c765bcb224d87aac414d74e3dcb0a62beff8ecd29d0eb52",
+      "write_latency_ms": 6.431,
+      "fsync_ok": true
+    },
+    {
+      "id": "76d460ea7f29db12ee503707a2e90ead3066f0e9ec080cd829a670e69c0bb19b",
+      "write_latency_ms": 6.84,
+      "fsync_ok": true
+    },
+    {
+      "id": "98cb51a91eabd7c7720f4a197c3eaad5170339ecddb02c3f1aed63ebfa67f7f1",
+      "write_latency_ms": 6.532,
+      "fsync_ok": true
+    },
+    {
+      "id": "417f16bab792727e2ef86c21e019d13923bd08f5eba4f0c92fc4831fddd44ef9",
+      "write_latency_ms": 6.59,
+      "fsync_ok": true
+    },
+    {
+      "id": "6f373a558ccbc2ba8038068a781279c2c9f4b5b371dac9402fd47f5ebebc7fc9",
+      "write_latency_ms": 7.42,
+      "fsync_ok": true
+    },
+    {
+      "id": "abea4af13e3b36278f7d4ff192b12d93bfa9a9c07184648f44c925812577df7e",
+      "write_latency_ms": 6.487,
+      "fsync_ok": true
+    },
+    {
+      "id": "c9c4104f1206570a821a068f1bede380b08b641ab27afad56ea5f7dd1638d9cf",
+      "write_latency_ms": 6.747,
+      "fsync_ok": true
+    },
+    {
+      "id": "ef756652d6d59043a7d681822a4688dedfc2d9b6d1875d552dc8255372500333",
+      "write_latency_ms": 6.539,
+      "fsync_ok": true
+    },
+    {
+      "id": "54a3da8d6bec1c4a93a9f739fdf45d48f32f3f98577db71253eb4dbee511468d",
+      "write_latency_ms": 6.591,
+      "fsync_ok": true
+    },
+    {
+      "id": "f2a77b038b9439c9d917971582dcb0cecc9830ccdd3fe49dbeccbb02da69039f",
+      "write_latency_ms": 6.845,
+      "fsync_ok": true
+    },
+    {
+      "id": "b137b91de6abf3b9a204b64f15fa6399d2cda79526c55eae449872a90051d1db",
+      "write_latency_ms": 6.339,
+      "fsync_ok": true
+    },
+    {
+      "id": "2f38c709cfba2374b90337c2839ba19de4298a40c9f22b2cb97e9fb31dee3069",
+      "write_latency_ms": 6.976,
+      "fsync_ok": true
+    },
+    {
+      "id": "abe61f3da50d4b027165b97bad04b4abadf2f3064b15c2c28bb3193ec442d270",
+      "write_latency_ms": 6.681,
+      "fsync_ok": true
+    },
+    {
+      "id": "dd8cb7fccca3b3f799406552f4d717f76fb976488d2eb8e48b914aaa6ff7f2b9",
+      "write_latency_ms": 11.822,
+      "fsync_ok": true
+    },
+    {
+      "id": "a736c3ae5a1df6217576e508c2ca1fc8162a3c5ad64554c0ce8f58145e89d7f0",
+      "write_latency_ms": 6.428,
+      "fsync_ok": true
+    },
+    {
+      "id": "d4805cbb41ed4878d16830dd48eac3d7a93ff3bd726cd88f32fdeab0e29d08ac",
+      "write_latency_ms": 6.769,
+      "fsync_ok": true
+    },
+    {
+      "id": "843340342f5bc47bd234f97ee880115204d6c08131a02c33de448a8c46b339f0",
+      "write_latency_ms": 6.649,
+      "fsync_ok": true
+    },
+    {
+      "id": "008859c4bfd184c11e7553534b2da9d88b37d34deb8abed304933f351a05f340",
+      "write_latency_ms": 6.743,
+      "fsync_ok": true
+    },
+    {
+      "id": "7530cf546d66d5eb5e756ba800ef7b5402038a876bbca7b536a2f84effdcdc68",
+      "write_latency_ms": 7.278,
+      "fsync_ok": true
+    },
+    {
+      "id": "674e63462c1571c0a8acd4a9191293a754469708babdd33c074a9ea2a6e37793",
+      "write_latency_ms": 11.134,
+      "fsync_ok": true
+    },
+    {
+      "id": "0a01b768cad99635638c14391e4ada35a51471e813cc514d332a081416430ab5",
+      "write_latency_ms": 7.1,
+      "fsync_ok": true
+    },
+    {
+      "id": "b7296f3a6f4d2925b0128e960141b86c6bec4e5c2b91741dff25dc6c324a4641",
+      "write_latency_ms": 6.235,
+      "fsync_ok": true
+    },
+    {
+      "id": "f466fe9f31efe30113fe49449bee6938ca8171a15e632c626c2b26d961b1ed41",
+      "write_latency_ms": 6.428,
+      "fsync_ok": true
+    },
+    {
+      "id": "81219377df4c08de7616c1c96aff2c5b1eb15acc13afbe68584a9efcb5a06251",
+      "write_latency_ms": 6.705,
+      "fsync_ok": true
+    },
+    {
+      "id": "019a0636ec18bf1ecfa5c50cdb44fd7692d25a096fe2ee273639ab43ebb69597",
+      "write_latency_ms": 6.587,
+      "fsync_ok": true
+    },
+    {
+      "id": "19cd864ef9d24fcc06de8df468f37b2dbf753c014083de0d308ccb734e33426e",
+      "write_latency_ms": 6.447,
+      "fsync_ok": true
+    },
+    {
+      "id": "c6e0e10b7aaeba8d590dc3a148c28b476634aa32d9df8106139123af065daa06",
+      "write_latency_ms": 6.634,
+      "fsync_ok": true
+    },
+    {
+      "id": "08e3068eccf9737c297f45427ed07e07a6348cfe8b1334045b6cccbdf047042d",
+      "write_latency_ms": 6.546,
+      "fsync_ok": true
+    },
+    {
+      "id": "87cee7b11a2df7be9a665685cf8d1584bbe1c038af5b6e38836d537cf205c8de",
+      "write_latency_ms": 6.48,
+      "fsync_ok": true
+    },
+    {
+      "id": "15446b94f20d9f58f9851508fb5d893dfa11fc3c7d42f636212a704ffa19c575",
+      "write_latency_ms": 6.547,
+      "fsync_ok": true
+    },
+    {
+      "id": "7238804e6787d4c76eff6ee4b5ff712bcda2195897cff854294508e277f99169",
+      "write_latency_ms": 6.421,
+      "fsync_ok": true
+    },
+    {
+      "id": "5ffbbbc2184bc533cf305133046df4d73a2fbcc84a1be2dd3d74599b45ba4e08",
+      "write_latency_ms": 6.823,
+      "fsync_ok": true
+    },
+    {
+      "id": "a7706a3905ed57f0d6e01db5b0b0e99a4dc96ad5accb6d0045cdd1296cf5f866",
+      "write_latency_ms": 6.588,
+      "fsync_ok": true
+    },
+    {
+      "id": "0dd84a545ed4b0ef29a8d5852403c2513d03a600e2e4416ecbfbd9f8e6eea2e7",
+      "write_latency_ms": 6.389,
+      "fsync_ok": true
+    },
+    {
+      "id": "130eae9222aed10f957a30453acde49784e448d783b07afaf65b78a92116a2fa",
+      "write_latency_ms": 6.821,
+      "fsync_ok": true
+    },
+    {
+      "id": "92f5cceddedb6838c1a6e1dfe9bf0089e44d099ba4d74d6a6b47bb155091eaa3",
+      "write_latency_ms": 6.369,
+      "fsync_ok": true
+    },
+    {
+      "id": "a02b942c7ba7a12abb060d97d31b981c0148feb243b00ec00cf01e020a20602a",
+      "write_latency_ms": 6.838,
+      "fsync_ok": true
+    },
+    {
+      "id": "243a6e8df740a2600a495fb66a17408d63b0d304247d2103154db4c1472ab832",
+      "write_latency_ms": 10.956,
+      "fsync_ok": true
+    },
+    {
+      "id": "b5117a865fcdbda411dcbbb6f96b61cceb92ad5750d41f760ea6793c19862bad",
+      "write_latency_ms": 11.842,
+      "fsync_ok": true
+    },
+    {
+      "id": "2cd0501828844924c138af55915cd8428df0df54ad13a4cd224127176984b934",
+      "write_latency_ms": 7.678,
+      "fsync_ok": true
+    },
+    {
+      "id": "feb30a13b21990fb47e4d72b34ca63b6f297a27ddab8c6d9e2ca09a81567382e",
+      "write_latency_ms": 7.003,
+      "fsync_ok": true
+    },
+    {
+      "id": "6558f65346313c21a35c82214debf2b9d74d79ec08a2bf587026ca672a919412",
+      "write_latency_ms": 6.382,
+      "fsync_ok": true
+    },
+    {
+      "id": "8b2da60e1e37451cb43ccfbc2ba16570d23220554aef1fcd5975f575785b5810",
+      "write_latency_ms": 6.889,
+      "fsync_ok": true
+    },
+    {
+      "id": "d9d1c498e2773c15a2f315c88a51708ab14d2743f5ceb4e5b86a7c039347e269",
+      "write_latency_ms": 6.744,
+      "fsync_ok": true
+    },
+    {
+      "id": "e12565e10603799344cd490ef16fba483b77a967d58cac7d0cdc4c43e74a17b1",
+      "write_latency_ms": 6.644,
+      "fsync_ok": true
+    },
+    {
+      "id": "a99ae174fa857e57a6d3ef2b8697e7fe4e815fef46240021e9bd64a509f9f2b6",
+      "write_latency_ms": 6.728,
+      "fsync_ok": true
+    },
+    {
+      "id": "030670da4f08ec02ea027421c3745ffbf667df1066265fae8ad6eb961a178b10",
+      "write_latency_ms": 11.088,
+      "fsync_ok": true
+    },
+    {
+      "id": "769f82013975cfe95cd374146aa995f67bad152b57e75432fb4f4c2795e279bd",
+      "write_latency_ms": 7.313,
+      "fsync_ok": true
+    },
+    {
+      "id": "f42c15ec9c6d6b2a91dfc6112bde3da6e1762ec2fa1b9a9e3e2315de29eb3145",
+      "write_latency_ms": 6.896,
+      "fsync_ok": true
+    },
+    {
+      "id": "d372daf54f3ff116f1d3210006075d36bae5a2a97348f65226b99a14a4f4172a",
+      "write_latency_ms": 7.354,
+      "fsync_ok": true
+    },
+    {
+      "id": "84ff1fd1b9ee2b83df4f43e0033180e60ccd6e2b02cd441c118ac32cac20474f",
+      "write_latency_ms": 7.394,
+      "fsync_ok": true
+    },
+    {
+      "id": "ef42d2cddecbf8025ed8ce14ca0b6e78514d0aca2d325030b7e6f877aa23f373",
+      "write_latency_ms": 7.049,
+      "fsync_ok": true
+    },
+    {
+      "id": "6de9a7ec19d264acea442c3c569a07b60e06477916767108d8ffccabd143a6f2",
+      "write_latency_ms": 6.651,
+      "fsync_ok": true
+    },
+    {
+      "id": "436404bc9d0114f21edce54c2a4f450597e907a1f4555a04e45360d949146485",
+      "write_latency_ms": 6.425,
+      "fsync_ok": true
+    },
+    {
+      "id": "26ec7f3dc7ff35d9da39f5baf8e69d4bd842b5163a584b3149cbaed416e98929",
+      "write_latency_ms": 6.396,
+      "fsync_ok": true
+    },
+    {
+      "id": "f02dda59929315171fc6efe6891af660e547278ca95ffe6967d721b22ac5aa94",
+      "write_latency_ms": 6.602,
+      "fsync_ok": true
+    },
+    {
+      "id": "fac8ed63522c991d68e8544d54f68699e0fbb287b197f0cc9637f974b71fe21f",
+      "write_latency_ms": 8.154,
+      "fsync_ok": true
+    },
+    {
+      "id": "f765428e5e4e0eeddc90c4468f10b926babaedfa543e1fbc20dd2fa60567c82e",
+      "write_latency_ms": 11.749,
+      "fsync_ok": true
+    },
+    {
+      "id": "b8de23a5eba17cfdbfb5fdef2dedad7ba67d051bb4560c85dd7e942d67f5eb6a",
+      "write_latency_ms": 6.826,
+      "fsync_ok": true
+    },
+    {
+      "id": "d916d6015874724662f5d3cec17f3830d4e738dd35aedc20880dfc7c3f6c594a",
+      "write_latency_ms": 6.457,
+      "fsync_ok": true
+    },
+    {
+      "id": "d2999b1435e36e7b330e6bfedf3c10de8e4a17ff7cbbcdcb9c8e31dc8cad1210",
+      "write_latency_ms": 6.389,
+      "fsync_ok": true
+    },
+    {
+      "id": "7972c158b70624fcfa22fc9134c37235ed6ad6f7981b4e9594928c9d7d5a073c",
+      "write_latency_ms": 6.575,
+      "fsync_ok": true
+    },
+    {
+      "id": "a638cad8567bbda0b02ce645681d5939b5a8c2dc8ee060d2fe5442e153249095",
+      "write_latency_ms": 6.894,
+      "fsync_ok": true
+    },
+    {
+      "id": "5b4266786fc61ce2780d8556dec76aa6c0a396f6cea6c8cf6a164010e408fec8",
+      "write_latency_ms": 7.176,
+      "fsync_ok": true
+    },
+    {
+      "id": "7572c93206efdc6fc0a50b2983b77c9b85f9a2f94162e6a41557657b81a8d51c",
+      "write_latency_ms": 6.595,
+      "fsync_ok": true
+    },
+    {
+      "id": "5f92b5851497c07d75b7dd4e3b8d84e868ff207ea87de579f955a4dd87dcc9db",
+      "write_latency_ms": 7.313,
+      "fsync_ok": true
+    },
+    {
+      "id": "e7fe0aa46d49f6ac93e9f55d5eca9734ac126445651953b866c72f63122e5132",
+      "write_latency_ms": 6.619,
+      "fsync_ok": true
+    },
+    {
+      "id": "df15ea42f4168caeaaff900faa5b2fa51ac85c65c3427f6b5c90a110dfeb575d",
+      "write_latency_ms": 6.878,
+      "fsync_ok": true
+    },
+    {
+      "id": "9cdb65cca6e8057f11163966d7cbd1e5a6d293a74e25fc266a09c9d88ca27752",
+      "write_latency_ms": 6.459,
+      "fsync_ok": true
+    },
+    {
+      "id": "f548647cfa6096dd7365c13429ccdefb524a1f29d29f4e765143985b80ce33da",
+      "write_latency_ms": 6.714,
+      "fsync_ok": true
+    },
+    {
+      "id": "dd276d4148fe2c0c603288fb3e030b39fe061182def66a24461b1349430bc553",
+      "write_latency_ms": 6.641,
+      "fsync_ok": true
+    },
+    {
+      "id": "8264b9506c15bee6f8607fbe73510cd918e7f4c174f5be143ab83e7d0bec5564",
+      "write_latency_ms": 6.642,
+      "fsync_ok": true
+    },
+    {
+      "id": "2c58b64c50d26fa5913b75bddd26076c20222a674fb51fcead4c8d1dac081967",
+      "write_latency_ms": 6.744,
+      "fsync_ok": true
+    },
+    {
+      "id": "74f6957afc8a67c99d20a5bdfcd26d13b35f0e549d961834c4b51bb7ad79c8a2",
+      "write_latency_ms": 11.249,
+      "fsync_ok": true
+    },
+    {
+      "id": "5978fa135cf72c0e851614db872461f4797f507b312e5d1222ecd6893dc6e736",
+      "write_latency_ms": 11.073,
+      "fsync_ok": true
+    },
+    {
+      "id": "e139fffd0592573536fc604594c24e82dbc06e6d932cca42038ee09bfd5cab87",
+      "write_latency_ms": 6.531,
+      "fsync_ok": true
+    },
+    {
+      "id": "4d13e2084cd9326d44c24e08e5c1e4bfb7ccc2876cee22b29b0f6cd7e425ddf4",
+      "write_latency_ms": 7.025,
+      "fsync_ok": true
+    },
+    {
+      "id": "4c1f5e8eac43647d2019bd1bcba6af877aa497b77351bbf39d58306de7da2801",
+      "write_latency_ms": 6.657,
+      "fsync_ok": true
+    },
+    {
+      "id": "7ccc53062798852a0c80266c059e3db605efb8a0beda1e0e1168679fe13ab9a4",
+      "write_latency_ms": 6.438,
+      "fsync_ok": true
+    },
+    {
+      "id": "4faa96167fe40b846f011a27a82c26f0dedc235666e941dfd63417599b1c098c",
+      "write_latency_ms": 11.221,
+      "fsync_ok": true
+    },
+    {
+      "id": "b257ba5e2e8c9e691d6f89f707352943c0d3142405ad022b388b43413d9a3b42",
+      "write_latency_ms": 6.779,
+      "fsync_ok": true
+    },
+    {
+      "id": "beb0b51f16e0fb0161570d4e04d7c1a25e3bc1ad4e12b622112a614f90a80d22",
+      "write_latency_ms": 6.813,
+      "fsync_ok": true
+    },
+    {
+      "id": "af5ca988a4ed1bd546d7d274bed09ebe79a04e39841b7b91d4c9884d25776e47",
+      "write_latency_ms": 6.356,
+      "fsync_ok": true
+    },
+    {
+      "id": "cf71d1cf74c0f86df2156ba5152ad177e402939e89a8eeb89fd6408a934cf9ef",
+      "write_latency_ms": 6.5,
+      "fsync_ok": true
+    },
+    {
+      "id": "e790ed69944ce1cb58028949f3c404c374cbbdfba7c6d9748bac5f777f3b165c",
+      "write_latency_ms": 6.746,
+      "fsync_ok": true
+    },
+    {
+      "id": "815e7bc480fef6a377c560025f09733a5eb635904c18e8c3299648e159a57343",
+      "write_latency_ms": 6.617,
+      "fsync_ok": true
+    },
+    {
+      "id": "649995879afd5e2147a4b69200695c0d4e5a3708a850b8095651aa0c99f79428",
+      "write_latency_ms": 7.027,
+      "fsync_ok": true
+    },
+    {
+      "id": "391979507ea64dbbc4ce43e6a4acf59ee9ba727b715489363c2a7d8041ddb54f",
+      "write_latency_ms": 6.613,
+      "fsync_ok": true
+    },
+    {
+      "id": "1481b4e2b59f2242b216e078e2996e0931c80c448d7db558da9fcad7ec0ef53d",
+      "write_latency_ms": 6.62,
+      "fsync_ok": true
+    },
+    {
+      "id": "e66cdfe6cedcc987b2a15bac45f3e59f6a90f7a2d6a1300c329b82699e592d42",
+      "write_latency_ms": 6.877,
+      "fsync_ok": true
+    },
+    {
+      "id": "0563f4047f9280f23ee00cc7bdd5b5e598ce90790e72b0d7f735214c0a66e1c7",
+      "write_latency_ms": 8.174,
+      "fsync_ok": true
+    },
+    {
+      "id": "15aa4733a6703d17a879fa2b2397feb4c686437f80124defb97dcd3e652b8377",
+      "write_latency_ms": 6.613,
+      "fsync_ok": true
+    },
+    {
+      "id": "87ff4e74d95655c72952d310d46aa7c67638574d45334150e4d70d396607438d",
+      "write_latency_ms": 6.554,
+      "fsync_ok": true
+    },
+    {
+      "id": "4ced9ad4542b8401973aca8a328377b0a31570a00888bcce1803667d72b82e9f",
+      "write_latency_ms": 6.754,
+      "fsync_ok": true
+    },
+    {
+      "id": "d573dce815a64947679141f21c20c0b192da6b5a9a6aaa5862629ae95494662d",
+      "write_latency_ms": 11.609,
+      "fsync_ok": true
+    },
+    {
+      "id": "49d63b04d3700e3407c3c9a8972e69ea5e3ad4323bd8d85e7ad023c4ec024e8e",
+      "write_latency_ms": 6.64,
+      "fsync_ok": true
+    },
+    {
+      "id": "dd35de614a067497932548c822018f21f363ac4c82e454ec0b85f681470f79f5",
+      "write_latency_ms": 6.628,
+      "fsync_ok": true
+    },
+    {
+      "id": "5fdd2ceae2996247dd013168f818616431bf4e382a7343b874dff4678dea24fb",
+      "write_latency_ms": 6.667,
+      "fsync_ok": true
+    },
+    {
+      "id": "101b67de79bda14f3555ac60dc90a18e84c94cf6160bddd474e6dd8b793937f0",
+      "write_latency_ms": 11.055,
+      "fsync_ok": true
+    },
+    {
+      "id": "e512db93709cdbefe2bc0aaf89b055478301649515540f86b600712a6654b999",
+      "write_latency_ms": 11.792,
+      "fsync_ok": true
+    },
+    {
+      "id": "f179c88ecf40afefee1ec8531dee318cfcb92ded30e2ec8b56e47019b3fd9ac8",
+      "write_latency_ms": 6.951,
+      "fsync_ok": true
+    },
+    {
+      "id": "0cbb95526600ab7fb268b9fd11205b666a91e968976220c5d7a649fe0740115f",
+      "write_latency_ms": 6.66,
+      "fsync_ok": true
+    },
+    {
+      "id": "7df7f39a475700f5ddba9d1057a45ee7e443784d2a1853c7adc425df2459ad30",
+      "write_latency_ms": 6.883,
+      "fsync_ok": true
+    },
+    {
+      "id": "281ecc4b3b00774d6f7f0945f73e7b0e8f806e6ade31d7d6e0b107eb0d2ceb5e",
+      "write_latency_ms": 11.339,
+      "fsync_ok": true
+    },
+    {
+      "id": "3ba53708c07894f52db3c96f80b918b1d8c21ff025901a2d61578917a0164f47",
+      "write_latency_ms": 6.5,
+      "fsync_ok": true
+    },
+    {
+      "id": "fb0a85de1696bc947ad7af4b676b95934a8966b21d3425b6b2ea1cf3421454d6",
+      "write_latency_ms": 6.839,
+      "fsync_ok": true
+    },
+    {
+      "id": "75dbf335ae7e9b6e38e3a9174a5692fdcfb437f27ebc4a3eb72f1b82be43b7cc",
+      "write_latency_ms": 6.68,
+      "fsync_ok": true
+    },
+    {
+      "id": "cf23c00dbdc0d768f6770168a3d1014e5b6c8a38807b84f97e0714e2b979d153",
+      "write_latency_ms": 6.453,
+      "fsync_ok": true
+    },
+    {
+      "id": "c782f93c695bf5f01c218c36ec11e86070df5e1b0a2e6330cf036d0ff655198e",
+      "write_latency_ms": 11.149,
+      "fsync_ok": true
+    },
+    {
+      "id": "a4d8b0d1d5ece4c2e6a7faad5ea294189db8937ad15685929b0ccbc2a78641fc",
+      "write_latency_ms": 7.477,
+      "fsync_ok": true
+    },
+    {
+      "id": "2901e287dd1d4dab0ad9be1bd803b20eaa870a3685721ceaae3af0aaa8fbb54e",
+      "write_latency_ms": 11.079,
+      "fsync_ok": true
+    },
+    {
+      "id": "7c38e4f0c21b4e79c14bd030f689a7f5ef8404af9eeb1c9fbe2962c00c0e2b93",
+      "write_latency_ms": 11.686,
+      "fsync_ok": true
+    },
+    {
+      "id": "95344ad907dceb48e91fe2cefc5853babff2154879f3259d912fb7a5a001abb4",
+      "write_latency_ms": 6.677,
+      "fsync_ok": true
+    },
+    {
+      "id": "5927bb6e1c51ae54f1ddc31b6dad6ad81ba0a2770da0aa6ae0bb9bcc505cc55f",
+      "write_latency_ms": 6.588,
+      "fsync_ok": true
+    },
+    {
+      "id": "dcfb22de45e47219f659cb2bb215b6f15867ac2d964c96106d295a216ab8dcaa",
+      "write_latency_ms": 6.8,
+      "fsync_ok": true
+    },
+    {
+      "id": "d2b3650a638fd3eb3fbb642a432da0b13666cadf69d58aa7160abe60d64cc6b6",
+      "write_latency_ms": 6.439,
+      "fsync_ok": true
+    },
+    {
+      "id": "4920c37478c9a568ce345a2d107cf6570885d318a324bc8e3d49a1886209a8c0",
+      "write_latency_ms": 6.632,
+      "fsync_ok": true
+    },
+    {
+      "id": "fb5a312a2c20e5762c6449e63972c65285da18543aaf9aaf267f350ed52ca567",
+      "write_latency_ms": 6.758,
+      "fsync_ok": true
+    },
+    {
+      "id": "d81865544e24a658e890077b799fbdeb657d4b62166a72c9c2ca03349f6d09fa",
+      "write_latency_ms": 6.571,
+      "fsync_ok": true
+    },
+    {
+      "id": "33586a248b56c27ae79eca781f257fecb4c4b9dbd6ab175db190e65ffbc55a40",
+      "write_latency_ms": 13.473,
+      "fsync_ok": true
+    },
+    {
+      "id": "c0eca760ebd1b3287ca19119d7d3f1a211cc6d6e5be3e62317d14e78b8d9c9c4",
+      "write_latency_ms": 6.779,
+      "fsync_ok": true
+    },
+    {
+      "id": "8172ba35c3fc1e56767d0dca416e89bc2a5ed2c2ab6480ce832f1907c37ca3a3",
+      "write_latency_ms": 6.888,
+      "fsync_ok": true
+    },
+    {
+      "id": "dbdb578b55c7d844c5d41d0e9c7c9d3c6af67c5d9d4ba712dfa5c383dc802768",
+      "write_latency_ms": 6.272,
+      "fsync_ok": true
+    },
+    {
+      "id": "5b23b42ef8de41c65a1efcc0bc3fc57235e1cb4af62efc1265ee6be8f1e31d88",
+      "write_latency_ms": 6.254,
+      "fsync_ok": true
+    },
+    {
+      "id": "3927fef4d28b9d99088b56a0c611f80a47a495bfb9f9aaf8de0d1a354dbfef35",
+      "write_latency_ms": 6.979,
+      "fsync_ok": true
+    },
+    {
+      "id": "62dcf7f9540e535ce59678aea30cfc909b164bf649bd7c0812316b120048b239",
+      "write_latency_ms": 6.753,
+      "fsync_ok": true
+    },
+    {
+      "id": "6bc1f35f016ad09aef9b897ac168368d7a9b7daa1126a8e7c492b99600d3f2ae",
+      "write_latency_ms": 9.787,
+      "fsync_ok": true
+    },
+    {
+      "id": "218f15a0e5a7315c9099b00b02ac6d82840b87d09d671972213f99f954e7954b",
+      "write_latency_ms": 7.367,
+      "fsync_ok": true
+    },
+    {
+      "id": "762f257159b24097cbe33f8871d7ae6e1f4a03a9b41a0e3d4a8865705ea752d5",
+      "write_latency_ms": 6.73,
+      "fsync_ok": true
+    },
+    {
+      "id": "4d0193aeac00243a88f140f280a533241f1829695fafa86d8411bfd9af6871b1",
+      "write_latency_ms": 6.53,
+      "fsync_ok": true
+    },
+    {
+      "id": "3f26e75b7300ad94605c3f03f5d8b51b5bf2405ac02305b678ad21b1b46c9c2b",
+      "write_latency_ms": 6.397,
+      "fsync_ok": true
+    },
+    {
+      "id": "53f5aef27492bd2c0f9cace1f627bc447f80248ad4c8da742ed6463c62024dd9",
+      "write_latency_ms": 6.856,
+      "fsync_ok": true
+    },
+    {
+      "id": "102dd2789ec6521725f654b730174803aa5b9d71bef3f350cccc6d6434207e3d",
+      "write_latency_ms": 6.524,
+      "fsync_ok": true
+    },
+    {
+      "id": "016d03395d523d7c8cbb398438816ee9e24dd687dafada78287d4906413a0342",
+      "write_latency_ms": 16.926,
+      "fsync_ok": true
+    },
+    {
+      "id": "44457355d99d77d2480d26717a6754b3ce4dd525a0468795c7563057d7913163",
+      "write_latency_ms": 12.577,
+      "fsync_ok": true
+    },
+    {
+      "id": "8c057a0f018155fe639e3cbe6987a2fed02fbe6f0f4ee7898685caace684ebb0",
+      "write_latency_ms": 6.659,
+      "fsync_ok": true
+    },
+    {
+      "id": "e1e82648b44c60e0e5c5253f2af111a7f48c24720607c24d846d8871fab580f0",
+      "write_latency_ms": 6.869,
+      "fsync_ok": true
+    },
+    {
+      "id": "543acbb0e6b30c37abffab3a708777f99b97e1c130bb1860fd6126fb58dca962",
+      "write_latency_ms": 7.547,
+      "fsync_ok": true
+    },
+    {
+      "id": "12cf625a484b9f9e53a59e0b5dc4afb61a14ea4c5cd350c1b4621610c884a0f4",
+      "write_latency_ms": 6.975,
+      "fsync_ok": true
+    },
+    {
+      "id": "3ec030216445a6c6b505b5b8c119a4f0ce9b03b4a5d5be24dae0f5c3ef47ce09",
+      "write_latency_ms": 6.64,
+      "fsync_ok": true
+    },
+    {
+      "id": "59083079c3a80f55f84a9825c4e318b90ec53a6e797c165342b88385670b0502",
+      "write_latency_ms": 6.586,
+      "fsync_ok": true
+    },
+    {
+      "id": "2cf82782e45bbbbec9bc63e0566ad5828db66d9de47686f1e3704588d402f6b9",
+      "write_latency_ms": 6.727,
+      "fsync_ok": true
+    },
+    {
+      "id": "f303f69f3eda80529107db7f79fbfdb67901f19fb23daaebe0e6b3ae42f3238c",
+      "write_latency_ms": 6.773,
+      "fsync_ok": true
+    },
+    {
+      "id": "5c214c359cd1f633d72f8b36189906c8757b2e9729d40ebb5e6dfe0ddec58837",
+      "write_latency_ms": 6.616,
+      "fsync_ok": true
+    },
+    {
+      "id": "6eb96d9ead6d24af607200357664baba8e5bda413735a9c058dad2ef36bf344f",
+      "write_latency_ms": 6.581,
+      "fsync_ok": true
+    },
+    {
+      "id": "09db90cdeac65f8896805e071b7771cfce8bdfb0133eed5ff14341274cb5454e",
+      "write_latency_ms": 6.962,
+      "fsync_ok": true
+    },
+    {
+      "id": "34d3bfaaf8abf8be8772e8b09887e2d8051a2be780008725b542cbd8610c1453",
+      "write_latency_ms": 6.791,
+      "fsync_ok": true
+    },
+    {
+      "id": "3fd8e7976b249fd00fac7094ed08f927e7ed10b2c197d97c868939b6e69fb27a",
+      "write_latency_ms": 6.895,
+      "fsync_ok": true
+    },
+    {
+      "id": "326f3a23e0855aba6de1abe7d4fcfac6ac692a8fd5a3de82469006da5733ab72",
+      "write_latency_ms": 7.423,
+      "fsync_ok": true
+    },
+    {
+      "id": "e2a26e1c8cdefd19f6cedf08012ff911bad72a6f51050d1084a0c936a61577db",
+      "write_latency_ms": 16.623,
+      "fsync_ok": true
+    },
+    {
+      "id": "0716070c8ac986aadf6b1f94a207786f333685c02bf9e94e2a18d89dfedff4ed",
+      "write_latency_ms": 6.61,
+      "fsync_ok": true
+    },
+    {
+      "id": "637c1f921c57fb67ea20c593a8472b026704707018d3ada0330162c88f8b417d",
+      "write_latency_ms": 7.379,
+      "fsync_ok": true
+    },
+    {
+      "id": "1e92ead390d74a10e5374384f0777ec4a4ddc10b017799039066232ef6fe559c",
+      "write_latency_ms": 6.593,
+      "fsync_ok": true
+    },
+    {
+      "id": "996902badc0b527f89e60f264d8a8760c61d89237d43bac7acc4554baa173d5b",
+      "write_latency_ms": 6.606,
+      "fsync_ok": true
+    },
+    {
+      "id": "94c6e005a119944ed58421bb4aaf0cdf957cbe8563b62b366725d2834835c4ee",
+      "write_latency_ms": 6.766,
+      "fsync_ok": true
+    },
+    {
+      "id": "4187bb4e2734996819716008521e3ecdc797b71503c097666a32592563bef287",
+      "write_latency_ms": 7.221,
+      "fsync_ok": true
+    },
+    {
+      "id": "2ed90a0e80d1e0acba9ff8eb277cc86b7e556df002597985b0d2cc1d50397773",
+      "write_latency_ms": 6.957,
+      "fsync_ok": true
+    },
+    {
+      "id": "50b98b222d86f0c586142c59b42c652a1bf7c26e9c36c9b6a1fa323ef7d9775a",
+      "write_latency_ms": 6.379,
+      "fsync_ok": true
+    },
+    {
+      "id": "1cc8e9b928121994d90cb94ddf224d836884baf1a109bb1e869228e9f9e70f83",
+      "write_latency_ms": 7.075,
+      "fsync_ok": true
+    },
+    {
+      "id": "43a58d6424c8417c68db5065eb55be8a67ba52e8b740c7f68b008ab04c8965e1",
+      "write_latency_ms": 6.698,
+      "fsync_ok": true
+    },
+    {
+      "id": "b03efad661ef7b90c83a4a80deffe9050e09140b501395696a49bd8ea92c8c6c",
+      "write_latency_ms": 6.754,
+      "fsync_ok": true
+    },
+    {
+      "id": "5e3ed43569667881d4f70cf795ef5f0b3d526123dbc622e4b5fca3eb75edccdd",
+      "write_latency_ms": 6.431,
+      "fsync_ok": true
+    },
+    {
+      "id": "a0d3afc1b10d40127d2fe4a6fa7636dde552144662773b409afe9ba0dbb164c4",
+      "write_latency_ms": 6.615,
+      "fsync_ok": true
+    },
+    {
+      "id": "90cd7b0b86069e5bd910b63349f9e46bac4e151873fb93f2b9a4d90f9f4e85b8",
+      "write_latency_ms": 6.306,
+      "fsync_ok": true
+    },
+    {
+      "id": "807876916f982c5e986fa1a0373eb190c350906b6b80d20c1c9f9412c190411b",
+      "write_latency_ms": 6.475,
+      "fsync_ok": true
+    },
+    {
+      "id": "0611bb0f1fac8ef8ade6f40f029bc7a0cd4b60f19c9cb782ce183e54a9afaceb",
+      "write_latency_ms": 11.33,
+      "fsync_ok": true
+    },
+    {
+      "id": "d5113ed76933c90f59f26d469bba1f83d115d1b213a9ecb11833047a0424a1f0",
+      "write_latency_ms": 6.563,
+      "fsync_ok": true
+    },
+    {
+      "id": "07f3609930e5196c979a6284db416083b1777a5cd030fe37e6c28624a329c514",
+      "write_latency_ms": 6.442,
+      "fsync_ok": true
+    },
+    {
+      "id": "80c10615064009306028d7126168448181fb8975244ce815a3846c23f23307af",
+      "write_latency_ms": 6.475,
+      "fsync_ok": true
+    },
+    {
+      "id": "9dc0a8d7ece702abf9e265dc51b789e0aa7e03d188b609fc60d4c16b6322a87b",
+      "write_latency_ms": 7.006,
+      "fsync_ok": true
+    },
+    {
+      "id": "7dd6e458e27c9dad069769556c7916ccb60a5c4797493c3b00c270df9781367c",
+      "write_latency_ms": 6.518,
+      "fsync_ok": true
+    },
+    {
+      "id": "867521b7708c577fb0aff2af2d1293a1b2e5df20d33cec48616ab8ccc48d6213",
+      "write_latency_ms": 6.843,
+      "fsync_ok": true
+    },
+    {
+      "id": "59136777ea3acae21a963eaed0cb7f06b54d5311d1b42e12464dd2b643a486d1",
+      "write_latency_ms": 6.602,
+      "fsync_ok": true
+    },
+    {
+      "id": "d2c5355f57c3084ee8a3cd5658ce3f2045467ef0fc8098f50b291eee75a3dbe9",
+      "write_latency_ms": 6.458,
+      "fsync_ok": true
+    },
+    {
+      "id": "2fcd4bd22776eb23f2ba824115b6f3050f53b72f8869ea5ca12e1a593a54676c",
+      "write_latency_ms": 6.448,
+      "fsync_ok": true
+    },
+    {
+      "id": "e7da13f058c41b59c905554c86091f09f71c483560562229545c1cf22d61b6d9",
+      "write_latency_ms": 6.525,
+      "fsync_ok": true
+    },
+    {
+      "id": "9f518a2d472ca73fc48c5a4edfd2bd3da8b463ed5c78fb89503d5f9264c11a1a",
+      "write_latency_ms": 6.59,
+      "fsync_ok": true
+    },
+    {
+      "id": "313428b41f030463a6da804ef2b9e310403ffc5b81ce779e64656d404aab5dfc",
+      "write_latency_ms": 6.596,
+      "fsync_ok": true
+    },
+    {
+      "id": "ba8d9113071eb818664f699fc19156cf2b362209ad1efe98b4e3218c7525875d",
+      "write_latency_ms": 6.6,
+      "fsync_ok": true
+    },
+    {
+      "id": "d7371f6afe5a44f31bfe9ff5f5e0e5d827274d482c3fef6c7cf68fd83e04da63",
+      "write_latency_ms": 6.764,
+      "fsync_ok": true
+    },
+    {
+      "id": "ecfdb4151d8c7e139b3c360812b44faa5bcf014df29ac76772a78bddec61d1c4",
+      "write_latency_ms": 6.472,
+      "fsync_ok": true
+    },
+    {
+      "id": "4aa3a0b845fe644b574b26bc3f621dbb08154ebd89772af85fc884223cfc59f8",
+      "write_latency_ms": 6.177,
+      "fsync_ok": true
+    },
+    {
+      "id": "8518c60a2849079a9c0879e5785d2ed1210464ec6887f43686717288147f519c",
+      "write_latency_ms": 6.638,
+      "fsync_ok": true
+    },
+    {
+      "id": "0da3fca7e057bc0c9af9237d2109ee2bc263085fe164e0c000d1bf179b32e3e8",
+      "write_latency_ms": 6.88,
+      "fsync_ok": true
+    },
+    {
+      "id": "97557e561cac694c61119baebd6b5e63fe6323c8d26443b218eab2e987c9309e",
+      "write_latency_ms": 6.597,
+      "fsync_ok": true
+    },
+    {
+      "id": "86793855fcd877c80f1cca6799008014f8fd99e173929c2790900791fcd64d3b",
+      "write_latency_ms": 6.703,
+      "fsync_ok": true
+    },
+    {
+      "id": "b329a1725e79f9a2bb260c338be92d863d3b8edc6bc2dc1642d9c2b20eefb583",
+      "write_latency_ms": 6.817,
+      "fsync_ok": true
+    },
+    {
+      "id": "e8fe027b3f0aa32357f41eb98f26a88ecad7688f8a11b4952b613f9b44286ab6",
+      "write_latency_ms": 6.636,
+      "fsync_ok": true
+    },
+    {
+      "id": "ce1ae1a0a3ccdd303d3cb42b737927534dd3583c6e2022789e3a4bff35db06ce",
+      "write_latency_ms": 6.381,
+      "fsync_ok": true
+    },
+    {
+      "id": "2b26f70d6f9c5fbc1b902c448a5d59982e0fe92927b32b547d1cab70bc609e4c",
+      "write_latency_ms": 7.595,
+      "fsync_ok": true
+    },
+    {
+      "id": "c956f4b937121daf8c1ea479edb1f93e836b20642fb74c543fa60db145e98c2c",
+      "write_latency_ms": 6.587,
+      "fsync_ok": true
+    },
+    {
+      "id": "eaf71a34e114e96842ae803053503bceacfc4757b3a09b77fdd45a52bd5d92ff",
+      "write_latency_ms": 6.821,
+      "fsync_ok": true
+    },
+    {
+      "id": "0eab96dbfd4723d4b82c172aee5ec79e31346e0bc2ac21b7e1e482698a4a6573",
+      "write_latency_ms": 6.832,
+      "fsync_ok": true
+    },
+    {
+      "id": "5c0d78e98a14a05709bf6ced2a65a72bd0e1767d4fbf62517af03be7c8c0bce3",
+      "write_latency_ms": 6.4,
+      "fsync_ok": true
+    },
+    {
+      "id": "44e4d21ca675ebe2e7f27c3b89d2172d850264b0690ca77281ce3c8094e52b43",
+      "write_latency_ms": 11.385,
+      "fsync_ok": true
+    },
+    {
+      "id": "2ee2397c8b0489a5ff85d9694c1dff8fc146863e2c24f950d3152808bd02d333",
+      "write_latency_ms": 6.711,
+      "fsync_ok": true
+    },
+    {
+      "id": "74622bef2f17bbaa724aedfccf92c0a784ce353c5de3b77a3b1ff5b7c28b0090",
+      "write_latency_ms": 6.699,
+      "fsync_ok": true
+    },
+    {
+      "id": "b552d04c703ab1f4d2dfbd7209f9c24422d8a1a0fb4a7c4528d0f0df10f97fd7",
+      "write_latency_ms": 6.534,
+      "fsync_ok": true
+    },
+    {
+      "id": "b8e54b70135fa00f27bbff0a6ae7b3603a8e5abb396e17fef905afdb489220d5",
+      "write_latency_ms": 6.914,
+      "fsync_ok": true
+    },
+    {
+      "id": "13c67af9e83f59a852bf439e1bddb1b70f69c6dc429feecf8b936d6021751e0b",
+      "write_latency_ms": 6.494,
+      "fsync_ok": true
+    },
+    {
+      "id": "67eecf6ed38360048adef3c64c40119812ee3d045c713c9df2f0246b7cf26d55",
+      "write_latency_ms": 7.733,
+      "fsync_ok": true
+    },
+    {
+      "id": "72fd0a55d79d00dadbd1992ee9df3c2d76ee5382f7adf43ccd082c716a25e9dc",
+      "write_latency_ms": 6.43,
+      "fsync_ok": true
+    },
+    {
+      "id": "792931b2ee53ef5c486f3c9b90daef0eb83d3888c3677e8cb7c4a167d34cf5f0",
+      "write_latency_ms": 6.712,
+      "fsync_ok": true
+    },
+    {
+      "id": "593eff82ea1ce9a7dfd209adfe7d28793cd921b1c98df9472371258660efff2b",
+      "write_latency_ms": 6.902,
+      "fsync_ok": true
+    },
+    {
+      "id": "6712a5f5c3ebf1e155b4a041c928ce78359cd1b00b49fb6bf5342bb8f5e1dafa",
+      "write_latency_ms": 6.347,
+      "fsync_ok": true
+    },
+    {
+      "id": "a732d2c7376cffe39c03f779f3a87441f7c28fe21c068e19af287024df29f316",
+      "write_latency_ms": 7.321,
+      "fsync_ok": true
+    },
+    {
+      "id": "60147265781d3e22c83508d585e2d163e75dcf15bb6bce3aded381d2fb4d620c",
+      "write_latency_ms": 6.477,
+      "fsync_ok": true
+    },
+    {
+      "id": "61fc867c92ad1bfb54758db9e0fc3792f1168439813d71f48a5bb95006262e45",
+      "write_latency_ms": 11.285,
+      "fsync_ok": true
+    },
+    {
+      "id": "d93075a08b60bd08e506a41820046ac92d9c19d73371fef0235e2df92e5db6ff",
+      "write_latency_ms": 6.788,
+      "fsync_ok": true
+    },
+    {
+      "id": "08b70d11a23da3ea9346e23ce778ba4354226bb7a3acee1ed95d53da8009a574",
+      "write_latency_ms": 6.763,
+      "fsync_ok": true
+    },
+    {
+      "id": "b22c97c827fb324a1796257b6d9f8ac5d93b21ad3684f70985b33f9d5c7a5738",
+      "write_latency_ms": 6.894,
+      "fsync_ok": true
+    },
+    {
+      "id": "4f78ebfcfda006166330c43380d223ac56764722bd5aacc0a121c8be4109f6db",
+      "write_latency_ms": 6.247,
+      "fsync_ok": true
+    },
+    {
+      "id": "aae12bbc5e7c170eca8b132d59e6e161bcbe9b7cc988bb104518f26e6510085a",
+      "write_latency_ms": 6.626,
+      "fsync_ok": true
+    },
+    {
+      "id": "1eef56cede5b85e155e2e1725edd47df7e790c7ff0a0686c430e49fd14c5a085",
+      "write_latency_ms": 6.587,
+      "fsync_ok": true
+    },
+    {
+      "id": "59551c45c44157e05dbc24d6b7ef1d83108213f00cb707a9ce4c9d55459d88af",
+      "write_latency_ms": 6.546,
+      "fsync_ok": true
+    },
+    {
+      "id": "c7c0121e0eac1e7f2c4b0c9ccd31a01ea0bbde1caff88b40084d6d8a04eafb4d",
+      "write_latency_ms": 11.675,
+      "fsync_ok": true
+    },
+    {
+      "id": "ce67c871013ec210a48b54b2f2fcb50919fb45e87d650b30cb21b38c2ab9af6c",
+      "write_latency_ms": 7.266,
+      "fsync_ok": true
+    },
+    {
+      "id": "c50b7f1cb0dc3d82b7bece37625ab14df49258fde8aa6f20aadf83368580c655",
+      "write_latency_ms": 6.791,
+      "fsync_ok": true
+    },
+    {
+      "id": "e069b54bb4c1cda898464584515307e00ffdd66db6b81f97112c852e52829450",
+      "write_latency_ms": 6.728,
+      "fsync_ok": true
+    },
+    {
+      "id": "7b5e660f5233d04e8c848d9ed498b6f894c14d66141caa7cba69a5f3f0d1eac7",
+      "write_latency_ms": 6.687,
+      "fsync_ok": true
+    },
+    {
+      "id": "90ce9263ee7552f9a6a7f42d1538c285c46b82ab378679514bae6312d9c2a4fe",
+      "write_latency_ms": 7.064,
+      "fsync_ok": true
+    },
+    {
+      "id": "a96b5c4f434b3c9e34dad808206502c91477300bbb0616bd4332fc5620d27b08",
+      "write_latency_ms": 6.626,
+      "fsync_ok": true
+    },
+    {
+      "id": "279ce3ab4912fbc34853235ef1ede9a49e1e598b50bcb2fa295113a523854479",
+      "write_latency_ms": 7.053,
+      "fsync_ok": true
+    },
+    {
+      "id": "7ef630778542583ef21db378a90bebf6bbb25ce322f073151d0c8a588f180aa5",
+      "write_latency_ms": 6.234,
+      "fsync_ok": true
+    },
+    {
+      "id": "cd7767fe3c64dc7574deafdca365a80f1416fa76b24cff45aca4c1fcce8c3277",
+      "write_latency_ms": 7.524,
+      "fsync_ok": true
+    },
+    {
+      "id": "40b8a844051d22f6934de6b6aabd85db4d704495675278c7db00209c4085c0c1",
+      "write_latency_ms": 6.54,
+      "fsync_ok": true
+    },
+    {
+      "id": "bf30b49d0b9f98aa1178d9548f375c83588467fe064396b4620f2f8b52e6590a",
+      "write_latency_ms": 6.546,
+      "fsync_ok": true
+    },
+    {
+      "id": "35d700fa86e58368eb71141dbe724dd3ed433334ba97e81d9e8880175b1b9833",
+      "write_latency_ms": 6.371,
+      "fsync_ok": true
+    },
+    {
+      "id": "c856251e1daa926fecc7990315a3fbf93bf5602a4d758634fcd44a527c48f592",
+      "write_latency_ms": 6.614,
+      "fsync_ok": true
+    }
+  ]
+}
