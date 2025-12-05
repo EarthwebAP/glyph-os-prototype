@@ -19,6 +19,16 @@ jobs:
   build-and-test:
     name: Build and Test
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        compiler: [gcc, clang]
+        include:
+          - compiler: gcc
+            cc: gcc
+            cxx: g++
+          - compiler: clang
+            cc: clang
+            cxx: clang++
 
     steps:
       - name: Checkout code
@@ -26,19 +36,33 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Cache APT packages
+        uses: awalsh128/cache-apt-pkgs-action@v1
+        with:
+          packages: clang llvm build-essential jq openssl gcc
+          version: 1.0
+
       - name: Setup build environment
         run: |
           sudo apt-get update
-          sudo apt-get install -y clang llvm build-essential jq openssl
+          sudo apt-get install -y ${{ matrix.compiler }} build-essential jq openssl
 
       - name: Display environment
         run: |
           echo "=== Environment ==="
           uname -a
-          clang --version
+          ${{ matrix.cc }} --version
           echo "TZ=$TZ"
           echo "LANG=$LANG"
           echo "SOURCE_DATE_EPOCH=$SOURCE_DATE_EPOCH"
+
+      - name: Cache build artifacts
+        uses: actions/cache@v3
+        with:
+          path: freebsd/bin
+          key: build-${{ matrix.compiler }}-${{ hashFiles('freebsd/src/**/*.c', 'freebsd/src/**/*.h') }}
+          restore-keys: |
+            build-${{ matrix.compiler }}-
 
       - name: Build all modules
         run: |
@@ -46,50 +70,63 @@ jobs:
           mkdir -p bin logs
 
           # Build substrate_core
-          clang -o bin/substrate_core src/substrate_core.c -lm
+          ${{ matrix.cc }} -o bin/substrate_core src/substrate_core.c -lm
 
           # Build glyph_interpreter
-          clang -o bin/glyph_interp src/glyph_interpreter.c -lm
+          ${{ matrix.cc }} -o bin/glyph_interp src/glyph_interpreter.c -lm
 
           echo "Build complete"
           ls -lh bin/
 
-      - name: Run tests
-        run: |
-          cd freebsd
+      - name: Run tests with retry
+        uses: nick-fields/retry@v2
+        with:
+          timeout_minutes: 10
+          max_attempts: 3
+          retry_wait_seconds: 30
+          command: |
+            cd freebsd
 
-          echo "=== Running substrate_core tests ==="
-          ./bin/substrate_core --test | tee logs/substrate_test.log
+            echo "=== Running substrate_core tests ==="
+            ./bin/substrate_core --test | tee logs/substrate_test.log
 
-          echo ""
-          echo "=== Running glyph_interpreter tests ==="
-          ./bin/glyph_interp --test | tee logs/glyph_test.log
+            echo ""
+            echo "=== Running glyph_interpreter tests ==="
+            ./bin/glyph_interp --test | tee logs/glyph_test.log
 
-          # Check for test failures
-          if grep -q "FAIL" logs/substrate_test.log logs/glyph_test.log; then
-            echo "❌ Tests failed"
-            exit 1
-          fi
+            # Check for test failures
+            if grep -q "FAIL" logs/substrate_test.log logs/glyph_test.log; then
+              echo "❌ Tests failed"
+              exit 1
+            fi
 
-          echo "✅ All tests passed"
+            echo "✅ All tests passed"
 
       - name: Upload test logs
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: test-logs
+          name: test-logs-${{ matrix.compiler }}
           path: freebsd/logs/*.log
 
   sanitizers:
     name: Sanitizer Builds
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         sanitizer: [address, undefined, memory]
+        compiler: [clang]
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+
+      - name: Cache APT packages
+        uses: awalsh128/cache-apt-pkgs-action@v1
+        with:
+          packages: clang llvm
+          version: 1.0
 
       - name: Setup clang
         run: |
@@ -110,25 +147,30 @@ jobs:
             src/glyph_interpreter.c -lm
 
       - name: Run tests with ${{ matrix.sanitizer }} sanitizer
-        run: |
-          cd freebsd
+        uses: nick-fields/retry@v2
+        with:
+          timeout_minutes: 10
+          max_attempts: 2
+          retry_wait_seconds: 15
+          command: |
+            cd freebsd
 
-          echo "=== Testing with ${{ matrix.sanitizer }} sanitizer ==="
+            echo "=== Testing with ${{ matrix.sanitizer }} sanitizer ==="
 
-          ./bin/substrate_core_${{ matrix.sanitizer }} --test \
-            2>&1 | tee logs/${{ matrix.sanitizer }}_substrate.log
+            ./bin/substrate_core_${{ matrix.sanitizer }} --test \
+              2>&1 | tee logs/${{ matrix.sanitizer }}_substrate.log
 
-          ./bin/glyph_interp_${{ matrix.sanitizer }} --test \
-            2>&1 | tee logs/${{ matrix.sanitizer }}_glyph.log
+            ./bin/glyph_interp_${{ matrix.sanitizer }} --test \
+              2>&1 | tee logs/${{ matrix.sanitizer }}_glyph.log
 
-          # Check for sanitizer errors
-          if grep -qE "(ERROR|LEAK|SUMMARY)" logs/${{ matrix.sanitizer }}_*.log; then
-            echo "❌ Sanitizer detected issues"
-            cat logs/${{ matrix.sanitizer }}_*.log
-            exit 1
-          fi
+            # Check for sanitizer errors
+            if grep -qE "(ERROR|LEAK|SUMMARY)" logs/${{ matrix.sanitizer }}_*.log; then
+              echo "❌ Sanitizer detected issues"
+              cat logs/${{ matrix.sanitizer }}_*.log
+              exit 1
+            fi
 
-          echo "✅ No sanitizer issues detected"
+            echo "✅ No sanitizer issues detected"
 
       - name: Upload sanitizer logs
         if: always()
@@ -144,6 +186,12 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+
+      - name: Cache APT packages
+        uses: awalsh128/cache-apt-pkgs-action@v1
+        with:
+          packages: clang
+          version: 1.0
 
       - name: Setup environment
         run: |
@@ -220,6 +268,36 @@ jobs:
           name: parity-logs
           path: freebsd/logs/run*
 
+  security-scan:
+    name: Security Scanning
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run Semgrep
+        uses: returntocorp/semgrep-action@v1
+        with:
+          config: >-
+            p/security-audit
+            p/c
+            p/command-injection
+
+      - name: Run TruffleHog for secrets
+        uses: trufflesecurity/trufflehog@main
+        with:
+          path: ./
+          base: ${{ github.event.repository.default_branch }}
+          head: HEAD
+          extra_args: --only-verified
+
+      - name: Run security tests
+        run: |
+          cd freebsd
+          chmod +x ci/security_tests.sh
+          ./ci/security_tests.sh
+
   sign-artifacts:
     name: Sign and Package Artifacts
     runs-on: ubuntu-latest
@@ -229,6 +307,12 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+
+      - name: Cache APT packages
+        uses: awalsh128/cache-apt-pkgs-action@v1
+        with:
+          packages: clang jq
+          version: 1.0
 
       - name: Setup environment
         run: |
@@ -265,6 +349,21 @@ jobs:
           gpg --batch --yes --armor --output artifacts/checksums.sha256.asc \
             --detach-sign artifacts/checksums.sha256
 
+      - name: Install Cosign
+        uses: sigstore/cosign-installer@v3
+
+      - name: Sign with Cosign (keyless)
+        env:
+          COSIGN_EXPERIMENTAL: 1
+        run: |
+          cd freebsd
+          cosign sign-blob --yes \
+            --output-signature artifacts/substrate_core.sig \
+            bin/substrate_core
+          cosign sign-blob --yes \
+            --output-signature artifacts/glyph_interp.sig \
+            bin/glyph_interp
+
       - name: Create release manifest
         run: |
           cd freebsd
@@ -281,14 +380,14 @@ jobs:
                 "version": "1.0.0",
                 "file": "bin/substrate_core",
                 "sha256": "$(sha256sum bin/substrate_core | awk '{print $1}')",
-                "size": $(stat -f%z bin/substrate_core 2>/dev/null || stat -c%s bin/substrate_core)
+                "size": $(stat -c%s bin/substrate_core)
               },
               {
                 "name": "glyph_interp",
                 "version": "0.1.0",
                 "file": "bin/glyph_interp",
                 "sha256": "$(sha256sum bin/glyph_interp | awk '{print $1}')",
-                "size": $(stat -f%z bin/glyph_interp 2>/dev/null || stat -c%s bin/glyph_interp)
+                "size": $(stat -c%s bin/glyph_interp)
               }
             ],
             "tests": {
@@ -302,6 +401,13 @@ jobs:
           EOF
 
           cat artifacts/release_manifest.json
+
+      - name: Generate SLSA provenance
+        uses: slsa-framework/slsa-github-generator/.github/workflows/generator_generic_slsa3.yml@v1.9.0
+        with:
+          base64-subjects: |
+            ${{ hashFiles('freebsd/bin/substrate_core') }}
+            ${{ hashFiles('freebsd/bin/glyph_interp') }}
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
@@ -321,6 +427,12 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+
+      - name: Cache APT packages
+        uses: awalsh128/cache-apt-pkgs-action@v1
+        with:
+          packages: clang llvm
+          version: 1.0
 
       - name: Setup fuzzing environment
         run: |
@@ -366,7 +478,7 @@ jobs:
   summary:
     name: CI Summary
     runs-on: ubuntu-latest
-    needs: [build-and-test, sanitizers, determinism-check, sign-artifacts]
+    needs: [build-and-test, sanitizers, determinism-check, sign-artifacts, security-scan]
     if: always()
 
     steps:
@@ -377,12 +489,14 @@ jobs:
           echo "Build and Test: ${{ needs.build-and-test.result }}"
           echo "Sanitizers: ${{ needs.sanitizers.result }}"
           echo "Determinism: ${{ needs.determinism-check.result }}"
+          echo "Security Scan: ${{ needs.security-scan.result }}"
           echo "Artifacts: ${{ needs.sign-artifacts.result }}"
           echo ""
 
           if [ "${{ needs.build-and-test.result }}" = "success" ] && \
              [ "${{ needs.sanitizers.result }}" = "success" ] && \
-             [ "${{ needs.determinism-check.result }}" = "success" ]; then
+             [ "${{ needs.determinism-check.result }}" = "success" ] && \
+             [ "${{ needs.security-scan.result }}" = "success" ]; then
             echo "✅ All checks passed"
             exit 0
           else
