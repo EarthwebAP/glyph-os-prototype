@@ -1,0 +1,25 @@
+{
+  "primitive": "merge",
+  "implementation": "cpp_reference",
+  "iterations": 100000,
+  "total_time_ns": 60545617,
+  "latency_ns": {
+    "min": 481,
+    "max": 68036,
+    "median": 578,
+    "mean": 566.502,
+    "p95": 579,
+    "p99": 579
+  },
+  "latency_us": {
+    "mean": 0.566502
+  },
+  "throughput": {
+    "ops_per_sec": 1765217
+  },
+  "baseline_comparison": {
+    "python_avg_latency_us": 5.33,
+    "python_ops_per_sec": 187652,
+    "speedup": 9.40861
+  }
+}
